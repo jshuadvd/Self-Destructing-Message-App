@@ -206,11 +206,11 @@ public final class R {
         public static final int video_size_limit_warning=0x7f06001a;
     }
     public static final class style {
-        public static final int ActionBar_Solid_Ribbit=0x7f080004;
-        public static final int ActionBar_Solid_Ribbit_TitleTextStyle=0x7f080005;
-        public static final int ActionBar_Transparent_Ribbit=0x7f080006;
-        public static final int ActionBarTabStyle_Ribbit=0x7f080009;
-        public static final int ActionButton_CloseMode_Ribbit=0x7f08000c;
+        public static final int ActionBar_Solid_Ribbit=0x7f080005;
+        public static final int ActionBar_Solid_Ribbit_TitleTextStyle=0x7f080006;
+        public static final int ActionBar_Transparent_Ribbit=0x7f080007;
+        public static final int ActionBarTabStyle_Ribbit=0x7f08000a;
+        public static final int ActionButton_CloseMode_Ribbit=0x7f08000d;
         /** 
         Base application theme for API 11+. This theme completely replaces
         AppBaseTheme from res/values/styles.xml on API 11+ devices.
@@ -223,24 +223,25 @@ public final class R {
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f080015;
+        public static final int AppBaseTheme=0x7f080016;
         public static final int AppTheme=0x7f080000;
-        public static final int AuthBackground=0x7f08000e;
-        public static final int AuthBackgroundImage=0x7f08000f;
-        public static final int AuthButton=0x7f080014;
-        public static final int AuthEditText=0x7f080013;
-        public static final int AuthFieldContainer=0x7f080012;
-        public static final int AuthTitle=0x7f080010;
-        public static final int AuthTitle_AuthSubTitle=0x7f080011;
-        public static final int DropDownListView_Ribbit=0x7f080008;
-        public static final int DropDownNav_Ribbit=0x7f08000a;
-        public static final int PopupMenu_Ribbit=0x7f080007;
-        public static final int ProgressBar_Ribbit=0x7f08000b;
+        public static final int AuthBackground=0x7f08000f;
+        public static final int AuthBackgroundImage=0x7f080010;
+        public static final int AuthButton=0x7f080015;
+        public static final int AuthEditText=0x7f080014;
+        public static final int AuthFieldContainer=0x7f080013;
+        public static final int AuthTitle=0x7f080011;
+        public static final int AuthTitle_AuthSubTitle=0x7f080012;
+        public static final int DropDownListView_Ribbit=0x7f080009;
+        public static final int DropDownNav_Ribbit=0x7f08000b;
+        public static final int PopupMenu_Ribbit=0x7f080008;
+        public static final int ProgressBar_Ribbit=0x7f08000c;
         public static final int Theme_Ribbit=0x7f080001;
         public static final int Theme_Ribbit_LightPurpleBackground=0x7f080002;
-        public static final int Theme_Ribbit_Overflow=0x7f080003;
+        public static final int Theme_Ribbit_LightPurpleBackground_GridView=0x7f080003;
+        public static final int Theme_Ribbit_Overflow=0x7f080004;
         /**  this style is only referenced in a Light.DarkActionBar based theme 
          */
-        public static final int Theme_Ribbit_Widget=0x7f08000d;
+        public static final int Theme_Ribbit_Widget=0x7f08000e;
     }
 }
