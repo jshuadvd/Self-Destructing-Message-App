@@ -36,11 +36,13 @@ public final class R {
     public static final class layout {
         public static final int activity_login=0x7f030000;
         public static final int activity_main=0x7f030001;
-        public static final int fragment_main=0x7f030002;
+        public static final int activity_sign_up=0x7f030002;
+        public static final int fragment_main=0x7f030003;
     }
     public static final class menu {
         public static final int login=0x7f070000;
         public static final int main=0x7f070001;
+        public static final int sign_up=0x7f070002;
     }
     public static final class string {
         public static final int action_settings=0x7f050005;
@@ -50,6 +52,7 @@ public final class R {
         public static final int password_hint=0x7f050008;
         public static final int sign_up_text=0x7f05000a;
         public static final int title_activity_login=0x7f050006;
+        public static final int title_activity_sign_up=0x7f05000b;
         public static final int title_section1=0x7f050001;
         public static final int title_section2=0x7f050002;
         public static final int title_section3=0x7f050003;
