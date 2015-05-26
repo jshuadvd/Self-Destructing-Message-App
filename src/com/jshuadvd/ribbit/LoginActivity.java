@@ -1,9 +1,11 @@
 package com.jshuadvd.ribbit;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 
 public class LoginActivity extends Activity {
@@ -15,7 +17,15 @@ public class LoginActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_login);
 		
-		mSignUpTextView = (TextView)findViewById(R.id.signupButton);
+		mSignUpTextView = (TextView)findViewById(R.id.signUpText);
+		mSignUpTextView.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(LoginActivity.this, SignUpActivity.class);
+				startActivity(intent);				
+			}
+		}); 
 	}
 
 	@Override
