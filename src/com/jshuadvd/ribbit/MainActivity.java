@@ -2,6 +2,8 @@ package com.jshuadvd.ribbit;
 
 import java.util.Locale;
 
+import com.parse.ParseAnalytics;
+
 import android.app.ActionBar;
 import android.app.Activity;
 import android.app.Fragment;
@@ -37,6 +39,8 @@ public class MainActivity extends Activity implements ActionBar.TabListener {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		
+		ParseAnalytics.trackAppOpened(getIntent());
 		
 		Intent intent = new Intent(this, LoginActivity.class);
 		intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
