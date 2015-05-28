@@ -4,13 +4,36 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 
 public class SignUpActivity extends Activity {
+	
+	protected EditText mUsername;
+	protected EditText mPassword;
+	protected EditText mEmail;
+	protected Button mSignUpButton;
+	
+	
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_sign_up);
+		
+		mUsername = (EditText)findViewById(R.id.usernameField);
+		mPassword = (EditText)findViewById(R.id.passwordField);
+		mEmail = (EditText)findViewById(R.id.emailField);
+		mSignUpButton = (Button)findViewById(R.id.signupButton);
+		mSignUpButton.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
 	}
 
 	@Override
