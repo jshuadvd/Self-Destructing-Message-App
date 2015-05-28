@@ -1,6 +1,7 @@
 package com.jshuadvd.ribbit;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -36,6 +37,17 @@ public class SignUpActivity extends Activity {
 				username = username.trim();
 				password = password.trim();
 				email = email.trim();
+				
+				if(username.isEmpty() || password.isEmpty() || email.isEmpty() ) {
+					AlertDialog.Builder builder = new AlertDialog.Builder(SignUpActivity.this);
+					builder.setMessage(message)
+					
+				}
+				else {
+					// create new user
+					
+				}
+					
 			}
 		});
 	}
