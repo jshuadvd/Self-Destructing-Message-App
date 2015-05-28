@@ -26,12 +26,16 @@ public class SignUpActivity extends Activity {
 		mPassword = (EditText)findViewById(R.id.passwordField);
 		mEmail = (EditText)findViewById(R.id.emailField);
 		mSignUpButton = (Button)findViewById(R.id.signupButton);
-		mSignUpButton.setOnClickListener(new View.OnClickListener() {
-			
+		mSignUpButton.setOnClickListener(new View.OnClickListener() {			
 			@Override
 			public void onClick(View v) {
-				// TODO Auto-generated method stub
+				String username = mUsername.getText().toString();		
+				String password = mPassword.getText().toString();		
+				String email = mEmail.getText().toString();		
 				
+				username = username.trim();
+				password = password.trim();
+				email = email.trim();
 			}
 		});
 	}
