@@ -1,5 +1,9 @@
 package com.jshuadvd.ribbit;
 
+import com.parse.ParseException;
+import com.parse.ParseUser;
+import com.parse.SignUpCallback;
+
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.os.Bundle;
@@ -43,11 +47,24 @@ public class SignUpActivity extends Activity {
 					builder.setMessage(R.string.signup_error_message)
 						   .setTitle(R.string.signup_error_title)
 						   .setPositiveButton(android.R.string.ok, null);
+					AlertDialog dialog = builder.create();
+					dialog.show();
 					
 				}
 				else {
 					// create new user
-					
+					ParseUser newUser = new ParseUser();
+					newUser.setUsername(username);
+					newUser.setPassword(password);
+					newUser.setEmail(email);
+					newUser.signUpInBackground(new SignUpCallback() {
+						
+						@Override
+						public void done(ParseException arg0) {
+							// TODO Auto-generated method stub
+							
+						}
+					});
 				}
 					
 			}
