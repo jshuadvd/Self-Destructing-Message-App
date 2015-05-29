@@ -1,5 +1,6 @@
 package com.jshuadvd.ribbit;
 
+import com.parse.LogInCallback;
 import com.parse.ParseException;
 import com.parse.ParseUser;
 import com.parse.SignUpCallback;
@@ -62,6 +63,14 @@ public class LoginActivity extends Activity {
 				}
 				else {
 					// Login
+					ParseUser.logInInBackground(username, password, new LogInCallback() {
+						
+						@Override
+						public void done(ParseUser user, ParseException e) {
+							// TODO Auto-generated method stub
+							
+						}
+					});	 
 				}
 					
 			}
