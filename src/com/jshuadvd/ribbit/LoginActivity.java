@@ -64,10 +64,14 @@ public class LoginActivity extends Activity {
 				}
 				else {
 					// Login
+					// Show Progress Indicator
+					setProgressBarIndeterminateVisibility(true);
 					ParseUser.logInInBackground(username, password, new LogInCallback() {
 						
 						@Override
 						public void done(ParseUser user, ParseException e) {
+							setProgressBarIndeterminateVisibility(false);
+							
 							if(e == null) {
 								// Success
 								Intent intent = new Intent(LoginActivity.this, MainActivity.class);
