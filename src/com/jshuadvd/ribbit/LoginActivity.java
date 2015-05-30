@@ -66,6 +66,7 @@ public class LoginActivity extends Activity {
 					// Login
 					// Show Progress Indicator
 					setProgressBarIndeterminateVisibility(true);
+					
 					ParseUser.logInInBackground(username, password, new LogInCallback() {
 						
 						@Override
