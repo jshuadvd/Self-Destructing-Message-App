@@ -1,15 +1,13 @@
 package com.jshuadvd.ribbit;
 
-import java.util.Locale;
-
 import android.app.ActionBar;
-import android.app.Activity;
-import android.app.Fragment;
-import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v13.app.FragmentPagerAdapter;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -17,20 +15,23 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.parse.ParseAnalytics;
 import com.parse.ParseUser;
 
-public class MainActivity extends Activity  implements ActionBar.TabListener {
+public class MainActivity extends FragmentActivity implements
+		ActionBar.TabListener {
 	
 	public static final String TAG = MainActivity.class.getSimpleName();
 
 	/**
 	 * The {@link android.support.v4.view.PagerAdapter} that will provide
-	 * fragments for each of the sections. We use a {@link FragmentPagerAdapter}
-	 * derivative, which will keep every loaded fragment in memory. If this
-	 * becomes too memory intensive, it may be best to switch to a
-	 * {@link android.support.v13.app.FragmentStatePagerAdapter}.
+	 * fragments for each of the sections. We use a
+	 * {@link android.support.v4.app.FragmentPagerAdapter} derivative, which
+	 * will keep every loaded fragment in memory. If this becomes too memory
+	 * intensive, it may be best to switch to a
+	 * {@link android.support.v4.app.FragmentStatePagerAdapter}.
 	 */
 	SectionsPagerAdapter mSectionsPagerAdapter;
 
@@ -46,22 +47,22 @@ public class MainActivity extends Activity  implements ActionBar.TabListener {
 		
 		ParseAnalytics.trackAppOpened(getIntent());
 		
-		
-	ParseUser currentUser = ParseUser.getCurrentUser();
-	   if(currentUser == null ) {
-			navigateToLogin();			
+		ParseUser currentUser = ParseUser.getCurrentUser();
+		if (currentUser == null) {
+			navigateToLogin();
 		}
-	   else {
-		   Log.i(TAG, currentUser.getUsername());
-	   }
+		else {
+			Log.i(TAG, currentUser.getUsername());
+		}
 
 		// Set up the action bar.
 		final ActionBar actionBar = getActionBar();
 		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 
 		// Create the adapter that will return a fragment for each of the three
-		// primary sections of the activity.
-		mSectionsPagerAdapter = new SectionsPagerAdapter(this, getFragmentManager());
+		// primary sections of the app.
+		mSectionsPagerAdapter = new SectionsPagerAdapter(this, 
+				getSupportFragmentManager());
 
 		// Set up the ViewPager with the sections adapter.
 		mViewPager = (ViewPager) findViewById(R.id.pager);
@@ -104,20 +105,18 @@ public class MainActivity extends Activity  implements ActionBar.TabListener {
 		return true;
 	}
 	
-
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		int itemId = item.getItemId();
 		
-		if(itemId == R.id.action_logout) {
+		if (itemId == R.id.action_logout) {
 			ParseUser.logOut();
-			navigateToLogin();	
+			navigateToLogin();
 		}
 		
 		return super.onOptionsItemSelected(item);
 	}
 
-	@SuppressWarnings("deprecation")
 	@Override
 	public void onTabSelected(ActionBar.Tab tab,
 			FragmentTransaction fragmentTransaction) {
@@ -126,7 +125,6 @@ public class MainActivity extends Activity  implements ActionBar.TabListener {
 		mViewPager.setCurrentItem(tab.getPosition());
 	}
 
-	@SuppressWarnings("deprecation")
 	@Override
 	public void onTabUnselected(ActionBar.Tab tab,
 			FragmentTransaction fragmentTransaction) {
@@ -138,31 +136,32 @@ public class MainActivity extends Activity  implements ActionBar.TabListener {
 	}
 
 
-	/**
-	 * A placeholder fragment containing a simple view.
-	 */
-	public static class PlaceholderFragment extends Fragment {
-		/**
-		 * The fragment argument representing the section number for this
-		 * fragment.
-		 */
-		private static final String ARG_SECTION_NUMBER = "section_number";
-
-		/**
-		 * Returns a new instance of this fragment for the given section number.
-		 */
-		public static PlaceholderFragment newInstance(int sectionNumber) {
-			PlaceholderFragment fragment = new PlaceholderFragment();
-			Bundle args = new Bundle();
-			args.putInt(ARG_SECTION_NUMBER, sectionNumber);
-			fragment.setArguments(args);
-			return fragment;
-		}
-
-		public PlaceholderFragment() {
-		}
-
-
-	}
+//
+//	/**
+//	 * A placeholder fragment containing a simple view.
+//	 */
+//	public static class PlaceholderFragment extends Fragment {
+//		/**
+//		 * The fragment argument representing the section number for this
+//		 * fragment.
+//		 */
+//		private static final String ARG_SECTION_NUMBER = "section_number";
+//
+//		/**
+//		 * Returns a new instance of this fragment for the given section number.
+//		 */
+//		public static PlaceholderFragment newInstance(int sectionNumber) {
+//			PlaceholderFragment fragment = new PlaceholderFragment();
+//			Bundle args = new Bundle();
+//			args.putInt(ARG_SECTION_NUMBER, sectionNumber);
+//			fragment.setArguments(args);
+//			return fragment;
+//		}
+//
+//		public PlaceholderFragment() {
+//		}
+//
+//
+//	}
 
 }

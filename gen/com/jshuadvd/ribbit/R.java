@@ -39,7 +39,8 @@ public final class R {
         public static final int activity_login=0x7f030000;
         public static final int activity_main=0x7f030001;
         public static final int activity_sign_up=0x7f030002;
-        public static final int fragment_main=0x7f030003;
+        public static final int fragment_friends=0x7f030003;
+        public static final int fragment_inbox=0x7f030004;
     }
     public static final class menu {
         public static final int login=0x7f070000;
@@ -50,6 +51,8 @@ public final class R {
         public static final int action_settings=0x7f050004;
         public static final int app_name=0x7f050000;
         public static final int email_hint=0x7f05000b;
+        public static final int empty_friends_label=0x7f050013;
+        public static final int empty_inbox_label=0x7f050012;
         public static final int hello_world=0x7f050003;
         public static final int login_button_label=0x7f050008;
         public static final int login_error_message=0x7f05000f;
