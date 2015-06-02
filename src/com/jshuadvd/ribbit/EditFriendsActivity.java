@@ -5,12 +5,22 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.parse.ParseQuery;
+import com.parse.ParseUser;
+
 public class EditFriendsActivity extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_edit_friends);
+	}
+	
+	@Override
+	protected void onResume() {
+		super.onResume();
+		
+		ParseQuery<ParseUser> query = ParseUser.getQuery();
 	}
 
 	@Override
@@ -19,6 +29,7 @@ public class EditFriendsActivity extends Activity {
 		getMenuInflater().inflate(R.menu.edit_friends, menu);
 		return true;
 	}
+	
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
