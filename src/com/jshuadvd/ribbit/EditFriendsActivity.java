@@ -21,6 +21,8 @@ public class EditFriendsActivity extends Activity {
 		super.onResume();
 		
 		ParseQuery<ParseUser> query = ParseUser.getQuery();
+		query.orderByAscending(ParseConstants.KEY_USERNAME);
+		query.setLimit(1000);
 	}
 
 	@Override
