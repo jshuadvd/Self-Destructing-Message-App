@@ -1,10 +1,14 @@
 package com.jshuadvd.ribbit;
 
+import java.util.List;
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.parse.FindCallback;
+import com.parse.ParseException;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
 
@@ -23,6 +27,14 @@ public class EditFriendsActivity extends Activity {
 		ParseQuery<ParseUser> query = ParseUser.getQuery();
 		query.orderByAscending(ParseConstants.KEY_USERNAME);
 		query.setLimit(1000);
+		query.findInBackground(new FindCallback<ParseUser>() {
+			
+			@Override
+			public void done(List<ParseUser> arg0, ParseException arg1) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
 	}
 
 	@Override
