@@ -4,6 +4,7 @@ import java.util.List;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -13,6 +14,8 @@ import com.parse.ParseQuery;
 import com.parse.ParseUser;
 
 public class EditFriendsActivity extends Activity {
+	
+	public static final String TAG = EditFriendsActivity.class.getSimpleName();
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -30,9 +33,13 @@ public class EditFriendsActivity extends Activity {
 		query.findInBackground(new FindCallback<ParseUser>() {
 			
 			@Override
-			public void done(List<ParseUser> arg0, ParseException arg1) {
-				// TODO Auto-generated method stub
-				
+			public void done(List<ParseUser> users, ParseException e) {
+				if(e == null) {
+					// Success!
+				}
+				else {
+					Log.e(TAG, e.getMessage());
+				}
 			}
 		});
 	}
