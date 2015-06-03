@@ -3,6 +3,7 @@ package com.jshuadvd.ribbit;
 import java.util.List;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -16,6 +17,8 @@ import com.parse.ParseUser;
 public class EditFriendsActivity extends Activity {
 	
 	public static final String TAG = EditFriendsActivity.class.getSimpleName();
+	
+	protected List<ParseUser> mUsers;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -36,9 +39,16 @@ public class EditFriendsActivity extends Activity {
 			public void done(List<ParseUser> users, ParseException e) {
 				if(e == null) {
 					// Success!
+					mUsers = users;
 				}
 				else {
 					Log.e(TAG, e.getMessage());
+					AlertDialog.Builder builder = new AlertDialog.Builder(EditFriendsActivity.this);
+					builder.setMessage(e.getMessage())
+						   .setTitle(R.string.error_title)
+						   .setPositiveButton(android.R.string.ok, null);
+					AlertDialog dialog = builder.create();
+					dialog.show();
 				}
 			}
 		});
