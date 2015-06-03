@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.Window;
 import android.widget.ArrayAdapter;
 
 import com.parse.FindCallback;
@@ -24,12 +25,15 @@ public class EditFriendsActivity extends ListActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
 		setContentView(R.layout.activity_edit_friends);
 	}
 	
 	@Override
 	protected void onResume() {
 		super.onResume();
+		
+		setProgressBarIndeterminateVisibility(true);
 		
 		ParseQuery<ParseUser> query = ParseUser.getQuery();
 		query.orderByAscending(ParseConstants.KEY_USERNAME);
@@ -38,6 +42,8 @@ public class EditFriendsActivity extends ListActivity {
 			
 			@Override
 			public void done(List<ParseUser> users, ParseException e) {
+				setProgressBarIndeterminateVisibility(false);
+				
 				if(e == null) {
 					// Success!
 					mUsers = users;
