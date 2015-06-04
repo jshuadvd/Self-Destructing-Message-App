@@ -18,6 +18,7 @@ import com.parse.ParseException;
 import com.parse.ParseQuery;
 import com.parse.ParseRelation;
 import com.parse.ParseUser;
+import com.parse.SaveCallback;
 
 public class EditFriendsActivity extends ListActivity {
 	
@@ -108,5 +109,20 @@ public class EditFriendsActivity extends ListActivity {
 	@Override
 	protected void onListItemClick(ListView l, View v, int position, long id) {
 		super.onListItemClick(l, v, position, id);
+		
+		if(getListView().isItemChecked(position)) {
+			// add friend
+		}
+		mFriendsRelation.add(mUsers.get(position));
+		mCurrentUser.saveInBackground(new SaveCallback() {
+			
+			@Override
+			public void done(ParseException e) {
+				if(e != null) {
+					Log.e(TAG, e.getMessage());
+				}
+				
+			}
+		});
 	}
 }
