@@ -42,6 +42,9 @@ public class EditFriendsActivity extends ListActivity {
 	protected void onResume() {
 		super.onResume();
 		
+		mCurrentUser = ParseUser.getCurrentUser();
+		mFriendsRelation = mCurrentUser.getRelation(ParseConstants.KEY_FRIENDS_RELATION);
+		
 		setProgressBarIndeterminateVisibility(true);
 		
 		ParseQuery<ParseUser> query = ParseUser.getQuery();
