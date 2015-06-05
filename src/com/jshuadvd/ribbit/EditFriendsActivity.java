@@ -136,8 +136,12 @@ public class EditFriendsActivity extends ListActivity {
 
 			@Override
 			public void done(List<ParseUser> efriends, ParseException e) {
-				
-				
+				if (e == null) {
+					// list returned - look for a match
+				}
+				else {
+					Log.e(TAG, e.getMessage());
+				}
 			}
 		});
 	}
