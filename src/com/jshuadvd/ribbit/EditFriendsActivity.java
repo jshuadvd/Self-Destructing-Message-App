@@ -142,10 +142,11 @@ public class EditFriendsActivity extends ListActivity {
 						
 					for(ParseUser friend : friends) {
 						if (friend.getObjectId().equals(user.getObjectId())) {
-								
-						}
-					}
-				}
+								getListView().setItemChecked(i, true);
+							}
+							
+						 }
+					 }
 				}
 				else {
 					Log.e(TAG, e.getMessage());
