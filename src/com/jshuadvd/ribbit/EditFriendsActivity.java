@@ -132,7 +132,14 @@ public class EditFriendsActivity extends ListActivity {
 	}
 	
 	private void addFriendCheckmarks() {
-		
+		mFriendsRelation.getQuery().findInBackground(new FindCallback<ParseUser>() {
+
+			@Override
+			public void done(List<ParseUser> efriends, ParseException e) {
+				
+				
+			}
+		});
 	}
 	
 	
