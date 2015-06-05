@@ -72,6 +72,8 @@ public class EditFriendsActivity extends ListActivity {
 							android.R.layout.simple_list_item_checked, 
 							usernames);
 					setListAdapter(adapter);
+				
+					addFriendCheckmarks(); 
 				}
 				else {
 					Log.e(TAG, e.getMessage());
@@ -112,6 +114,9 @@ public class EditFriendsActivity extends ListActivity {
 		
 		if(getListView().isItemChecked(position)) {
 			// add friend
+		}
+		else {
+			// remove friend
 			mFriendsRelation.add(mUsers.get(position));
 			mCurrentUser.saveInBackground(new SaveCallback() {
 				
@@ -119,14 +124,17 @@ public class EditFriendsActivity extends ListActivity {
 				public void done(ParseException e) {
 					if(e != null) {
 						Log.e(TAG, e.getMessage());
-					}
+					}		
 					
 				}
 			});
-		}
-		else {
-			// remove friend
-		}
+		}	
+	}
+	
+	private void addFriendCheckmarks() {
 		
 	}
+	
+	
+	
 }

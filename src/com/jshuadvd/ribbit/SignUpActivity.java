@@ -1,11 +1,7 @@
 package com.jshuadvd.ribbit;
 
-import com.parse.ParseException;
-import com.parse.ParseUser;
-import com.parse.SignUpCallback;
-
-import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -15,7 +11,11 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 
-public class SignUpActivity extends Activity {
+import com.parse.ParseException;
+import com.parse.ParseUser;
+import com.parse.SignUpCallback;
+
+public class SignUpActivity extends ListActivity {
 	
 	protected EditText mUsername;
 	protected EditText mPassword;
@@ -34,6 +34,8 @@ public class SignUpActivity extends Activity {
 		mPassword = (EditText)findViewById(R.id.passwordField);
 		mEmail = (EditText)findViewById(R.id.emailField);
 		mSignUpButton = (Button)findViewById(R.id.signupButton);
+		
+		
 		mSignUpButton.setOnClickListener(new View.OnClickListener() {			
 			@Override
 			public void onClick(View v) {
