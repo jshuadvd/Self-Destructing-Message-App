@@ -125,6 +125,12 @@ public class EditFriendsActivity extends ListActivity {
 					if(e != null) {
 						Log.e(TAG, e.getMessage());
 					}		
+					for (int i = 0; i < mUsers.size(); i++) {
+						ParseUser user = mUsers.get(i);
+					}
+						for(ParseUser friend : friends) {
+							
+						}
 					
 				}
 			});
