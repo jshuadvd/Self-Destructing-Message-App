@@ -124,14 +124,7 @@ public class EditFriendsActivity extends ListActivity {
 				public void done(ParseException e) {
 					if(e != null) {
 						Log.e(TAG, e.getMessage());
-					}		
-					for (int i = 0; i < mUsers.size(); i++) {
-						ParseUser user = mUsers.get(i);
-					}
-						for(ParseUser friend : friends) {
-							
-						}
-					
+					}			
 				}
 			});
 		}	
@@ -141,9 +134,18 @@ public class EditFriendsActivity extends ListActivity {
 		mFriendsRelation.getQuery().findInBackground(new FindCallback<ParseUser>() {
 
 			@Override
-			public void done(List<ParseUser> efriends, ParseException e) {
+			public void done(List<ParseUser> friends, ParseException e) {
 				if (e == null) {
 					// list returned - look for a match
+					for (int i = 0; i < mUsers.size(); i++) {
+						ParseUser user = mUsers.get(i);				
+						
+					for(ParseUser friend : friends) {
+						if (friend.getObjectId().equals(user.getObjectId())) {
+								
+						}
+					}
+				}
 				}
 				else {
 					Log.e(TAG, e.getMessage());
