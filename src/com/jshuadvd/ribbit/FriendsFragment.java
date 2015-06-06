@@ -19,21 +19,21 @@ import com.parse.ParseUser;
 
 public class FriendsFragment extends ListFragment {
 	
-	public final static String TAG = FriendsFragment.class.getSimpleName();
-	
-	protected List<ParseUser> mUsers;
+	public static final String TAG = FriendsFragment.class.getSimpleName();
+
 	protected ParseRelation<ParseUser> mFriendsRelation;
-	protected ParseUser mFriends;
+	protected ParseUser mCurrentUser;	
+	protected List<ParseUser> mFriends;
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-		View rootView = inflater.inflate(R.layout.fragment_friends, container,
-				false);
-		
+		View rootView = inflater.inflate(R.layout.fragment_friends,
+				container, false);
+
 		return rootView;
 	}
-	
+
 	@Override
 	public void onResume() {
 		super.onResume();
@@ -41,24 +41,29 @@ public class FriendsFragment extends ListFragment {
 		mCurrentUser = ParseUser.getCurrentUser();
 		mFriendsRelation = mCurrentUser.getRelation(ParseConstants.KEY_FRIENDS_RELATION);
 		
-
-		mFriendsRelation.getQuery().findInBackground(new FindCallback<ParseUser>() {
-
+		getActivity().setProgressBarIndeterminateVisibility(true);
+		
+		ParseQuery<ParseUser> query = mFriendsRelation.getQuery();
+		query.addAscendingOrder(ParseConstants.KEY_USERNAME);
+		query.findInBackground(new FindCallback<ParseUser>() {
+			
 			@Override
 			public void done(List<ParseUser> friends, ParseException e) {
-				if(e == null) {
+				
+				getActivity().setProgressBarIndeterminateVisibility(false);
+				
+				if (e == null) {
 					mFriends = friends;
-	
-					String[] usernames = new String[mFriends.size()]; 
+					
+					String[] usernames = new String[mFriends.size()];
 					int i = 0;
 					for(ParseUser user : mFriends) {
 						usernames[i] = user.getUsername();
 						i++;
 					}
-					
 					ArrayAdapter<String> adapter = new ArrayAdapter<String>(
 							getListView().getContext(), 
-							android.R.layout.simple_list_item_1, 
+							android.R.layout.simple_list_item_1,
 							usernames);
 					setListAdapter(adapter);
 				}
@@ -66,14 +71,13 @@ public class FriendsFragment extends ListFragment {
 					Log.e(TAG, e.getMessage());
 					AlertDialog.Builder builder = new AlertDialog.Builder(getListView().getContext());
 					builder.setMessage(e.getMessage())
-						   .setTitle(R.string.error_title)
-						   .setPositiveButton(android.R.string.ok, null);
+						.setTitle(R.string.error_title)
+						.setPositiveButton(android.R.string.ok, null);
 					AlertDialog dialog = builder.create();
 					dialog.show();
 				}
 			}
 		});
-		
 	}
 
 }
