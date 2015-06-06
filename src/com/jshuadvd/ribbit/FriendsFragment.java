@@ -1,12 +1,24 @@
 package com.jshuadvd.ribbit;
 
+import java.util.List;
+
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.parse.FindCallback;
+import com.parse.ParseException;
+import com.parse.ParseRelation;
+import com.parse.ParseUser;
+
 public class FriendsFragment extends ListFragment {
+	
+	protected List<ParseUser> mUsers;
+	protected ParseRelation<ParseUser> mFriendsRelation;
+	protected ParseUser mFriends;
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -15,6 +27,24 @@ public class FriendsFragment extends ListFragment {
 				false);
 		
 		return rootView;
+	}
+	
+	@Override
+	public void onResume() {
+		super.onResume();
+		
+		mCurrentUser = ParseUser.getCurrentUser();
+		mFriendsRelation = mCurrentUser.getRelation(ParseConstants.KEY_FRIENDS_RELATION);
+		
+
+		mFriendsRelation.getQuery().findInBackground(new FindCallback<ParseUser>() {
+
+			@Override
+			public void done(List<ParseUser> friends, ParseException e) {
+			
+			}
+		});
+		
 	}
 
 }
