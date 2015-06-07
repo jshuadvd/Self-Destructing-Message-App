@@ -114,9 +114,6 @@ public class EditFriendsActivity extends ListActivity {
 		
 		if(getListView().isItemChecked(position)) {
 			// add friend
-		}
-		else {
-			// remove friend
 			mFriendsRelation.add(mUsers.get(position));
 			mCurrentUser.saveInBackground(new SaveCallback() {
 				
@@ -128,7 +125,12 @@ public class EditFriendsActivity extends ListActivity {
 				}
 			});
 		}	
-	}
+		else {
+			// remove friend
+			mFriendsRelation.remove(mUsers.get(position));
+		}
+	}		
+		
 	
 	private void addFriendCheckmarks() {
 		mFriendsRelation.getQuery().findInBackground(new FindCallback<ParseUser>() {
