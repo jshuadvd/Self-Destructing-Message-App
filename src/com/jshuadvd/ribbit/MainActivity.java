@@ -122,7 +122,10 @@ public class MainActivity extends FragmentActivity implements
 			startActivity(intent);
 			
 		case R.id.action_camera:
-			AlertDialog.Builder
+			AlertDialog.Builder builder = new AlertDialog.Builder(this);
+			builder.setItems(R.array.camera_choices, null);
+			AlertDialog dialog = builder.create();
+			builder.show();
 		}
 			
 		
