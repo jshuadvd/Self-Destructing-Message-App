@@ -61,6 +61,7 @@ public final class R {
         public static final int login_button_label=0x7f050008;
         public static final int login_error_message=0x7f05000f;
         public static final int login_error_title=0x7f050010;
+        public static final int menu_camera_label=0x7f050017;
         public static final int menu_edit_friends_label=0x7f050014;
         public static final int menu_logout_label=0x7f050011;
         public static final int password_hint=0x7f050007;
