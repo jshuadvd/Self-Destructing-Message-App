@@ -1,6 +1,7 @@
 package com.jshuadvd.ribbit;
 
 import android.app.ActionBar;
+import android.app.AlertDialog;
 import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
@@ -111,14 +112,17 @@ public class MainActivity extends FragmentActivity implements
 	public boolean onOptionsItemSelected(MenuItem item) {
 		int itemId = item.getItemId();
 		
-		if (itemId == R.id.action_logout) {
+		switch(itemId) {
+		case R.id.action_logout:
 			ParseUser.logOut();
 			navigateToLogin();
-		}
 		
-		else if (itemId == R.id.action_edit_friends) {
+		case R.id.action_edit_friends:
 			Intent intent = new Intent(this, EditFriendsActivity.class);
 			startActivity(intent);
+			
+		case R.id.action_camera:
+			AlertDialog.Builder
 		}
 			
 		
