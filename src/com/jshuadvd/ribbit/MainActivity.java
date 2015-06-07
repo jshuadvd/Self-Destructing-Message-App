@@ -3,21 +3,15 @@ package com.jshuadvd.ribbit;
 import android.app.ActionBar;
 import android.app.AlertDialog;
 import android.app.FragmentTransaction;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
 import android.view.Window;
-import android.widget.TextView;
 
 import com.parse.ParseAnalytics;
 import com.parse.ParseUser;
@@ -26,6 +20,15 @@ public class MainActivity extends FragmentActivity implements
 		ActionBar.TabListener {
 	
 	public static final String TAG = MainActivity.class.getSimpleName();
+	
+	protected DialogInterface.OnClickListener mDialogListener = 
+			new DialogInterface.OnClickListener() {		
+		@Override
+		public void onClick(DialogInterface dialog, int which) {
+			// TODO Auto-generated method stub
+			
+		}
+	};
 
 	/**
 	 * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -125,7 +128,7 @@ public class MainActivity extends FragmentActivity implements
 			AlertDialog.Builder builder = new AlertDialog.Builder(this);
 			builder.setItems(R.array.camera_choices, null);
 			AlertDialog dialog = builder.create();
-			builder.show();
+			dialog.show();
 		}
 			
 		
