@@ -25,7 +25,18 @@ public class MainActivity extends FragmentActivity implements
 			new DialogInterface.OnClickListener() {		
 		@Override
 		public void onClick(DialogInterface dialog, int which) {
-			// TODO Auto-generated method stub
+			
+			switch(which) {
+			case 0: // Take a Picture
+				break;
+			case 1: // Take Video
+				break;
+			case 2: // Choose Picture
+				break;
+			case 3: // Choose Video
+				break;
+			
+			}
 			
 		}
 	};
@@ -126,7 +137,7 @@ public class MainActivity extends FragmentActivity implements
 			
 		case R.id.action_camera:
 			AlertDialog.Builder builder = new AlertDialog.Builder(this);
-			builder.setItems(R.array.camera_choices, null);
+			builder.setItems(R.array.camera_choices, mDialogListener);
 			AlertDialog dialog = builder.create();
 			dialog.show();
 		}
