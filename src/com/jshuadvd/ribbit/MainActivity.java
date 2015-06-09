@@ -6,6 +6,7 @@ import android.app.FragmentTransaction;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
@@ -21,6 +22,14 @@ public class MainActivity extends FragmentActivity implements
 	
 	public static final String TAG = MainActivity.class.getSimpleName();
 	
+	
+	// CAnstant value member variables to reference
+	public static final int TAKE_PHOTO_REQUEST = 0;
+	public static final int TAKE_VIDEO_REQUEST = 1;
+	public static final int PICK_PHOTO_REQUEST = 2;
+	public static final int PICK_VIDEO_REQUEST = 3;
+	
+	
 	protected DialogInterface.OnClickListener mDialogListener = 
 			new DialogInterface.OnClickListener() {		
 		@Override
@@ -28,6 +37,8 @@ public class MainActivity extends FragmentActivity implements
 			
 			switch(which) {
 			case 0: // Take a Picture
+				Intent takePhotoIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+				startActivityForResult(takePhotoIntent, TAKE_PHOTO_REQUEST);
 				break;
 			case 1: // Take Video
 				break;
