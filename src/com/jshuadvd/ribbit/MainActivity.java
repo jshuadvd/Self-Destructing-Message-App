@@ -7,13 +7,14 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.Window;
+import android.widget.Toast;
 
 import com.parse.ParseAnalytics;
 import com.parse.ParseUser;
@@ -44,6 +45,11 @@ public class MainActivity extends FragmentActivity implements
 			switch(which) {
 			case 0: // Take a Picture
 				Intent takePhotoIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+				mMediaUri = getOutputMediaFileUri(MEDIA_TYPE_IMAGE);
+				
+				// Adding extra data to a intent with putExtra
+				takePhotoIntent.putExtra(MediaStore.EXTRA_OUTPUT, mMediaUri);
+				
 				startActivityForResult(takePhotoIntent, TAKE_PHOTO_REQUEST);
 				break;
 			case 1: // Take Video
@@ -55,6 +61,11 @@ public class MainActivity extends FragmentActivity implements
 			
 			}
 			
+		}
+
+		private Uri getOutputMediaFileUri(int mediaTypeImage) {
+			// TODO Auto-generated method stub
+			return null;
 		}
 	};
 
