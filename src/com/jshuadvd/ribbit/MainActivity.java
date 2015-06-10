@@ -47,6 +47,14 @@ public class MainActivity extends FragmentActivity implements
 				Intent takePhotoIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
 				mMediaUri = getOutputMediaFileUri(MEDIA_TYPE_IMAGE);
 				
+				if(mMediaUri == null) {
+					// Display error
+					Toast.makeText(MainActivity.this, "There was a problem accessing your device's external storage!", Toast.LENGTH_LONG).show();;
+				}
+				
+				else {
+					
+				}
 				// Adding extra data to a intent with putExtra
 				takePhotoIntent.putExtra(MediaStore.EXTRA_OUTPUT, mMediaUri);
 				
@@ -64,8 +72,25 @@ public class MainActivity extends FragmentActivity implements
 		}
 
 		private Uri getOutputMediaFileUri(int mediaTypeImage) {
-			// TODO Auto-generated method stub
-			return null;
+			if(isExternalStorageAvailable()) {
+				// get Uri
+				return null;
+			}
+			else {
+			
+				return null;
+			}
+		}
+		private boolean isExternalStorageAvailable() {
+			String state = Environment.getExternalStorageState();
+			
+			// If external storage is available
+			if(state.equals(Environment.MEDIA_MOUNTED)) {
+				return true;
+			}
+			else {
+				return false;
+			}
 		}
 	};
 
