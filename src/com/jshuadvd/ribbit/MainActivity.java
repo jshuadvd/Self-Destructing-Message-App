@@ -5,6 +5,7 @@ import android.app.AlertDialog;
 import android.app.FragmentTransaction;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.v4.app.FragmentActivity;
@@ -29,6 +30,11 @@ public class MainActivity extends FragmentActivity implements
 	public static final int PICK_PHOTO_REQUEST = 2;
 	public static final int PICK_VIDEO_REQUEST = 3;
 	
+	public static final int MEDIA_TYPE_IMAGE = 4;
+	public static final int MEDIA_TYPE_VIDEO = 5;
+
+	// Uniform resource identifier
+	protected Uri mMediaUri;
 	
 	protected DialogInterface.OnClickListener mDialogListener = 
 			new DialogInterface.OnClickListener() {		
