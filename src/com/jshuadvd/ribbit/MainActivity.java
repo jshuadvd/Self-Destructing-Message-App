@@ -14,6 +14,7 @@ import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.Window;
 import android.widget.Toast;
 
 import com.parse.ParseAnalytics;
@@ -49,16 +50,15 @@ public class MainActivity extends FragmentActivity implements
 				
 				if(mMediaUri == null) {
 					// Display error
-					Toast.makeText(MainActivity.this, "There was a problem accessing your device's external storage!", Toast.LENGTH_LONG).show();;
+					Toast.makeText(MainActivity.this, R.string.error_externl_storage , 
+							Toast.LENGTH_LONG).show();;
 				}
 				
 				else {
-					
+					// Adding extra data to a intent with putExtra
+					takePhotoIntent.putExtra(MediaStore.EXTRA_OUTPUT, mMediaUri);				
+					startActivityForResult(takePhotoIntent, TAKE_PHOTO_REQUEST);
 				}
-				// Adding extra data to a intent with putExtra
-				takePhotoIntent.putExtra(MediaStore.EXTRA_OUTPUT, mMediaUri);
-				
-				startActivityForResult(takePhotoIntent, TAKE_PHOTO_REQUEST);
 				break;
 			case 1: // Take Video
 				break;
