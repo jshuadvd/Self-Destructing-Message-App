@@ -1,6 +1,9 @@
 package com.jshuadvd.ribbit;
 
 import java.io.File;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 
 import android.app.ActionBar;
 import android.app.AlertDialog;
@@ -92,6 +95,22 @@ public class MainActivity extends FragmentActivity implements
  				}
 				// 3. Create a File name
 				// 4. Create the file
+				File mediaFile;
+				Date now = new Date();
+				String timestamp = new SimpleDateFormat("yyyyMMdd_HHmmss", Locale.US).format(now); 
+				
+				String path = mediaStorageDir.getPath() + File.separator;
+				if(mediaType == MEDIA_TYPE_IMAGE) {
+					mediaFile = new File(path + "IMG_" + timestamp + ".jpg");
+				}
+				else if(mediaType == MEDIA_TYPE_VIDEO) {
+					mediaFile = new FIle(path + "VID_" + timestamp + ".mp4");
+				}
+				else {
+					return null;
+				}
+					
+				
 				// 5. Return the files Uri
 				
 				return null;
