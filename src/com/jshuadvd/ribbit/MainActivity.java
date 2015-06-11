@@ -76,12 +76,13 @@ public class MainActivity extends FragmentActivity implements
 			
 		}
 
-		private Uri getOutputMediaFileUri(int mediaTypeImage) {
+		private Uri getOutputMediaFileUri(int mediaType) {
 			if(isExternalStorageAvailable()) {
 				// get Uri
 				
 				// 1. Get external storage directory	
 				String appName = MainActivity.this.getString(R.string.app_name);
+				
 				File mediaStorageDir = new File(
 						Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES),
 						appName);
@@ -93,27 +94,32 @@ public class MainActivity extends FragmentActivity implements
 						return null;
 					}
  				}
+				
 				// 3. Create a File name
+				
+				
 				// 4. Create the file
+				
 				File mediaFile;
 				Date now = new Date();
 				String timestamp = new SimpleDateFormat("yyyyMMdd_HHmmss", Locale.US).format(now); 
 				
 				String path = mediaStorageDir.getPath() + File.separator;
-				if(mediaType == MEDIA_TYPE_IMAGE) {
+				if (mediaType == MEDIA_TYPE_IMAGE) {
 					mediaFile = new File(path + "IMG_" + timestamp + ".jpg");
 				}
-				else if(mediaType == MEDIA_TYPE_VIDEO) {
-					mediaFile = new FIle(path + "VID_" + timestamp + ".mp4");
+				else if (mediaType == MEDIA_TYPE_VIDEO) {
+					mediaFile = new File(path + "VID_" + timestamp + ".mp4");
 				}
 				else {
 					return null;
 				}
-					
+							
+				Log.d(TAG, "File: " + Uri.fromFile(mediaFile));
 				
 				// 5. Return the files Uri
 				
-				return null;
+				return Uri.fromFile(mediaFile);
 			}
 			else {
 			
@@ -198,6 +204,12 @@ public class MainActivity extends FragmentActivity implements
 					.setText(mSectionsPagerAdapter.getPageTitle(i))
 					.setTabListener(this));
 		}
+	}
+	
+	@Override
+	protected void onActivityResult(int arg0, int arg1, Intent arg2) {
+		// TODO Auto-generated method stub
+		super.onActivityResult(arg0, arg1, arg2);
 	}
 
 	private void navigateToLogin() {
