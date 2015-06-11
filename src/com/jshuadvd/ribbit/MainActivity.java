@@ -79,11 +79,17 @@ public class MainActivity extends FragmentActivity implements
 				
 				// 1. Get external storage directory	
 				String appName = MainActivity.this.getString(R.string.app_name);
-				File mediaSotorageDir = new File(
+				File mediaStorageDir = new File(
 						Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES),
 						appName);
 				
 				// 2. Create Sub directory
+				if(! mediaStorageDir.exists()) {
+					if(! mediaStorageDir.mkdirs()) {
+						Log.e(TAG, "Failed to create directory.");
+						return null;
+					}
+ 				}
 				// 3. Create a File name
 				// 4. Create the file
 				// 5. Return the files Uri
