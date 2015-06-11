@@ -207,9 +207,9 @@ public class MainActivity extends FragmentActivity implements
 	}
 	
 	@Override
-	protected void onActivityResult(int arg0, int arg1, Intent arg2) {
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		// TODO Auto-generated method stub
-		super.onActivityResult(arg0, arg1, arg2);
+		super.onActivityResult(requestCode, resultCode, data);
 	}
 
 	private void navigateToLogin() {
