@@ -1,5 +1,7 @@
 package com.jshuadvd.ribbit;
 
+import java.io.File;
+
 import android.app.ActionBar;
 import android.app.AlertDialog;
 import android.app.FragmentTransaction;
@@ -74,6 +76,18 @@ public class MainActivity extends FragmentActivity implements
 		private Uri getOutputMediaFileUri(int mediaTypeImage) {
 			if(isExternalStorageAvailable()) {
 				// get Uri
+				
+				// 1. Get external storage directory	
+				String appName = MainActivity.this.getString(R.string.app_name);
+				File mediaSotorageDir = new File(
+						Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES),
+						appName);
+				
+				// 2. Create Sub directory
+				// 3. Create a File name
+				// 4. Create the file
+				// 5. Return the files Uri
+				
 				return null;
 			}
 			else {
