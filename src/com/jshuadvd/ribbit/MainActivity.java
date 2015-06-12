@@ -88,7 +88,9 @@ public class MainActivity extends FragmentActivity implements
 				break;
 			
 			case 3: // Choose Video
-				
+				Intent chooseVideoIntent = new Intent(Intent.ACTION_GET_CONTENT);
+				chooseVideoIntent.setType("video/*");
+				startActivityForResult(chooseVideoIntent, PICK_VIDEO_REQUEST);
 				break;
 			
 			}
