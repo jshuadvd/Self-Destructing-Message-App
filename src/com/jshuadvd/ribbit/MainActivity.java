@@ -57,8 +57,7 @@ public class MainActivity extends FragmentActivity implements
 					// Display error
 					Toast.makeText(MainActivity.this, R.string.error_externl_storage , 
 							Toast.LENGTH_LONG).show();;
-				}
-				
+				}				
 				else {
 					// Adding extra data to a intent with putExtra
 					takePhotoIntent.putExtra(MediaStore.EXTRA_OUTPUT, mMediaUri);				
@@ -83,8 +82,13 @@ public class MainActivity extends FragmentActivity implements
 				
 				break;
 			case 2: // Choose Picture
+				Intent choosePhotoIntent = new Intent(Intent.ACTION_GET_CONTENT);
+				choosePhotoIntent.setType("image/*");
+				startActivityForResult(choosePhotoIntent, PICK_PHOTO_REQUEST);
 				break;
+			
 			case 3: // Choose Video
+				
 				break;
 			
 			}
