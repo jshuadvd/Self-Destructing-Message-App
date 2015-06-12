@@ -75,7 +75,10 @@ public class MainActivity extends FragmentActivity implements
 							Toast.LENGTH_LONG).show();;
 				}
 				else {
-					
+					videoIntent.putExtra(MediaStore.EXTRA_OUTPUT, mMediaUri);
+					videoIntent.putExtra(MediaStore.EXTRA_DURATION_LIMIT, 10); // Video Time Limit
+					videoIntent.putExtra(MediaStore.EXTRA_VIDEO_QUALITY, 0); // Video Quality
+					startActivityForResult(videoIntent, TAKE_VIDEO_REQUEST);
 				}
 				
 				break;
