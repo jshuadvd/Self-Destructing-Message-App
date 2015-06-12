@@ -66,6 +66,18 @@ public class MainActivity extends FragmentActivity implements
 				}
 				break;
 			case 1: // Take Video
+				Intent videoIntent = new Intent(MediaStore.ACTION_VIDEO_CAPTURE);
+				mMediaUri = getOutputMediaFileUri(MEDIA_TYPE_VIDEO);
+				
+				if(mMediaUri == null) {
+					// Display error
+					Toast.makeText(MainActivity.this, R.string.error_externl_storage , 
+							Toast.LENGTH_LONG).show();;
+				}
+				else {
+					
+				}
+				
 				break;
 			case 2: // Choose Picture
 				break;
