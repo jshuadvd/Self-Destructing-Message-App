@@ -229,9 +229,30 @@ public class MainActivity extends FragmentActivity implements
 	
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-		// TODO Auto-generated method stub
 		super.onActivityResult(requestCode, resultCode, data);
+		
+		if (resultCode == RESULT_OK) {
+			
+			if (requestCode == PICK_PHOTO_REQUEST || requestCode == PICK_VIDEO_REQUEST) {
+				if (data == null) {
+					Toast.makeText(this, getString(R.string.general_error), Toast.LENGTH_LONG).show();
+				}
+				else {
+					mMediaUri = data.getData();
+				}
+			}
+			
+			else {
+				Intent mediaScanIntent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
+				mediaScanIntent.setData(mMediaUri);
+				sendBroadcast(mediaScanIntent);
+				}
+		}
+		else if (resultCode != RESULT_CANCELED) {
+			Toast.makeText(this, R.string.general_error, Toast.LENGTH_LONG).show();
+		}
 	}
+		
 
 	private void navigateToLogin() {
 		Intent intent = new Intent(this, LoginActivity.class);
