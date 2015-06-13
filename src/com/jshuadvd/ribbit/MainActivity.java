@@ -40,6 +40,8 @@ public class MainActivity extends FragmentActivity implements
 	
 	public static final int MEDIA_TYPE_IMAGE = 4;
 	public static final int MEDIA_TYPE_VIDEO = 5;
+	
+	public static final int FILE_SIZE_LIMIT = 1;
 
 	// Uniform resource identifier
 	protected Uri mMediaUri;
