@@ -88,7 +88,7 @@ public class MainActivity extends FragmentActivity implements
 			case 3: // Choose Video
 				Intent chooseVideoIntent = new Intent(Intent.ACTION_GET_CONTENT);
 				chooseVideoIntent.setType("video/*");
-				Toast.makeText(MainActivity.this, R.string.video_file_size_warning, Toast.LENGTH_LONG)show;
+				Toast.makeText(MainActivity.this, R.string.video_file_size_warning, Toast.LENGTH_LONG).show();
 				startActivityForResult(chooseVideoIntent, PICK_VIDEO_REQUEST);
 				break;
 			
@@ -238,6 +238,12 @@ public class MainActivity extends FragmentActivity implements
 				}
 				else {
 					mMediaUri = data.getData();
+				}
+				
+				Log.i(TAG, "Media URI: " + mMediaUri);
+				if (requestCode == PICK_VIDEO_REQUEST) {
+					// Make sure the file is < 10MB
+					int fileSize = 0;
 				}
 			}
 			
