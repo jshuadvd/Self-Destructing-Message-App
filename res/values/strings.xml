@@ -33,5 +33,6 @@
         <item >Choose Picture</item>
         <item >Choose Video</item>
     </string-array>
+        <string name="video_file_size_warning">The selected video must be less than 10MB.</string>
 
 </resources>

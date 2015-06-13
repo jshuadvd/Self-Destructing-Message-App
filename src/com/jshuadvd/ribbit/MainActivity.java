@@ -4,7 +4,6 @@ import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
-
 import android.app.ActionBar;
 import android.app.AlertDialog;
 import android.app.FragmentTransaction;
@@ -21,7 +20,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.Window;
 import android.widget.Toast;
-
 import com.parse.ParseAnalytics;
 import com.parse.ParseUser;
 
@@ -90,6 +88,7 @@ public class MainActivity extends FragmentActivity implements
 			case 3: // Choose Video
 				Intent chooseVideoIntent = new Intent(Intent.ACTION_GET_CONTENT);
 				chooseVideoIntent.setType("video/*");
+				Toast.makeText(MainActivity.this, R.string.video_file_size_warning, Toast.LENGTH_LONG)show;
 				startActivityForResult(chooseVideoIntent, PICK_VIDEO_REQUEST);
 				break;
 			
