@@ -1,9 +1,13 @@
 package com.jshuadvd.ribbit;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
+
 import android.app.ActionBar;
 import android.app.AlertDialog;
 import android.app.FragmentTransaction;
@@ -20,6 +24,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.Window;
 import android.widget.Toast;
+
 import com.parse.ParseAnalytics;
 import com.parse.ParseUser;
 
@@ -244,6 +249,17 @@ public class MainActivity extends FragmentActivity implements
 				if (requestCode == PICK_VIDEO_REQUEST) {
 					// Make sure the file is < 10MB
 					int fileSize = 0;
+					
+					try {
+					InputStream inputStream = getContentResolver().openInputStream(mMediaUri);
+					fileSize = inputStream.available();
+					}
+					catch (FileNotFoundException e) {
+						Toast.makeText(this, getString(R.string.general_error), Toast.LENGTH_LONG).show();
+					}
+					catch (IOException e) {
+						Toast.makeText(this, getString(R.string.general_error), Toast.LENGTH_LONG).show();
+					}
 				}
 			}
 			
