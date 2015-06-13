@@ -7,7 +7,6 @@ import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
-
 import android.app.ActionBar;
 import android.app.AlertDialog;
 import android.app.FragmentTransaction;
@@ -24,7 +23,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.Window;
 import android.widget.Toast;
-
 import com.parse.ParseAnalytics;
 import com.parse.ParseUser;
 
@@ -255,10 +253,10 @@ public class MainActivity extends FragmentActivity implements
 					fileSize = inputStream.available();
 					}
 					catch (FileNotFoundException e) {
-						Toast.makeText(this, getString(R.string.general_error), Toast.LENGTH_LONG).show();
+						Toast.makeText(this, R.string.error_opening_file, Toast.LENGTH_LONG).show();
 					}
 					catch (IOException e) {
-						Toast.makeText(this, getString(R.string.general_error), Toast.LENGTH_LONG).show();
+						Toast.makeText(this, R.string.error_opening_file, Toast.LENGTH_LONG).show();
 					}
 				}
 			}
