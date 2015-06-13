@@ -248,8 +248,10 @@ public class MainActivity extends FragmentActivity implements
 					// Make sure the file is < 10MB
 					int fileSize = 0;
 					
+					InputStream inputStream = null;
+					
 					try {
-					InputStream inputStream = getContentResolver().openInputStream(mMediaUri);
+					inputStream = getContentResolver().openInputStream(mMediaUri);
 					fileSize = inputStream.available();
 					}
 					catch (FileNotFoundException e) {
@@ -257,6 +259,11 @@ public class MainActivity extends FragmentActivity implements
 					}
 					catch (IOException e) {
 						Toast.makeText(this, R.string.error_opening_file, Toast.LENGTH_LONG).show();
+					}
+					finally {
+						try {
+							inputStream.close();
+						} catch (IOException e) { /* Intentionally Blank */	}
 					}
 				}
 			}
