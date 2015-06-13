@@ -268,7 +268,8 @@ public class MainActivity extends FragmentActivity implements
 						} catch (IOException e) { /* Intentionally Blank */	}
 					}
 					if (fileSize >= FILE_SIZE_LIMIT) {
-						Toast.makeText(this, "The selected file is too large!", Toast.LENGTH_LONG).show();
+						Toast.makeText(this, R.string.error_file_size_too_large, Toast.LENGTH_LONG).show();
+						return;
 					}
 				}
 			}
