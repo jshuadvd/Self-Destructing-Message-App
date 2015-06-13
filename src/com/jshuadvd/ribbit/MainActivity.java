@@ -41,7 +41,7 @@ public class MainActivity extends FragmentActivity implements
 	public static final int MEDIA_TYPE_IMAGE = 4;
 	public static final int MEDIA_TYPE_VIDEO = 5;
 	
-	public static final int FILE_SIZE_LIMIT = 1;
+	public static final int FILE_SIZE_LIMIT = 1024*1024*10; // 10 MB
 
 	// Uniform resource identifier
 	protected Uri mMediaUri;
@@ -266,6 +266,9 @@ public class MainActivity extends FragmentActivity implements
 						try {
 							inputStream.close();
 						} catch (IOException e) { /* Intentionally Blank */	}
+					}
+					if (fileSize >= FILE_SIZE_LIMIT) {
+						Toast.makeText(this, "The selected file is too large!", Toast.LENGTH_LONG).show();
 					}
 				}
 			}
