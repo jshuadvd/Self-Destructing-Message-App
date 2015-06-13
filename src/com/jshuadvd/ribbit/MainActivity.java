@@ -258,9 +258,11 @@ public class MainActivity extends FragmentActivity implements
 					}
 					catch (FileNotFoundException e) {
 						Toast.makeText(this, R.string.error_opening_file, Toast.LENGTH_LONG).show();
+						return;
 					}
 					catch (IOException e) {
 						Toast.makeText(this, R.string.error_opening_file, Toast.LENGTH_LONG).show();
+						return;
 					}
 					finally {
 						try {
