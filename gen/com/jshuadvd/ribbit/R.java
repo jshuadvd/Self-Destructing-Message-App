@@ -62,6 +62,7 @@ public final class R {
         public static final int email_hint=0x7f05000b;
         public static final int empty_friends_label=0x7f050013;
         public static final int empty_inbox_label=0x7f050012;
+        public static final int empty_recipients_list_message=0x7f05001e;
         public static final int error_externl_storage=0x7f050018;
         public static final int error_file_size_too_large=0x7f05001c;
         public static final int error_opening_file=0x7f05001b;
