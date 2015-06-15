@@ -63,13 +63,13 @@ public class RecipientsActivity extends ListActivity {
 					}
 					ArrayAdapter<String> adapter = new ArrayAdapter<String>(
 							getListView().getContext(), 
-							android.R.layout.simple_list_item_1,
+							android.R.layout.simple_list_item_checked,
 							usernames);
 					setListAdapter(adapter);
 				}
 				else {
 					Log.e(TAG, e.getMessage());
-					AlertDialog.Builder builder = new AlertDialog.Builder(getListView().getContext());
+					AlertDialog.Builder builder = new AlertDialog.Builder(RecipientsActivity.this);
 					builder.setMessage(e.getMessage())
 						.setTitle(R.string.error_title)
 						.setPositiveButton(android.R.string.ok, null);
