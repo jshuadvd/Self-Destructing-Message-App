@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.Window;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
@@ -26,6 +27,7 @@ public class RecipientsActivity extends ListActivity {
 	protected ParseUser mCurrentUser;	
 	protected List<ParseUser> mFriends;
 	
+	protected MenuItem mSendMenuItem;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -88,6 +90,7 @@ public class RecipientsActivity extends ListActivity {
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.recipients, menu);
+		mSendMenuItem = menu.getItem(0);
 		return true;
 	}
 
@@ -101,6 +104,12 @@ public class RecipientsActivity extends ListActivity {
 			return true;
 		}
 		return super.onOptionsItemSelected(item);
+	}
+	
+	@Override
+	protected void onListItemClick(ListView l, View v, int position, long id) {
+		super.onListItemClick(l, v, position, id);
+		mSendMenuItem.setVisible(true);
 	}
 
 
