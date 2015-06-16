@@ -32,6 +32,7 @@ public final class R {
         public static final int action_camera=0x7f09000a;
         public static final int action_edit_friends=0x7f090008;
         public static final int action_logout=0x7f090009;
+        public static final int action_send=0x7f09000b;
         public static final int action_settings=0x7f090007;
         public static final int emailField=0x7f090005;
         public static final int loginButton=0x7f090002;
@@ -75,6 +76,7 @@ public final class R {
         public static final int menu_camera_label=0x7f050017;
         public static final int menu_edit_friends_label=0x7f050014;
         public static final int menu_logout_label=0x7f050011;
+        public static final int menu_send_label=0x7f05001f;
         public static final int password_hint=0x7f050007;
         public static final int sign_up_button_label=0x7f05000c;
         public static final int sign_up_text=0x7f050009;
