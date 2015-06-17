@@ -105,7 +105,7 @@ public class RecipientsActivity extends ListActivity {
 		if (id == R.id.action_settings) {
 			
 			ParseObject message = createMessage();
-			send(message);
+			// send(message);
 			
 			return true;
 		}
@@ -127,12 +127,20 @@ public class RecipientsActivity extends ListActivity {
 	protected ParseObject createMessage {
 		ParseObject message = new ParseObject(ParseConstants.CLASS_MESSAGES);
 		message.put(ParseConstants.KEY_SENDER_ID, ParseUser.getCurrentUser().getObjectId());
-		message.put(ParseConstants.KEY_SENDER_NAME, ParseUser.getCurrentUser().getUsername()());
+		message.put(ParseConstants.KEY_SENDER_NAME, ParseUser.getCurrentUser().getUsername());
 		message.put(ParseConstants.KEY_RECIPIENT_IDS, getRecipientIds());
+		
+		return message;
 	}
 	
 	protected ArrayList<String> getRecipientIds() {
 		ArrayList<String> recipientIds = new ArrayList<String>();
+		for (int i = 0; i < getListView().getCount(); i++) {
+			if (getListView().isItemChecked(i)) {
+				recipientIds.add(mFriends.get(i).getObjectId());
+			}
+		}
+		return recipientIds;
 	}
 
 }
