@@ -18,6 +18,7 @@ import android.widget.ListView;
 
 import com.parse.FindCallback;
 import com.parse.ParseException;
+import com.parse.ParseFile;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseRelation;
@@ -155,9 +156,12 @@ public class RecipientsActivity extends ListActivity {
 			
 			String fileName = FileHelper.getFileName(this, mMediaUri, mFileType);
 			ParseFile file = new ParseFile(fileName, fileBytes);
+			message.put(ParseConstants.KEY_FILE, file);
+			
+			return message;
 		}
 		
-		return message;
+		
 		
 	}
 	
