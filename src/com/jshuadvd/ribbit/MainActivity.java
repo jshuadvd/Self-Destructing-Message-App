@@ -7,6 +7,7 @@ import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
+
 import android.app.ActionBar;
 import android.app.AlertDialog;
 import android.app.FragmentTransaction;
@@ -23,6 +24,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.Window;
 import android.widget.Toast;
+
 import com.parse.ParseAnalytics;
 import com.parse.ParseUser;
 
@@ -287,9 +289,13 @@ public class MainActivity extends FragmentActivity implements
 			
 			String fileType;
 			if (requestCode == PICK_PHOTO_REQUEST || requestCode == TAKE_PHOTO_REQUEST) {
-				fileType = 
+				fileType = ParseConstants.TYPE_IMAGE;
+			}
+			else {
+				fileType = ParseConstants.TYPE_VIDEO;
 			}
 			
+			recipientsIntent.putExtra(ParseConstants.KEY_FILE_TYPE, fileType);
 			startActivity(recipientsIntent);
 			
 			
