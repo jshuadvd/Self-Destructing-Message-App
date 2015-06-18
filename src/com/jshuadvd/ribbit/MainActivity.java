@@ -284,6 +284,12 @@ public class MainActivity extends FragmentActivity implements
 			
 			Intent recipientsIntent = new Intent(this, RecipientsActivity.class);
 			recipientsIntent.setData(mMediaUri);
+			
+			String fileType;
+			if (requestCode == PICK_PHOTO_REQUEST || requestCode == TAKE_PHOTO_REQUEST) {
+				fileType = 
+			}
+			
 			startActivity(recipientsIntent);
 			
 			
