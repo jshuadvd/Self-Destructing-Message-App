@@ -150,9 +150,11 @@ public class RecipientsActivity extends ListActivity {
 		}
 		else {
 			if (mFileType.equals(ParseConstants.TYPE_IMAGE) ) {
-				
+				fileBytes = FileHelper.reduceImageForUpload(fileBytes);
 			}
-				
+			
+			String fileName = FileHelper.getFileName(this, mMediaUri, mFileType);
+			ParseFile file = new ParseFile(fileName, fileBytes);
 		}
 		
 		return message;
