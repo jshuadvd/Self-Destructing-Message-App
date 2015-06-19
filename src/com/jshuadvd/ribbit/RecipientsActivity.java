@@ -130,6 +130,7 @@ public class RecipientsActivity extends ListActivity {
 			}
 			else {
 				send(message);
+				// Finish this section
 				finish();
 			}
 			return true;
