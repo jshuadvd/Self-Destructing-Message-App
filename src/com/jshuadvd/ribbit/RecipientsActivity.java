@@ -119,7 +119,18 @@ public class RecipientsActivity extends ListActivity {
 			return true;
 		case R.id.action_send:
 			ParseObject message = createMessage();
-			//send(message);
+			if (message == null) {
+				// error
+				AlertDialog.Builder builder = new AlertDialog.Builder(this);
+				builder.setMessage("There was an error with the file selected. Please select a different file.")
+				.setTitle("We're Sorry!")
+				.setPositiveButton(android.R.string.ok, null);
+				AlertDialog dialog = builder .create();
+				dialog.show();
+			}
+			else {
+				send(message);
+			}
 			return true;
 		}
 		return super.onOptionsItemSelected(item);
