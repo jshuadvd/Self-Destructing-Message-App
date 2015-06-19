@@ -2,7 +2,6 @@ package com.jshuadvd.ribbit;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import android.app.AlertDialog;
 import android.app.ListActivity;
 import android.net.Uri;
@@ -15,7 +14,6 @@ import android.view.View;
 import android.view.Window;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-
 import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseFile;
@@ -122,8 +120,8 @@ public class RecipientsActivity extends ListActivity {
 			if (message == null) {
 				// error
 				AlertDialog.Builder builder = new AlertDialog.Builder(this);
-				builder.setMessage("There was an error with the file selected. Please select a different file.")
-				.setTitle("We're Sorry!")
+				builder.setMessage(R.string.error_selecting_file)
+				.setTitle(R.string.error_selecting_file_title)
 				.setPositiveButton(android.R.string.ok, null);
 				AlertDialog dialog = builder .create();
 				dialog.show();
