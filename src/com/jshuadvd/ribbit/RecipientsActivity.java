@@ -130,6 +130,7 @@ public class RecipientsActivity extends ListActivity {
 			}
 			else {
 				send(message);
+				finish();
 			}
 			return true;
 		}
@@ -192,15 +193,18 @@ public class RecipientsActivity extends ListActivity {
 			public void done(ParseException e) {
 				if (e == null) {
 					// It was successful
-					Toast.makeText(RecipientsActivity.this, "Message sent!", Toast.LENGTH_LONG).show(;)
+					Toast.makeText(RecipientsActivity.this, "Message sent!", Toast.LENGTH_LONG).show();
 				}
 				else {
-					AlertDialog.Builder builder = new AlertDialog.Builder(this);
-					builder.setMessage(R.string.error_selecting_file)
+					AlertDialog.Builder builder = new AlertDialog.Builder(RecipientsActivity.this);
+					builder.setMessage(R.string.error_sending_message)
 					.setTitle(R.string.error_selecting_file_title)
 					.setPositiveButton(android.R.string.ok, null);
 					AlertDialog dialog = builder .create();
 					dialog.show();
+					
+					
+					
 				}
 					
 				
