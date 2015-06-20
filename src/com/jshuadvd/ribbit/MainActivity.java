@@ -241,6 +241,7 @@ public class MainActivity extends FragmentActivity implements
 		// Query the new message class/table that I just created
 		setProgressBarIndeterminateVisibility(true);
 		ParseQuery<ParseObject> query = new ParseQuery(ParseConstants.CLASS_MESSAGES); 
+		query.whereEqualTo(ParseConstants.KEY_RECIPIENT_IDS, ParseUser.getCurrentUser().getObjectId());
 	}
 	
 	@Override
