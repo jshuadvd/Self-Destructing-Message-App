@@ -26,6 +26,8 @@ import android.view.Window;
 import android.widget.Toast;
 
 import com.parse.ParseAnalytics;
+import com.parse.ParseObject;
+import com.parse.ParseQuery;
 import com.parse.ParseUser;
 
 public class MainActivity extends FragmentActivity implements
@@ -231,6 +233,14 @@ public class MainActivity extends FragmentActivity implements
 					.setText(mSectionsPagerAdapter.getPageTitle(i))
 					.setTabListener(this));
 		}
+	}
+	
+	@Override
+	protected void onResume() {
+		super.onResume();
+		// Query the new message class/table that I just created
+		setProgressBarIndeterminateVisibility(true);
+		ParseQuery<ParseObject> query = new ParseQuery(ParseConstants.CLASS_MESSAGES); 
 	}
 	
 	@Override
