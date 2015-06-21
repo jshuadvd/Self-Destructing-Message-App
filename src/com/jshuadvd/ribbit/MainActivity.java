@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
 
 import android.app.ActionBar;
@@ -25,7 +26,9 @@ import android.view.MenuItem;
 import android.view.Window;
 import android.widget.Toast;
 
+import com.parse.FindCallback;
 import com.parse.ParseAnalytics;
+import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
@@ -242,6 +245,15 @@ public class MainActivity extends FragmentActivity implements
 		setProgressBarIndeterminateVisibility(true);
 		ParseQuery<ParseObject> query = new ParseQuery(ParseConstants.CLASS_MESSAGES); 
 		query.whereEqualTo(ParseConstants.KEY_RECIPIENT_IDS, ParseUser.getCurrentUser().getObjectId());
+		query.addDescendingOrder(ParseConstants.KEY_CREATED_AT);
+		query.findInBackground(new FindCallback<ParseObject>() {
+			
+			@Override
+			public void done(List<ParseObject> messages, ParseException e) {
+				
+				
+			}
+		});
 	}
 	
 	@Override
