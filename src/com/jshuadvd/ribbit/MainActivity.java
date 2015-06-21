@@ -24,6 +24,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.Window;
+import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
 import com.parse.FindCallback;
@@ -52,6 +53,7 @@ public class MainActivity extends FragmentActivity implements
 
 	// Uniform resource identifier
 	protected Uri mMediaUri;
+	protected List<ParseObject> mMessages;
 	
 	protected DialogInterface.OnClickListener mDialogListener = 
 			new DialogInterface.OnClickListener() {		
@@ -236,30 +238,6 @@ public class MainActivity extends FragmentActivity implements
 					.setText(mSectionsPagerAdapter.getPageTitle(i))
 					.setTabListener(this));
 		}
-	}
-	
-	@Override
-	protected void onResume() {
-		super.onResume();
-		// Query the new message class/table that I just created
-		setProgressBarIndeterminateVisibility(true);
-		ParseQuery<ParseObject> query = new ParseQuery(ParseConstants.CLASS_MESSAGES); 
-		query.whereEqualTo(ParseConstants.KEY_RECIPIENT_IDS, ParseUser.getCurrentUser().getObjectId());
-		query.addDescendingOrder(ParseConstants.KEY_CREATED_AT);
-		query.findInBackground(new FindCallback<ParseObject>() {
-			
-			@Override
-			public void done(List<ParseObject> messages, ParseException e) {
-				setProgressBarIndeterminateVisibility(false);
-				
-				if (e == null) {
-					// Found messages!
-				}	
-				else {
-					
-				}				
-			}
-		});
 	}
 	
 	@Override
