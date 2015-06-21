@@ -17,6 +17,8 @@ import com.parse.ParseUser;
 
 public class InboxFragment extends ListFragment {
 	
+	protected List<ParseObject> mMessages;
+	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
@@ -27,18 +29,18 @@ public class InboxFragment extends ListFragment {
 	}
 	
 	@Override
-	protected void onResume() {
+	public void onResume() {
 		super.onResume();
 		// Query the new message class/table that I just created
-		setProgressBarIndeterminateVisibility(true);
-		ParseQuery<ParseObject> query = new ParseQuery(ParseConstants.CLASS_MESSAGES); 
+		getActivity().setProgressBarIndeterminateVisibility(true);
+		ParseQuery<ParseObject> query = new ParseQuery<ParseObject>(ParseConstants.CLASS_MESSAGES); 
 		query.whereEqualTo(ParseConstants.KEY_RECIPIENT_IDS, ParseUser.getCurrentUser().getObjectId());
 		query.addDescendingOrder(ParseConstants.KEY_CREATED_AT);
 		query.findInBackground(new FindCallback<ParseObject>() {
 			
 			@Override
 			public void done(List<ParseObject> messages, ParseException e) {
-				setProgressBarIndeterminateVisibility(false);
+				getActivity().setProgressBarIndeterminateVisibility(false);
 				
 				if (e == null) {
 					// Found messages!
@@ -51,7 +53,7 @@ public class InboxFragment extends ListFragment {
 						i++;
 					}
 					ArrayAdapter<String> adapter = new ArrayAdapter<String>(
-							MainActivity.this, 
+							getListView().getContext(), 
 							android.R.layout.simple_list_item_1,
 							usernames);
 					setListAdapter(adapter);
