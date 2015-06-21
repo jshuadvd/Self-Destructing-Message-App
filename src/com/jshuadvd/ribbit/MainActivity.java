@@ -250,8 +250,14 @@ public class MainActivity extends FragmentActivity implements
 			
 			@Override
 			public void done(List<ParseObject> messages, ParseException e) {
+				setProgressBarIndeterminateVisibility(false);
 				
-				
+				if (e == null) {
+					// Found messages!
+				}	
+				else {
+					
+				}				
 			}
 		});
 	}
