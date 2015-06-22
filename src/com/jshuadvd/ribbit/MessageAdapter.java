@@ -11,5 +11,11 @@ public class MessageAdapter extends ArrayAdapter<ParseObject> {
 	
 	protected Context mContext;
 	protected List<ParseObject> mMessages;
+	
+	public MessageAdapter(Context context, List<ParseObject> messages) {
+		super(context, R.layout.message_item, messages);
+		mContext = context;
+		mMessages = messages;
+	}
 
 }
