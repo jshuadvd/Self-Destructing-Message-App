@@ -44,15 +44,15 @@ public class MessageAdapter extends ArrayAdapter<ParseObject> {
 	
 		ParseObject message = mMessages.get(position);
 		
-		if (message.get(ParseConstants.KEY_FILE_TYPE).equals(ParseConstants.TYPE_IMAGE)) {
+		if (message.getString(ParseConstants.KEY_FILE_TYPE).equals(ParseConstants.TYPE_IMAGE)) {
 			holder.iconImageView.setImageResource(R.drawable.ic_action_picture);
 		}
 		else {
 			holder.iconImageView.setImageResource(R.drawable.ic_action_play_over_video);
 		}
-			holder.nameLabel.setText(message.getInt(ParseConstants.KEY_SENDER_NAME));
+		holder.nameLabel.setText(message.getString(ParseConstants.KEY_SENDER_NAME));
 		
-			return convertView;
+		return convertView;
 		
 	}
 	
