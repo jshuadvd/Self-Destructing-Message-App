@@ -33,17 +33,18 @@ public final class R {
         public static final int ic_launcher=0x7f020004;
     }
     public static final class id {
-        public static final int action_camera=0x7f09000c;
-        public static final int action_edit_friends=0x7f09000a;
-        public static final int action_logout=0x7f09000b;
-        public static final int action_send=0x7f09000d;
-        public static final int action_settings=0x7f090009;
+        public static final int action_camera=0x7f09000d;
+        public static final int action_edit_friends=0x7f09000b;
+        public static final int action_logout=0x7f09000c;
+        public static final int action_send=0x7f09000e;
+        public static final int action_settings=0x7f09000a;
         public static final int emailField=0x7f090005;
+        public static final int imageView=0x7f090007;
         public static final int loginButton=0x7f090002;
-        public static final int messageIcon=0x7f090007;
+        public static final int messageIcon=0x7f090008;
         public static final int pager=0x7f090004;
         public static final int passwordField=0x7f090001;
-        public static final int senderLabel=0x7f090008;
+        public static final int senderLabel=0x7f090009;
         public static final int signUpText=0x7f090003;
         public static final int signupButton=0x7f090006;
         public static final int usernameField=0x7f090000;
