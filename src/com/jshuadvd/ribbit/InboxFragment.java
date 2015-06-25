@@ -7,7 +7,6 @@ import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.parse.FindCallback;
@@ -66,7 +65,9 @@ public class InboxFragment extends ListFragment {
 	public void onListItemClick(ListView l, View v, int position, long id) {
 		super.onListItemClick(l, v, position, id);
 		
-		mMessages.get(position);
+		ParseObject message = mMessages.get(position);
+		String messageType = message.getString(ParseConstants.KEY_FILE);
+		ParseFile file = message.getParseFile(ParseConstants.KEY_FILE);
 	}
 	
 	
