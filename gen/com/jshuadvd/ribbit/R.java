@@ -54,15 +54,17 @@ public final class R {
         public static final int activity_main=0x7f030002;
         public static final int activity_recipients=0x7f030003;
         public static final int activity_sign_up=0x7f030004;
-        public static final int fragment_friends=0x7f030005;
-        public static final int fragment_inbox=0x7f030006;
-        public static final int message_item=0x7f030007;
+        public static final int activity_view_image=0x7f030005;
+        public static final int fragment_friends=0x7f030006;
+        public static final int fragment_inbox=0x7f030007;
+        public static final int message_item=0x7f030008;
     }
     public static final class menu {
         public static final int login=0x7f080000;
         public static final int main=0x7f080001;
         public static final int recipients=0x7f080002;
         public static final int sign_up=0x7f080003;
+        public static final int view_image=0x7f080004;
     }
     public static final class string {
         public static final int action_settings=0x7f050004;
@@ -97,6 +99,7 @@ public final class R {
         public static final int title_activity_login=0x7f050005;
         public static final int title_activity_recipients=0x7f05001d;
         public static final int title_activity_sign_up=0x7f05000a;
+        public static final int title_activity_view_image=0x7f050024;
         public static final int title_section1=0x7f050001;
         public static final int title_section2=0x7f050002;
         public static final int username_hint=0x7f050006;
