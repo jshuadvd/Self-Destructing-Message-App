@@ -2,6 +2,7 @@ package com.jshuadvd.ribbit;
 
 import java.util.List;
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
@@ -11,6 +12,7 @@ import android.widget.ListView;
 
 import com.parse.FindCallback;
 import com.parse.ParseException;
+import com.parse.ParseFile;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
@@ -68,6 +70,15 @@ public class InboxFragment extends ListFragment {
 		ParseObject message = mMessages.get(position);
 		String messageType = message.getString(ParseConstants.KEY_FILE);
 		ParseFile file = message.getParseFile(ParseConstants.KEY_FILE);
+		Uri fileUri = Uri.parse(file.getUrl());
+		
+		if (messageType.equals(ParseConstants.TYPE_IMAGE)) {
+			// View the image
+			
+		}
+		else {
+			// View the video
+		}
 	}
 	
 	
