@@ -2,6 +2,7 @@ package com.jshuadvd.ribbit;
 
 import java.util.List;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
@@ -74,7 +75,9 @@ public class InboxFragment extends ListFragment {
 		
 		if (messageType.equals(ParseConstants.TYPE_IMAGE)) {
 			// View the image
-			
+			Intent intent = new Intent(getActivity(), ViewImageActivity.class);
+			intent.setData(fileUri);
+			startActivity(intent);
 		}
 		else {
 			// View the video
