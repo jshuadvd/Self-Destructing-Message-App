@@ -11,6 +11,8 @@ public class ViewImageActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_view_image);
+		
+		ImageView imageView = (ImageView)findViewById(R.id.imageView);
 	}
 
 	@Override
