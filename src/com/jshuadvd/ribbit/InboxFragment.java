@@ -81,11 +81,11 @@ public class InboxFragment extends ListFragment {
 		}
 		else {
 			// View the video
+			Intent intent = new Intent(Intent.ACTION_VIEW, fileUri);
+			intent.setDataAndType(fileUri, "video/*");
+			startActivity(intent);
+			
 		}
-	}
-	
-	
-	
-	
+	}	
 	
 }
