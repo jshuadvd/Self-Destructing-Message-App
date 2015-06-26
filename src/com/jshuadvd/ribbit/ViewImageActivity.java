@@ -1,9 +1,13 @@
 package com.jshuadvd.ribbit;
 
+import com.squareup.picasso.Picasso;
+
 import android.app.Activity;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
 
 public class ViewImageActivity extends Activity {
 
@@ -13,6 +17,10 @@ public class ViewImageActivity extends Activity {
 		setContentView(R.layout.activity_view_image);
 		
 		ImageView imageView = (ImageView)findViewById(R.id.imageView);
+		
+		Uri imageUri = getIntent().getData();
+		
+		Picasso.with(this).load(imageUri.toString()).into(imageView);
 	}
 
 	@Override
