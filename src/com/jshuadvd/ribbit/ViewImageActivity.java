@@ -34,6 +34,7 @@ public class ViewImageActivity extends Activity {
 				
 			}
 		}, 10 * 1000);
+		}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
