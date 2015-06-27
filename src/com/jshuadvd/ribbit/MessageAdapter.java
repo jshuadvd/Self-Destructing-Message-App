@@ -63,7 +63,8 @@ public class MessageAdapter extends ArrayAdapter<ParseObject> {
 	
 	public void refill(List<ParseObject> messages) {
 		mMessages.clear();
-		
+		mMessages.addAll(messages);
+		notifyDataSetChanged();
 	
 	}
 
