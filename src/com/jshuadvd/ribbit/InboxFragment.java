@@ -1,4 +1,4 @@
-package com.teamtreehouse.ribbit;
+package com.jshuadvd.ribbit;
 
 import java.util.List;
 
@@ -55,10 +55,15 @@ public class InboxFragment extends ListFragment {
 						usernames[i] = message.getString(ParseConstants.KEY_SENDER_NAME);
 						i++;
 					}
-					MessageAdapter adapter = new MessageAdapter(
-							getListView().getContext(), 
-							mMessages);
-					setListAdapter(adapter);
+					if(getListView().getAdapter() == null ) {
+						MessageAdapter adapter = new MessageAdapter(
+								getListView().getContext(), 
+								mMessages);
+						setListAdapter(adapter);
+					}
+					else {
+						// Refill the adapter
+					}
 				}
 			}
 		});
