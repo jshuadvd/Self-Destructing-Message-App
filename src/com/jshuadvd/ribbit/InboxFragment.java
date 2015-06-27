@@ -63,6 +63,8 @@ public class InboxFragment extends ListFragment {
 					}
 					else {
 						// Refill the adapter
+						((MessageAdapter)getListView().getAdapter()).refill(mMessages);
+						
 					}
 				}
 			}
