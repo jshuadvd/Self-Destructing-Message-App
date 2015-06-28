@@ -1,5 +1,6 @@
 package com.jshuadvd.ribbit;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import android.content.Intent;
@@ -104,6 +105,10 @@ public class InboxFragment extends ListFragment {
 		else {
 			// remove the recipient
 			ids.remove(ParseUser.getCurrentUser().getObjectId());
+			ArrayList<String> idsToRemove = new ArrayList<String>(); 
+			idsToRemove.add(ParseUser.getCurrentUser().getObjectId());
+			
+			message.removeAll();
 		}
 		
 	}
