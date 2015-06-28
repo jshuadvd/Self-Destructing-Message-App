@@ -92,6 +92,12 @@ public class InboxFragment extends ListFragment {
 			intent.setDataAndType(fileUri, "video/*");
 			startActivity(intent);
 		}
+		
+		// Deleting the message
+		List<String> ids = message.getList(ParseConstants.KEY_RECIPIENT_IDS);
+		
+		// Check the Recipient count
+		
 	}
 }
 
