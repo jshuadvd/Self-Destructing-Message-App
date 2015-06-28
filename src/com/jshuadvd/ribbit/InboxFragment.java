@@ -97,6 +97,12 @@ public class InboxFragment extends ListFragment {
 		List<String> ids = message.getList(ParseConstants.KEY_RECIPIENT_IDS);
 		
 		// Check the Recipient count
+		if(ids.size() == 1) {
+			// last recipient - delete the whole thing
+		}
+		else {
+			// remove the recipient
+		}
 		
 	}
 }
