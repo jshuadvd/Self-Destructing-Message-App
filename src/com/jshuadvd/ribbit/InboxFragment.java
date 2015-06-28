@@ -103,6 +103,7 @@ public class InboxFragment extends ListFragment {
 		}
 		else {
 			// remove the recipient
+			ids.remove(ParseUser.getCurrentUser().getObjectId());
 		}
 		
 	}
