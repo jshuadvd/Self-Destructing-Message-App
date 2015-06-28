@@ -99,6 +99,7 @@ public class InboxFragment extends ListFragment {
 		// Check the Recipient count
 		if(ids.size() == 1) {
 			// last recipient - delete the whole thing
+			message.deleteInBackground();
 		}
 		else {
 			// remove the recipient
