@@ -108,7 +108,7 @@ public class InboxFragment extends ListFragment {
 			ArrayList<String> idsToRemove = new ArrayList<String>(); 
 			idsToRemove.add(ParseUser.getCurrentUser().getObjectId());
 			
-			message.removeAll();
+			message.removeAll(ParseConstants.KEY_RECIPIENT_IDS, idsToRemove);
 		}
 		
 	}
