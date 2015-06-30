@@ -1,5 +1,6 @@
 package com.jshuadvd.ribbit;
 
+import android.app.ActionBar;
 import android.app.AlertDialog;
 import android.app.ListActivity;
 import android.content.Intent;
@@ -29,6 +30,9 @@ public class SignUpActivity extends ListActivity {
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
 		setContentView(R.layout.activity_sign_up);
+		
+		ActionBar actionBar = getActionBar();
+		actionBar.hide();
 		
 		mUsername = (EditText)findViewById(R.id.usernameField);
 		mPassword = (EditText)findViewById(R.id.passwordField);
