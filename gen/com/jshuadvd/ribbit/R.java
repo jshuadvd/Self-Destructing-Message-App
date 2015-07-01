@@ -26,11 +26,23 @@ public final class R {
         public static final int message_list_item_vertical_margin=0x7f040002;
     }
     public static final class drawable {
-        public static final int ic_action_camera=0x7f020000;
-        public static final int ic_action_picture=0x7f020001;
-        public static final int ic_action_play_over_video=0x7f020002;
-        public static final int ic_action_send_now=0x7f020003;
-        public static final int ic_launcher=0x7f020004;
+        public static final int avatar_empty=0x7f020000;
+        public static final int avatar_selected=0x7f020001;
+        public static final int background=0x7f020002;
+        public static final int background_fill=0x7f020003;
+        public static final int button_divider=0x7f020004;
+        public static final int ic_action_camera=0x7f020005;
+        public static final int ic_action_picture=0x7f020006;
+        public static final int ic_action_play_over_video=0x7f020007;
+        public static final int ic_action_send_now=0x7f020008;
+        public static final int ic_launcher=0x7f020009;
+        public static final int ic_menu_camera=0x7f02000a;
+        public static final int ic_menu_overflow=0x7f02000b;
+        public static final int ic_menu_send=0x7f02000c;
+        public static final int ic_picture=0x7f02000d;
+        public static final int ic_tab_friends=0x7f02000e;
+        public static final int ic_tab_inbox=0x7f02000f;
+        public static final int ic_video=0x7f020010;
     }
     public static final class id {
         public static final int action_camera=0x7f09000d;
