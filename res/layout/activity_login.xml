@@ -6,13 +6,14 @@
     android:background="@drawable/background_fill" >
 
     <ImageView
-        android:id="@+id/imageView1"
+        android:id="@+id/ibackgroundImage"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:scaleType="fitStart"
-        android:src="@drawable/background" />
+        android:src="@drawable/background"
+        android:contentDescription="@string/content_desc_background" />
     
     <EditText
         android:id="@+id/usernameField"

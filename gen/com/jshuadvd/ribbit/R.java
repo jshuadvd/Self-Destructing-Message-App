@@ -54,8 +54,8 @@ public final class R {
         public static final int action_send=0x7f0a000f;
         public static final int action_settings=0x7f0a000b;
         public static final int emailField=0x7f0a0006;
+        public static final int ibackgroundImage=0x7f0a0000;
         public static final int imageView=0x7f0a0008;
-        public static final int imageView1=0x7f0a0000;
         public static final int loginButton=0x7f0a0003;
         public static final int messageIcon=0x7f0a0009;
         public static final int pager=0x7f0a0005;
@@ -86,6 +86,7 @@ public final class R {
     public static final class string {
         public static final int action_settings=0x7f060004;
         public static final int app_name=0x7f060000;
+        public static final int content_desc_background=0x7f060025;
         public static final int email_hint=0x7f06000b;
         public static final int empty_friends_label=0x7f060013;
         public static final int empty_inbox_label=0x7f060012;
