@@ -53,8 +53,8 @@ public final class R {
         public static final int action_logout=0x7f0a000d;
         public static final int action_send=0x7f0a000f;
         public static final int action_settings=0x7f0a000b;
+        public static final int backgroundImage=0x7f0a0000;
         public static final int emailField=0x7f0a0006;
-        public static final int ibackgroundImage=0x7f0a0000;
         public static final int imageView=0x7f0a0008;
         public static final int loginButton=0x7f0a0003;
         public static final int messageIcon=0x7f0a0009;

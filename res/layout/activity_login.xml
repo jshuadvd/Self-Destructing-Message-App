@@ -6,7 +6,7 @@
     android:background="@drawable/background_fill" >
 
     <ImageView
-        android:id="@+id/ibackgroundImage"
+        android:id="@+id/backgroundImage"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentLeft="true"
