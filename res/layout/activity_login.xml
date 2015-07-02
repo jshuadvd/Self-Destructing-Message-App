@@ -37,7 +37,7 @@
         android:id="@+id/passwordField"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/loginButton"
+        android:layout_below="@+id/loginButton"
         android:layout_alignParentLeft="true"
         android:layout_marginBottom="31dp"
         android:ems="10"
@@ -59,7 +59,6 @@
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/usernameField"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="32dp"
@@ -72,11 +71,11 @@
         android:id="@+id/subTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/usernameField"
+        android:layout_below="@+id/title"
         android:layout_centerHorizontal="true"
         android:text="@string/subtitle"
-        android:textSize="14sp"
         android:textColor="@android:color/white"
-        android:textStyle="bold"/>
+        android:textSize="14sp"
+        android:textStyle="bold" />
 
 </RelativeLayout>
