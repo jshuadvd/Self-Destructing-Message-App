@@ -114,6 +114,7 @@ public final class R {
         public static final int sign_up_text=0x7f060009;
         public static final int signup_error_message=0x7f06000d;
         public static final int signup_error_title=0x7f06000e;
+        public static final int subtitle=0x7f060026;
         public static final int success_message=0x7f060022;
         public static final int title_activity_edit_friends=0x7f060015;
         public static final int title_activity_login=0x7f060005;

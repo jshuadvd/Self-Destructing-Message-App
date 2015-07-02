@@ -74,7 +74,9 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/usernameField"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="21dp"
-        android:text="TextView" />
+        android:text="@string/subtitle"
+        android:textSize="14sp"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"/>
 
 </RelativeLayout>
