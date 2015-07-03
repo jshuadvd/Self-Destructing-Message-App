@@ -19,25 +19,26 @@
         android:id="@+id/signUpText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="126dp"
-        android:text="@string/sign_up_text" />
+        android:layout_below="@id/loginButton"
+        android:layout_marginTop="12dp"
+        android:text="@string/sign_up_text"
+        android:textColor="@android:color/white"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/loginButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/signUpText"
+        android:layout_below="@+id/passwordField"
         android:layout_alignParentLeft="true"
-        android:layout_marginBottom="59dp"
         android:text="@string/login_button_label" />
 
     <EditText
         android:id="@+id/passwordField"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/loginButton"
+        android:layout_above="@+id/loginButton"
         android:layout_alignParentLeft="true"
         android:layout_marginBottom="31dp"
         android:ems="10"
