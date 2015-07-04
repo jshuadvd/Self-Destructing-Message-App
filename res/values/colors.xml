@@ -7,5 +7,9 @@
     <color name="light_gray">#BBBBBB
         
         </color>
+        
+    <color name="apptheme_color">#61408c
+        
+       </color>
     
 </resources> 

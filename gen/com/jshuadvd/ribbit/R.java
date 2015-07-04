@@ -14,6 +14,7 @@ public final class R {
     public static final class attr {
     }
     public static final class color {
+        public static final int apptheme_color=0x7f040002;
         public static final int background_purple=0x7f040000;
         public static final int light_gray=0x7f040001;
     }
@@ -145,15 +146,6 @@ public final class R {
     }
     public static final class style {
         /** 
-        Base application theme, dependent on API level. This theme is replaced
-        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
-    
-
-            Theme customizations available in newer API levels can go in
-            res/values-vXX/styles.xml, while customizations related to
-            backward-compatibility can go here.
-        
-
         Base application theme for API 11+. This theme completely replaces
         AppBaseTheme from res/values/styles.xml on API 11+ devices.
     
@@ -165,10 +157,10 @@ public final class R {
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f080000;
-        /**  Application theme. 
- All customizations that are NOT specific to a particular API-level can go here. 
-         */
-        public static final int AppTheme=0x7f080001;
+        public static final int AppBaseTheme=0x7f080004;
+        public static final int AppTheme=0x7f080002;
+        public static final int ButtonAppTheme=0x7f080000;
+        public static final int ImageButtonAppTheme=0x7f080001;
+        public static final int _AppTheme=0x7f080003;
     }
 }
