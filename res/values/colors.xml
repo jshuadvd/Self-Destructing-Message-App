@@ -3,5 +3,9 @@
     <color name="background_purple">#533377
         
         </color>
+        
+    <color name="light_gray">#BBBBBB
+        
+        </color>
     
 </resources> 

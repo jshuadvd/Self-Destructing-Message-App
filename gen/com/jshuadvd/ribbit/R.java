@@ -15,6 +15,7 @@ public final class R {
     }
     public static final class color {
         public static final int background_purple=0x7f040000;
+        public static final int light_gray=0x7f040001;
     }
     public static final class dimen {
         /**  Default screen margins, per the Android Design guidelines. 
