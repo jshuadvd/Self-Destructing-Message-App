@@ -49,7 +49,10 @@
         android:layout_marginRight="@dimen/activity_horizontal_margin"
         android:paddingLeft="@dimen/login_horizontal_padding"
         android:paddingRight="@dimen/login_horizontal_padding"
-        android:background="@android:color/white" >
+        android:paddingTop="@dimen/login_vertical_padding" 
+        android:paddingBottom="@dimen/login_vertical_padding"
+        android:background="@android:color/white"
+        >
 
         <EditText
             android:id="@+id/usernameField"

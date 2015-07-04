@@ -28,6 +28,7 @@ public final class R {
         public static final int activity_vertical_margin=0x7f050001;
         public static final int login_horizontal_padding=0x7f050004;
         public static final int login_vertical_margin=0x7f050003;
+        public static final int login_vertical_padding=0x7f050005;
         public static final int message_list_item_vertical_margin=0x7f050002;
     }
     public static final class drawable {
