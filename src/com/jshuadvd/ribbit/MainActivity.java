@@ -33,8 +33,6 @@ public class MainActivity extends FragmentActivity implements
 	
 	public static final String TAG = MainActivity.class.getSimpleName();
 	
-	
-	// CAnstant value member variables to reference
 	public static final int TAKE_PHOTO_REQUEST = 0;
 	public static final int TAKE_VIDEO_REQUEST = 1;
 	public static final int PICK_PHOTO_REQUEST = 2;
@@ -44,93 +42,81 @@ public class MainActivity extends FragmentActivity implements
 	public static final int MEDIA_TYPE_VIDEO = 5;
 	
 	public static final int FILE_SIZE_LIMIT = 1024*1024*10; // 10 MB
-
-	// Uniform resource identifier
+	
 	protected Uri mMediaUri;
 	
-	
 	protected DialogInterface.OnClickListener mDialogListener = 
-			new DialogInterface.OnClickListener() {		
+			new DialogInterface.OnClickListener() {
 		@Override
 		public void onClick(DialogInterface dialog, int which) {
-			
 			switch(which) {
-			case 0: // Take a Picture
-				Intent takePhotoIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-				mMediaUri = getOutputMediaFileUri(MEDIA_TYPE_IMAGE);
-				
-				if(mMediaUri == null) {
-					// Display error
-					Toast.makeText(MainActivity.this, R.string.error_externl_storage , 
-							Toast.LENGTH_LONG).show();;
-				}				
-				else {
-					// Adding extra data to a intent with putExtra
-					takePhotoIntent.putExtra(MediaStore.EXTRA_OUTPUT, mMediaUri);				
-					startActivityForResult(takePhotoIntent, TAKE_PHOTO_REQUEST);
-				}
-				break;
-			case 1: // Take Video
-				Intent videoIntent = new Intent(MediaStore.ACTION_VIDEO_CAPTURE);
-				mMediaUri = getOutputMediaFileUri(MEDIA_TYPE_VIDEO);
-				
-				if(mMediaUri == null) {
-					// Display error
-					Toast.makeText(MainActivity.this, R.string.error_externl_storage , 
-							Toast.LENGTH_LONG).show();;
-				}
-				else {
-					videoIntent.putExtra(MediaStore.EXTRA_OUTPUT, mMediaUri);
-					videoIntent.putExtra(MediaStore.EXTRA_DURATION_LIMIT, 10); // Video Time Limit
-					videoIntent.putExtra(MediaStore.EXTRA_VIDEO_QUALITY, 0); // Video Quality
-					startActivityForResult(videoIntent, TAKE_VIDEO_REQUEST);
-				}
-				
-				break;
-			case 2: // Choose Picture
-				Intent choosePhotoIntent = new Intent(Intent.ACTION_GET_CONTENT);
-				choosePhotoIntent.setType("image/*");
-				startActivityForResult(choosePhotoIntent, PICK_PHOTO_REQUEST);
-				break;
-			
-			case 3: // Choose Video
-				Intent chooseVideoIntent = new Intent(Intent.ACTION_GET_CONTENT);
-				chooseVideoIntent.setType("video/*");
-				Toast.makeText(MainActivity.this, R.string.video_file_size_warning, Toast.LENGTH_LONG).show();
-				startActivityForResult(chooseVideoIntent, PICK_VIDEO_REQUEST);
-				break;
-			
+				case 0: // Take picture
+					Intent takePhotoIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+					mMediaUri = getOutputMediaFileUri(MEDIA_TYPE_IMAGE);
+					if (mMediaUri == null) {
+						// display an error
+						Toast.makeText(MainActivity.this, R.string.error_external_storage,
+								Toast.LENGTH_LONG).show();
+					}
+					else {
+						takePhotoIntent.putExtra(MediaStore.EXTRA_OUTPUT, mMediaUri);
+						startActivityForResult(takePhotoIntent, TAKE_PHOTO_REQUEST);
+					}
+					break;
+				case 1: // Take video
+					Intent videoIntent = new Intent(MediaStore.ACTION_VIDEO_CAPTURE);
+					mMediaUri = getOutputMediaFileUri(MEDIA_TYPE_VIDEO);
+					if (mMediaUri == null) {
+						// display an error
+						Toast.makeText(MainActivity.this, R.string.error_external_storage,
+								Toast.LENGTH_LONG).show();
+					}
+					else {
+						videoIntent.putExtra(MediaStore.EXTRA_OUTPUT, mMediaUri);
+						videoIntent.putExtra(MediaStore.EXTRA_DURATION_LIMIT, 10);
+						videoIntent.putExtra(MediaStore.EXTRA_VIDEO_QUALITY, 0); // 0 = lowest res
+						startActivityForResult(videoIntent, TAKE_VIDEO_REQUEST);
+					}
+					break;
+				case 2: // Choose picture
+					Intent choosePhotoIntent = new Intent(Intent.ACTION_GET_CONTENT);
+					choosePhotoIntent.setType("image/*");
+					startActivityForResult(choosePhotoIntent, PICK_PHOTO_REQUEST);
+					break;
+				case 3: // Choose video
+					Intent chooseVideoIntent = new Intent(Intent.ACTION_GET_CONTENT);
+					chooseVideoIntent.setType("video/*");
+					Toast.makeText(MainActivity.this, R.string.video_file_size_warning, Toast.LENGTH_LONG).show();
+					startActivityForResult(chooseVideoIntent, PICK_VIDEO_REQUEST);
+					break;
 			}
-			
 		}
 
 		private Uri getOutputMediaFileUri(int mediaType) {
-			if(isExternalStorageAvailable()) {
-				// get Uri
+			// To be safe, you should check that the SDCard is mounted
+		    // using Environment.getExternalStorageState() before doing this.
+			if (isExternalStorageAvailable()) {
+				// get the URI
 				
-				// 1. Get external storage directory	
+				// 1. Get the external storage directory
 				String appName = MainActivity.this.getString(R.string.app_name);
-				
 				File mediaStorageDir = new File(
 						Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES),
 						appName);
 				
-				// 2. Create Sub directory
-				if(! mediaStorageDir.exists()) {
-					if(! mediaStorageDir.mkdirs()) {
+				// 2. Create our subdirectory
+				if (! mediaStorageDir.exists()) {
+					if (! mediaStorageDir.mkdirs()) {
 						Log.e(TAG, "Failed to create directory.");
 						return null;
 					}
- 				}
+				}
 				
-				// 3. Create a File name
-				
-				
+				// 3. Create a file name
 				// 4. Create the file
-				
 				File mediaFile;
 				Date now = new Date();
-				String timestamp = new SimpleDateFormat("yyyyMMdd_HHmmss", Locale.US).format(now); 
+				String timestamp = new SimpleDateFormat("yyyyMMdd_HHmmss", Locale.US).format(now);
 				
 				String path = mediaStorageDir.getPath() + File.separator;
 				if (mediaType == MEDIA_TYPE_IMAGE) {
@@ -142,23 +128,21 @@ public class MainActivity extends FragmentActivity implements
 				else {
 					return null;
 				}
-							
+				
 				Log.d(TAG, "File: " + Uri.fromFile(mediaFile));
 				
-				// 5. Return the files Uri
-				
+				// 5. Return the file's URI				
 				return Uri.fromFile(mediaFile);
 			}
 			else {
-			
 				return null;
 			}
 		}
+		
 		private boolean isExternalStorageAvailable() {
 			String state = Environment.getExternalStorageState();
 			
-			// If external storage is available
-			if(state.equals(Environment.MEDIA_MOUNTED)) {
+			if (state.equals(Environment.MEDIA_MOUNTED)) {
 				return true;
 			}
 			else {
@@ -238,8 +222,7 @@ public class MainActivity extends FragmentActivity implements
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		super.onActivityResult(requestCode, resultCode, data);
 		
-		if (resultCode == RESULT_OK) {
-			
+		if (resultCode == RESULT_OK) {			
 			if (requestCode == PICK_PHOTO_REQUEST || requestCode == PICK_VIDEO_REQUEST) {
 				if (data == null) {
 					Toast.makeText(this, getString(R.string.general_error), Toast.LENGTH_LONG).show();
@@ -250,14 +233,13 @@ public class MainActivity extends FragmentActivity implements
 				
 				Log.i(TAG, "Media URI: " + mMediaUri);
 				if (requestCode == PICK_VIDEO_REQUEST) {
-					// Make sure the file is < 10MB
+					// make sure the file is less than 10 MB
 					int fileSize = 0;
-					
 					InputStream inputStream = null;
 					
 					try {
-					inputStream = getContentResolver().openInputStream(mMediaUri);
-					fileSize = inputStream.available();
+						inputStream = getContentResolver().openInputStream(mMediaUri);
+						fileSize = inputStream.available();
 					}
 					catch (FileNotFoundException e) {
 						Toast.makeText(this, R.string.error_opening_file, Toast.LENGTH_LONG).show();
@@ -270,20 +252,20 @@ public class MainActivity extends FragmentActivity implements
 					finally {
 						try {
 							inputStream.close();
-						} catch (IOException e) { /* Intentionally Blank */	}
+						} catch (IOException e) { /* Intentionally blank */ }
 					}
+					
 					if (fileSize >= FILE_SIZE_LIMIT) {
 						Toast.makeText(this, R.string.error_file_size_too_large, Toast.LENGTH_LONG).show();
 						return;
 					}
 				}
 			}
-			
 			else {
 				Intent mediaScanIntent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
 				mediaScanIntent.setData(mMediaUri);
 				sendBroadcast(mediaScanIntent);
-				}
+			}
 			
 			Intent recipientsIntent = new Intent(this, RecipientsActivity.class);
 			recipientsIntent.setData(mMediaUri);
@@ -298,15 +280,11 @@ public class MainActivity extends FragmentActivity implements
 			
 			recipientsIntent.putExtra(ParseConstants.KEY_FILE_TYPE, fileType);
 			startActivity(recipientsIntent);
-			
-			
-			
 		}
 		else if (resultCode != RESULT_CANCELED) {
 			Toast.makeText(this, R.string.general_error, Toast.LENGTH_LONG).show();
 		}
 	}
-		
 
 	private void navigateToLogin() {
 		Intent intent = new Intent(this, LoginActivity.class);
@@ -327,24 +305,21 @@ public class MainActivity extends FragmentActivity implements
 		int itemId = item.getItemId();
 		
 		switch(itemId) {
-		case R.id.action_logout:
-			ParseUser.logOut();
-			navigateToLogin();
-			break;
-		
-		case R.id.action_edit_friends:
-			Intent intent = new Intent(this, EditFriendsActivity.class);
-			startActivity(intent);
-			break;
-			
-		case R.id.action_camera:
-			AlertDialog.Builder builder = new AlertDialog.Builder(this);
-			builder.setItems(R.array.camera_choices, mDialogListener);
-			AlertDialog dialog = builder.create();
-			dialog.show();
-			break;
+			case R.id.action_logout:
+				ParseUser.logOut();
+				navigateToLogin();
+				break;
+			case R.id.action_edit_friends:
+				Intent intent = new Intent(this, EditFriendsActivity.class);
+				startActivity(intent);
+				break;
+			case R.id.action_camera:
+				AlertDialog.Builder builder = new AlertDialog.Builder(this);
+				builder.setItems(R.array.camera_choices, mDialogListener);
+				AlertDialog dialog = builder.create();
+				dialog.show();
+				break;
 		}
-			
 		
 		return super.onOptionsItemSelected(item);
 	}
@@ -366,34 +341,4 @@ public class MainActivity extends FragmentActivity implements
 	public void onTabReselected(ActionBar.Tab tab,
 			FragmentTransaction fragmentTransaction) {
 	}
-
-
-//
-//	/**
-//	 * A placeholder fragment containing a simple view.
-//	 */
-//	public static class PlaceholderFragment extends Fragment {
-//		/**
-//		 * The fragment argument representing the section number for this
-//		 * fragment.
-//		 */
-//		private static final String ARG_SECTION_NUMBER = "section_number";
-//
-//		/**
-//		 * Returns a new instance of this fragment for the given section number.
-//		 */
-//		public static PlaceholderFragment newInstance(int sectionNumber) {
-//			PlaceholderFragment fragment = new PlaceholderFragment();
-//			Bundle args = new Bundle();
-//			args.putInt(ARG_SECTION_NUMBER, sectionNumber);
-//			fragment.setArguments(args);
-//			return fragment;
-//		}
-//
-//		public PlaceholderFragment() {
-//		}
-//
-//
-//	}
-
 }
