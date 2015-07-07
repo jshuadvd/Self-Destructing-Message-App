@@ -168,7 +168,7 @@ public final class R {
         public static final int AppTheme=0x7f080000;
         public static final int AuthBackground=0x7f080001;
         public static final int AuthBackgroundImage=0x7f080002;
-        public static final int AuthSubTitle=0x7f080004;
         public static final int AuthTitle=0x7f080003;
+        public static final int AuthTitle_AuthSubTitle=0x7f080004;
     }
 }
