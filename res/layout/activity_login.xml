@@ -11,15 +11,8 @@
 
     <TextView
         android:id="@+id/title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="32dp"
-        android:text="@string/app_name"
-        android:textColor="@android:color/white"
-        android:textSize="60sp"
-        android:textStyle="bold" />
+        style="@style/AuthTitle"
+         />
 
     <TextView
         android:id="@+id/subtitle"
