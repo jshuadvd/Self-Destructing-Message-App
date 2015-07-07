@@ -7,12 +7,7 @@
 
     <ImageView
         android:id="@+id/backgroundImage"
-        style="@style/AuthBackgroundImage"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:src="@drawable/background" />
+        style="@style/AuthBackgroundImage" />
 
     <TextView
         android:id="@+id/title"
