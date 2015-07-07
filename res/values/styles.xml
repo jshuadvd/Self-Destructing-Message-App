@@ -10,4 +10,8 @@
 
     
 
+    <style name="AuthBackgroundImage">
+        <item name="android:contentDescription">@string/content_desc_background</item>
+        <item name="android:scaleType">fitStart</item>
+    </style>
 </resources>
