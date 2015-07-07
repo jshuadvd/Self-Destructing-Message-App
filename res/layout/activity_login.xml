@@ -15,15 +15,7 @@
          />
 
     <TextView
-        android:id="@+id/subtitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/title"
-        android:layout_centerHorizontal="true"
-        android:text="@string/subtitle"
-        android:textColor="@android:color/white"
-        android:textSize="13sp"
-        android:textStyle="bold" />
+        android:id="@+id/subtitle" />
 
     <LinearLayout
         android:id="@+id/editTextLayout"
