@@ -19,7 +19,10 @@
 
     <LinearLayout
         android:id="@+id/editTextLayout"
-        style="@style/AuthFieldContainer" >
+        style="@style/AuthFieldContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/subtitle" >
 
         <EditText
             android:id="@+id/usernameField"
