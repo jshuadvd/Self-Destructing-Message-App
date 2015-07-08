@@ -97,9 +97,10 @@ public final class R {
         public static final int activity_recipients=0x7f030003;
         public static final int activity_sign_up=0x7f030004;
         public static final int activity_view_image=0x7f030005;
-        public static final int fragment_friends=0x7f030006;
-        public static final int fragment_inbox=0x7f030007;
-        public static final int message_item=0x7f030008;
+        public static final int auth_common=0x7f030006;
+        public static final int fragment_friends=0x7f030007;
+        public static final int fragment_inbox=0x7f030008;
+        public static final int message_item=0x7f030009;
     }
     public static final class menu {
         public static final int login=0x7f090000;
@@ -164,10 +165,11 @@ public final class R {
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f080005;
+        public static final int AppBaseTheme=0x7f080006;
         public static final int AppTheme=0x7f080000;
         public static final int AuthBackground=0x7f080001;
         public static final int AuthBackgroundImage=0x7f080002;
+        public static final int AuthFieldContainer=0x7f080005;
         public static final int AuthTitle=0x7f080003;
         public static final int AuthTitle_AuthSubTitle=0x7f080004;
     }
