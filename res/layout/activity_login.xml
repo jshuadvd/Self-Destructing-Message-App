@@ -27,7 +27,12 @@
         <EditText
             android:id="@+id/usernameField"
             style="@style/AuthEditText"
-            android:layout_width="match_parent" />
+            android:layout_width="match_parent" >
+        <requestFocus />    
+        </EditText>
+        
+        
+        
 
         <EditText
             android:id="@+id/passwordField"            
