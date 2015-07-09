@@ -59,10 +59,7 @@
 
     <Button
         android:id="@+id/signupButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/editTextLayout"
-        android:layout_marginTop="20dp"
+        style="@style/AuthButton"
         android:text="@string/sign_up_button_label" />
 
 </RelativeLayout>
