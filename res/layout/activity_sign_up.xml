@@ -60,6 +60,16 @@
     <Button
         android:id="@+id/signupButton"
         style="@style/AuthButton"
-        android:text="@string/sign_up_button_label" />
+        android:text="@string/sign_up_button_label"               
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/editTextLayout" />
 
+    
+    <Button
+        android:id="@+id/cancelButton"
+        style="@style/AuthButton"
+        android:text="@string/cancel_button_label"               
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/editTextLayout" />
+    
 </RelativeLayout>
