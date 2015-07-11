@@ -43,7 +43,7 @@ public class SignUpActivity extends ListActivity {
 			
 			@Override
 			public void onClick(View v) {
-				
+				finish();
 			}
 		});
 		mSignUpButton = (Button)findViewById(R.id.signupButton);
