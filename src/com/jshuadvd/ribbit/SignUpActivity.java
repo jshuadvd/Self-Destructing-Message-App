@@ -22,6 +22,7 @@ public class SignUpActivity extends ListActivity {
 	protected EditText mPassword;
 	protected EditText mEmail;
 	protected Button mSignUpButton;
+	protected Button mCancelButton;
 	
 	
 
@@ -37,6 +38,14 @@ public class SignUpActivity extends ListActivity {
 		mUsername = (EditText)findViewById(R.id.usernameField);
 		mPassword = (EditText)findViewById(R.id.passwordField);
 		mEmail = (EditText)findViewById(R.id.emailField);
+		mCancelButton = (Button)findViewById(R.id.cancelButton);
+		mCancelButton.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				
+			}
+		});
 		mSignUpButton = (Button)findViewById(R.id.signupButton);
 		
 		
