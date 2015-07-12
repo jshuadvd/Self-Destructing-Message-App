@@ -12,7 +12,8 @@
 
     <TextView
         android:id="@+id/title"
-        style="@style/AuthTitle" />
+        style="@style/AuthTitle"
+        android:layout_marginTop="180dp" />
 
     <TextView
         android:id="@+id/subtitle"
