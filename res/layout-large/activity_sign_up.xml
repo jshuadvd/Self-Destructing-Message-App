@@ -59,7 +59,7 @@
         android:id="@+id/signupButton"
 		style="@style/AuthButton"
         android:text="@string/sign_up_button_label"
-        android:layout_alignParentLeft="true"
+        android:layout_alignLeft="@id/editTextLayout"
         android:layout_below="@+id/editTextLayout"
         android:layout_toLeftOf="@id/buttonDivider"
         android:layout_marginRight="0dp" />
@@ -68,7 +68,7 @@
         android:id="@+id/cancelButton"
 		style="@style/AuthButton"
         android:text="@string/cancel_button_label"
-        android:layout_alignParentRight="true"
+        android:layout_alignRight="@id/editTextLayout"
         android:layout_below="@+id/editTextLayout"
         android:layout_toRightOf="@id/buttonDivider"
         android:layout_marginLeft="0dp" />
