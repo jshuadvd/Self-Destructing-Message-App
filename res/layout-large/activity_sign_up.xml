@@ -21,7 +21,9 @@
 
     <LinearLayout
         android:id="@+id/editTextLayout"
-        style="@style/AuthFieldContainer" >
+        style="@style/AuthFieldContainer"
+       android:layout_width="400dp"
+        android:layout_centerHorizontal="true" >
 
         <EditText
             android:id="@+id/usernameField"
