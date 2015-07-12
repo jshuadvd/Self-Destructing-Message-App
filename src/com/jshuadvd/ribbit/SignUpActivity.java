@@ -100,4 +100,3 @@ public class SignUpActivity extends Activity {
 	}
 
 }
-// Removed OnClickListeners
