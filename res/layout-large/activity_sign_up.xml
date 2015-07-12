@@ -62,7 +62,8 @@
         android:layout_alignLeft="@id/editTextLayout"
         android:layout_below="@+id/editTextLayout"
         android:layout_toLeftOf="@id/buttonDivider"
-        android:layout_marginRight="0dp" />
+        android:layout_marginRight="0dp"
+        android:layout_marginLeft="0dp" />
     
     <Button
         android:id="@+id/cancelButton"
@@ -71,7 +72,8 @@
         android:layout_alignRight="@id/editTextLayout"
         android:layout_below="@+id/editTextLayout"
         android:layout_toRightOf="@id/buttonDivider"
-        android:layout_marginLeft="0dp" />
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp" />
 
 </RelativeLayout>
 
