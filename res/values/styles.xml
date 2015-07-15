@@ -34,9 +34,17 @@
         <item name="android:actionModeSplitBackground">@drawable/cab_background_bottom_ribbit</item>
         <item name="android:actionModeCloseButtonStyle">@style/ActionButton.CloseMode.Ribbit</item>
         <item name="android:editTextBackground">@drawable/apptheme_edit_text_holo_light</item>
+        <item name="android:actionOverflowButtonStyle">@style/Theme.Ribbit.Overflow</item>
         
         
     </style>
+    
+    
+    <style name="Theme.Ribbit.Overflow" parent="@android:style/Widget.ActionButton.Overflow">
+        
+        
+    </style>
+    
 
     <style name="ActionBar.Solid.Ribbit" parent="@android:style/Widget.Holo.Light.ActionBar.Solid">
         <item name="android:background">@drawable/ab_solid_ribbit</item>
