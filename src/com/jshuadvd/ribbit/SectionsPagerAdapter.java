@@ -47,9 +47,9 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
 		Locale l = Locale.getDefault();
 		switch (position) {
 		case 0:
-			return R.drawable.ic_tab_inbox;
+			return mContext.getString(R.string.title_section1).toUpperCase(l);
 		case 1:
-			return R.drawable.ic_tab_friends;
+			return mContext.getString(R.string.title_section2).toUpperCase(l);
 		
 		}
 		return null;
@@ -58,11 +58,12 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
 	public int getIcon(int position) {
 		switch (position) {
 		case 0:
-			return mContext.getString(R.string.title_section1).toUpperCase(l);
+			return R.drawable.ic_tab_inbox;
 		case 1:
-			return mContext.getString(R.string.title_section2).toUpperCase(l);
-		
+			return R.drawable.ic_tab_friends;		
 		}
+		return R.drawable.ic_tab_inbox;
+	
 	}
 	
 }
