@@ -23,7 +23,7 @@
         android:label="@string/app_name"
         android:theme="@style/Theme.Ribbit" >
         <activity
-            android:name=".MainActivity"
+            android:name="com.jshuadvd.ribbit.ui.MainActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
             <intent-filter>
@@ -33,19 +33,18 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".LoginActivity"
+            android:name="com.jshuadvd.ribbit.ui.LoginActivity"
             android:label="@string/title_activity_login"
             android:screenOrientation="portrait" >
         </activity>
-        <activity
+com.jshuadvd.ribbit.ui.SignUpActivityty
             android:name=".SignUpActivity"
             android:label="@string/title_activity_sign_up"
-            android:parentActivityName=".LoginActivity"
+            android:parentActivityName="com.jshuadvd.ribbit.ui.LoginActivity"
             android:screenOrientation="portrait" >
         </activity>
-        <activity
-            android:name=".EditFriendsActivity"
-            android:label="@string/title_activity_edit_friends"
+com.jshuadvd.ribbit.ui.EditFriendsActivity          android:name=".EditFriendsActivity"
+            android:label="@string/titcom.jshuadvd.ribbit.ui.MainActivitydit_friends"
             android:parentActivityName=".MainActivity"
             android:screenOrientation="portrait" >
             <meta-data
@@ -53,8 +52,8 @@
                 android:value="com.jshuadvd.ribbit.MainActivity" />
         </activity>
         <activity
-            android:name=".RecipientsActivity"
-            android:label="@string/title_activity_recipients"
+            android:name="com.jshuadvd.ribbit.ui.RecipientsActivity"
+            ancom.jshuadvd.ribbit.ui.MainActivity@string/title_activity_recipients"
             android:parentActivityName=".MainActivity"
             android:screenOrientation="portrait" >
             <meta-data
@@ -62,8 +61,7 @@
                 android:value="com.jshuadvd.ribbit.MainActivity" />
         </activity>
         <activity
-            android:name=".ViewImageActivity"
-            android:label="@string/title_activity_view_image"
+    com.jshuadvd.ribbit.ui.ViewImageActivityme=".ViewImageAccom.jshuadvd.ribbit.ui.MainActivity       android:label="@string/title_activity_view_image"
             android:parentActivityName=".MainActivity"
             android:screenOrientation="portrait" >
             <meta-data

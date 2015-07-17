@@ -2,6 +2,9 @@ package com.jshuadvd.ribbit;
 
 import java.util.Locale;
 
+import com.jshuadvd.ribbit.ui.FriendsFragment;
+import com.jshuadvd.ribbit.ui.InboxFragment;
+
 import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
