@@ -12,10 +12,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
-import com.jshuadvd.ribbit.MessageAdapter;
 import com.jshuadvd.ribbit.ParseConstants;
 import com.jshuadvd.ribbit.R;
 import com.jshuadvd.ribbit.R.layout;
+import com.jshuadvd.ribbit.adapters.MessageAdapter;
 import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseFile;

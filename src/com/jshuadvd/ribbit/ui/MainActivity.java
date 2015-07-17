@@ -27,12 +27,12 @@ import android.widget.Toast;
 
 import com.jshuadvd.ribbit.ParseConstants;
 import com.jshuadvd.ribbit.R;
-import com.jshuadvd.ribbit.SectionsPagerAdapter;
 import com.jshuadvd.ribbit.R.array;
 import com.jshuadvd.ribbit.R.id;
 import com.jshuadvd.ribbit.R.layout;
 import com.jshuadvd.ribbit.R.menu;
 import com.jshuadvd.ribbit.R.string;
+import com.jshuadvd.ribbit.adapters.SectionsPagerAdapter;
 import com.parse.ParseAnalytics;
 import com.parse.ParseUser;
 

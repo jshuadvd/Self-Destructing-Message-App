@@ -1,7 +1,10 @@
-package com.jshuadvd.ribbit;
+package com.jshuadvd.ribbit.adapters;
 
 import java.util.Locale;
 
+import com.jshuadvd.ribbit.R;
+import com.jshuadvd.ribbit.R.drawable;
+import com.jshuadvd.ribbit.R.string;
 import com.jshuadvd.ribbit.ui.FriendsFragment;
 import com.jshuadvd.ribbit.ui.InboxFragment;
 
