@@ -1,4 +1,4 @@
-package com.jshuadvd.ribbit;
+package com.jshuadvd.ribbit.utilities;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;

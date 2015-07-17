@@ -11,10 +11,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 
-import com.jshuadvd.ribbit.ParseConstants;
 import com.jshuadvd.ribbit.R;
 import com.jshuadvd.ribbit.R.layout;
 import com.jshuadvd.ribbit.R.string;
+import com.jshuadvd.ribbit.utilities.ParseConstants;
 import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseQuery;

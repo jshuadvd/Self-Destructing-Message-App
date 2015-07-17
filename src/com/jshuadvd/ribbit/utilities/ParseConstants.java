@@ -1,4 +1,4 @@
-package com.jshuadvd.ribbit;
+package com.jshuadvd.ribbit.utilities;
 
 public final class ParseConstants {
 	

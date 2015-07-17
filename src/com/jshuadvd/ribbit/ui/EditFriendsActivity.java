@@ -13,11 +13,11 @@ import android.view.Window;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import com.jshuadvd.ribbit.ParseConstants;
 import com.jshuadvd.ribbit.R;
 import com.jshuadvd.ribbit.R.id;
 import com.jshuadvd.ribbit.R.layout;
 import com.jshuadvd.ribbit.R.string;
+import com.jshuadvd.ribbit.utilities.ParseConstants;
 import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseQuery;

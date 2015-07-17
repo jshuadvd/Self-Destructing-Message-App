@@ -10,11 +10,11 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.jshuadvd.ribbit.ParseConstants;
 import com.jshuadvd.ribbit.R;
 import com.jshuadvd.ribbit.R.drawable;
 import com.jshuadvd.ribbit.R.id;
 import com.jshuadvd.ribbit.R.layout;
+import com.jshuadvd.ribbit.utilities.ParseConstants;
 import com.parse.ParseObject;
 
 public class MessageAdapter extends ArrayAdapter<ParseObject> {
