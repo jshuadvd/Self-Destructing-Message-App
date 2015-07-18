@@ -34,6 +34,7 @@ public final class R {
         public static final int activity_horizontal_margin=0x7f050000;
         public static final int activity_vertical_margin=0x7f050001;
         public static final int inbox_horizontal_margin=0x7f050006;
+        public static final int inbox_vertical_margin=0x7f050007;
         public static final int login_horizontal_padding=0x7f050004;
         public static final int login_vertical_margin=0x7f050003;
         public static final int login_vertical_padding=0x7f050005;
