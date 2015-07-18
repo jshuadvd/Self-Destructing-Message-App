@@ -18,6 +18,7 @@ public final class R {
         public static final int background_purple=0x7f040000;
         public static final int focused_purple_button=0x7f040005;
         public static final int light_gray=0x7f040001;
+        public static final int light_purple_background=0x7f040007;
         public static final int light_purple_button=0x7f040003;
         public static final int pressed_purple_button=0x7f040004;
         public static final int text_color=0x7f040006;
