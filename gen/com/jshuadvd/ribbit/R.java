@@ -39,6 +39,7 @@ public final class R {
         public static final int login_vertical_margin=0x7f050003;
         public static final int login_vertical_padding=0x7f050005;
         public static final int message_list_item_vertical_margin=0x7f050002;
+        public static final int message_vertical_padding=0x7f050008;
     }
     public static final class drawable {
         public static final int ab_background_textured_ribbit=0x7f020000;
