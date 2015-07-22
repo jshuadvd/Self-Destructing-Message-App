@@ -34,7 +34,8 @@
             android:paddingBottom="@dimen/message_vertical_padding"
             android:layout_alignParentLeft="true"
             android:text="Test Name"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textSize="16sp" />
     </RelativeLayout>
 
 </LinearLayout>
