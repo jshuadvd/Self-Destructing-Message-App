@@ -36,6 +36,16 @@
             android:text="Test Name"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/timeLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="13dp"
+            android:text="TextView" />
+
     </RelativeLayout>
 
 </LinearLayout>
