@@ -64,6 +64,7 @@ public class MessageAdapter extends ArrayAdapter<ParseObject> {
 	private static class ViewHolder {
 		ImageView iconImageView;
 		TextView nameLabel;
+		TextView timeLabel;
 	}
 	
 	public void refill(List<ParseObject> messages) {
