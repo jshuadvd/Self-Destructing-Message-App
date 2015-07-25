@@ -49,6 +49,7 @@ public class MessageAdapter extends ArrayAdapter<ParseObject> {
 		ParseObject message = mMessages.get(position);
 		
 		Date createdAt = message.getCreatedAt();
+		long now = new Date().getTime();
 		
 		if (message.getString(ParseConstants.KEY_FILE_TYPE).equals(ParseConstants.TYPE_IMAGE)) {
 			holder.iconImageView.setImageResource(R.drawable.ic_picture);
