@@ -1,5 +1,6 @@
 package com.jshuadvd.ribbit.adapters;
 
+import java.util.Date;
 import java.util.List;
 
 import android.content.Context;
@@ -46,6 +47,8 @@ public class MessageAdapter extends ArrayAdapter<ParseObject> {
 		}
 	
 		ParseObject message = mMessages.get(position);
+		
+		Date createdAt;
 		
 		if (message.getString(ParseConstants.KEY_FILE_TYPE).equals(ParseConstants.TYPE_IMAGE)) {
 			holder.iconImageView.setImageResource(R.drawable.ic_picture);
