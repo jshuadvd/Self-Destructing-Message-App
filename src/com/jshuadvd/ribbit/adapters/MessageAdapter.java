@@ -4,6 +4,7 @@ import java.util.Date;
 import java.util.List;
 
 import android.content.Context;
+import android.text.format.DateUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -50,6 +51,7 @@ public class MessageAdapter extends ArrayAdapter<ParseObject> {
 		
 		Date createdAt = message.getCreatedAt();
 		long now = new Date().getTime();
+		String convertedDate = DateUtils.getRelativeTimeSpanString(time, now, minResolution);
 		
 		if (message.getString(ParseConstants.KEY_FILE_TYPE).equals(ParseConstants.TYPE_IMAGE)) {
 			holder.iconImageView.setImageResource(R.drawable.ic_picture);
