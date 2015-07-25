@@ -11,9 +11,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.jshuadvd.ribbit.R;
-import com.jshuadvd.ribbit.R.drawable;
-import com.jshuadvd.ribbit.R.id;
-import com.jshuadvd.ribbit.R.layout;
 import com.jshuadvd.ribbit.utilities.ParseConstants;
 import com.parse.ParseObject;
 
@@ -39,6 +36,7 @@ public class MessageAdapter extends ArrayAdapter<ParseObject> {
 			holder = new ViewHolder();
 			holder.iconImageView = (ImageView)convertView.findViewById(R.id.messageIcon) ;
 			holder.nameLabel = (TextView)convertView.findViewById(R.id.senderLabel);
+			holder.timeLabel = (TextView)convertView.findViewById(R.id.timeLabel);
 			convertView.setTag(holder);			
 			
 		}
