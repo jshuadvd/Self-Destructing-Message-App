@@ -56,6 +56,8 @@ public class MessageAdapter extends ArrayAdapter<ParseObject> {
 				now, 
 				DateUtils.SECOND_IN_MILLIS).toString();
 		
+		holder.timeLabel.setText(convertedDate);
+		
 		if (message.getString(ParseConstants.KEY_FILE_TYPE).equals(ParseConstants.TYPE_IMAGE)) {
 			holder.iconImageView.setImageResource(R.drawable.ic_picture);
 		}
