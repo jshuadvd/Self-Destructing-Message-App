@@ -7,13 +7,13 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
 import com.jshuadvd.ribbit.R;
-import com.jshuadvd.ribbit.R.layout;
 import com.jshuadvd.ribbit.adapters.MessageAdapter;
 import com.jshuadvd.ribbit.utilities.ParseConstants;
 import com.parse.FindCallback;
@@ -33,6 +33,8 @@ public class InboxFragment extends ListFragment {
 			Bundle savedInstanceState) {
 		View rootView = inflater.inflate(R.layout.fragment_inbox,
 				container, false);
+		
+		mSwipeRefreshLoyout = (SwipeRefreshLayout)rootView.findViewById(R.id.swipeRefreshLayout);
 
 		return rootView;
 	}
