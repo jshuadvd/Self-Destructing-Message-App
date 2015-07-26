@@ -26,6 +26,7 @@ import com.parse.ParseUser;
 public class InboxFragment extends ListFragment {
 
 	protected List<ParseObject> mMessages;
+	protected SwipeRefreshLayout mSwipeRefreshLoyout;
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
