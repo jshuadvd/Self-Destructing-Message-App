@@ -129,7 +129,6 @@ public class InboxFragment extends ListFragment {
 		
 		@Override
 		public void onRefresh() {
-			// TODO Auto-generated method stub
 			
 		}
 	};	
