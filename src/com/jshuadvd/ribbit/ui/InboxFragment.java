@@ -35,6 +35,7 @@ public class InboxFragment extends ListFragment {
 				container, false);
 		
 		mSwipeRefreshLoyout = (SwipeRefreshLayout)rootView.findViewById(R.id.swipeRefreshLayout);
+		mSwipeRefreshLoyout.setOnClickListener(mOnRefreshListener);
 
 		return rootView;
 	}
