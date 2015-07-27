@@ -8,6 +8,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
 import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v4.widget.SwipeRefreshLayout.OnRefreshListener;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -123,6 +124,15 @@ public class InboxFragment extends ListFragment {
 		// Final Edit
 		
 	}
+	
+	protected OnRefreshListener mOnRefreshListener = new OnRefreshListener() {
+		
+		@Override
+		public void onRefresh() {
+			// TODO Auto-generated method stub
+			
+		}
+	};	
 }
 
 
