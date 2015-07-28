@@ -13,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.jshuadvd.ribbit.R;
 import com.jshuadvd.ribbit.adapters.MessageAdapter;
@@ -129,7 +130,7 @@ public class InboxFragment extends ListFragment {
 		
 		@Override
 		public void onRefresh() {
-			
+			Toast.makeText(getActivity(), "We're Refreshing!", Toast.LENGTH_SHORT).show();
 		}
 	};	
 }
