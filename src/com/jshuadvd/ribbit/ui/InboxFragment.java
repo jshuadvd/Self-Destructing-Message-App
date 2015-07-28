@@ -39,6 +39,7 @@ public class InboxFragment extends ListFragment {
 		
 		mSwipeRefreshLoyout = (SwipeRefreshLayout)rootView.findViewById(R.id.swipeRefreshLayout);
 		mSwipeRefreshLoyout.setOnRefreshListener(mOnRefreshListener);
+		mSwipeRefreshLoyout.setColorSchemeResources(arg0);
 
 		return rootView;
 	}
