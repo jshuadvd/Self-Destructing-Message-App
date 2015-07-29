@@ -13,7 +13,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.jshuadvd.ribbit.R;
 import com.jshuadvd.ribbit.adapters.MessageAdapter;
@@ -28,22 +27,22 @@ import com.parse.ParseUser;
 public class InboxFragment extends ListFragment {
 
 	protected List<ParseObject> mMessages;
-	protected SwipeRefreshLayout mSwipeRefreshLoyout;
+	protected SwipeRefreshLayout mSwipeRefreshLayout;
 	
+	@SuppressWarnings("deprecation")
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		View rootView = inflater.inflate(R.layout.fragment_inbox,
 				container, false);
 		
-		mSwipeRefreshLoyout = (SwipeRefreshLayout)rootView.findViewById(R.id.swipeRefreshLayout);
-		mSwipeRefreshLoyout.setOnRefreshListener(mOnRefreshListener);
-		mSwipeRefreshLoyout.setColorSchemeColors(
+		mSwipeRefreshLayout = (SwipeRefreshLayout)rootView.findViewById(R.id.swipeRefreshLayout);
+		mSwipeRefreshLayout.setOnRefreshListener(mOnRefreshListener);
+		mSwipeRefreshLayout.setColorScheme(
 				R.color.swipeRefresh1,
 				R.color.swipeRefresh2,
 				R.color.swipeRefresh3,
 				R.color.swipeRefresh4);
-				
 
 		return rootView;
 	}
@@ -66,6 +65,10 @@ public class InboxFragment extends ListFragment {
 			public void done(List<ParseObject> messages, ParseException e) {
 				getActivity().setProgressBarIndeterminateVisibility(false);
 				
+				if (mSwipeRefreshLayout.isRefreshing()) {
+					mSwipeRefreshLayout.setRefreshing(false);
+				}
+				
 				if (e == null) {
 					// We found messages!
 					mMessages = messages;
@@ -76,16 +79,15 @@ public class InboxFragment extends ListFragment {
 						usernames[i] = message.getString(ParseConstants.KEY_SENDER_NAME);
 						i++;
 					}
-					if(getListView().getAdapter() == null ) {
+					if (getListView().getAdapter() == null) {
 						MessageAdapter adapter = new MessageAdapter(
 								getListView().getContext(), 
 								mMessages);
 						setListAdapter(adapter);
 					}
 					else {
-						// Refill the adapter
+						// refill the adapter!
 						((MessageAdapter)getListView().getAdapter()).refill(mMessages);
-						
 					}
 				}
 			}
@@ -114,35 +116,31 @@ public class InboxFragment extends ListFragment {
 			startActivity(intent);
 		}
 		
-		// Deleting the message
+		// Delete it!
 		List<String> ids = message.getList(ParseConstants.KEY_RECIPIENT_IDS);
 		
-		// Check the Recipient count
-		if(ids.size() == 1) {
-			// last recipient - delete the whole thing
+		if (ids.size() == 1) {
+			// last recipient - delete the whole thing!
 			message.deleteInBackground();
 		}
 		else {
-			// remove the recipient
+			// remove the recipient and save
 			ids.remove(ParseUser.getCurrentUser().getObjectId());
-			ArrayList<String> idsToRemove = new ArrayList<String>(); 
+			
+			ArrayList<String> idsToRemove = new ArrayList<String>();
 			idsToRemove.add(ParseUser.getCurrentUser().getObjectId());
 			
 			message.removeAll(ParseConstants.KEY_RECIPIENT_IDS, idsToRemove);
 			message.saveInBackground();
 		}
-		
-		// Final Edit
-		
 	}
 	
 	protected OnRefreshListener mOnRefreshListener = new OnRefreshListener() {
-		
 		@Override
 		public void onRefresh() {
 			retrieveMessages();
 		}
-	};	
+	};
 }
 
 
