@@ -140,7 +140,7 @@ public class InboxFragment extends ListFragment {
 		
 		@Override
 		public void onRefresh() {
-			Toast.makeText(getActivity(), "We're Refreshing!", Toast.LENGTH_SHORT).show();
+			retrieveMessages();
 		}
 	};	
 }
