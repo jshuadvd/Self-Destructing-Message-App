@@ -11,7 +11,6 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v4.widget.SwipeRefreshLayout.OnRefreshListener;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -39,7 +38,12 @@ public class InboxFragment extends ListFragment {
 		
 		mSwipeRefreshLoyout = (SwipeRefreshLayout)rootView.findViewById(R.id.swipeRefreshLayout);
 		mSwipeRefreshLoyout.setOnRefreshListener(mOnRefreshListener);
-		mSwipeRefreshLoyout.setColorSchemeResources(arg0);
+		mSwipeRefreshLoyout.setColorSchemeColors(
+				R.color.swipeRefresh1,
+				R.color.swipeRefresh2,
+				R.color.swipeRefresh3,
+				R.color.swipeRefresh4);
+				
 
 		return rootView;
 	}
