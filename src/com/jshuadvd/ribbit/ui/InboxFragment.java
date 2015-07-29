@@ -54,6 +54,10 @@ public class InboxFragment extends ListFragment {
 		
 		getActivity().setProgressBarIndeterminateVisibility(true);
 		
+		retrieveMessages();
+	}
+
+	private void retrieveMessages() {
 		ParseQuery<ParseObject> query = new ParseQuery<ParseObject>(ParseConstants.CLASS_MESSAGES);
 		query.whereEqualTo(ParseConstants.KEY_RECIPIENT_IDS, ParseUser.getCurrentUser().getObjectId());
 		query.addDescendingOrder(ParseConstants.KEY_CREATED_AT);
