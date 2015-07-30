@@ -5,7 +5,7 @@
     tools:context=".MainActivity$DummySectionFragment" >
 
     <GridView
-        android:id="@android:id/list"
+        android:id="@+id/friendsGrid"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentLeft="true"
