@@ -21,13 +21,14 @@ import com.parse.ParseQuery;
 import com.parse.ParseRelation;
 import com.parse.ParseUser;
 
-public class FriendsFragment extends ListFragment {
+public class FriendsFragment extends Fragment {
 	
 	public static final String TAG = FriendsFragment.class.getSimpleName();
 
 	protected ParseRelation<ParseUser> mFriendsRelation;
 	protected ParseUser mCurrentUser;	
 	protected List<ParseUser> mFriends;
+	
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
