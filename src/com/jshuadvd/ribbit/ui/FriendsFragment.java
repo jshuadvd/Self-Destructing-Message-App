@@ -4,16 +4,15 @@ import java.util.List;
 
 import android.app.AlertDialog;
 import android.os.Bundle;
-import android.support.v4.app.ListFragment;
+import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.GridView;
 
 import com.jshuadvd.ribbit.R;
-import com.jshuadvd.ribbit.R.layout;
-import com.jshuadvd.ribbit.R.string;
 import com.jshuadvd.ribbit.utilities.ParseConstants;
 import com.parse.FindCallback;
 import com.parse.ParseException;
@@ -28,7 +27,7 @@ public class FriendsFragment extends Fragment {
 	protected ParseRelation<ParseUser> mFriendsRelation;
 	protected ParseUser mCurrentUser;	
 	protected List<ParseUser> mFriends;
-	
+	protected GridView mGridView;
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
