@@ -34,6 +34,8 @@ public class FriendsFragment extends Fragment {
 			Bundle savedInstanceState) {
 		View rootView = inflater.inflate(R.layout.fragment_friends,
 				container, false);
+		
+		mGridView = (GridView)rootView.findViewById(R.id.friendsGrid);
 
 		return rootView;
 	}
