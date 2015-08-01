@@ -71,7 +71,7 @@ public class FriendsFragment extends Fragment {
 							getActivity(), 
 							android.R.layout.simple_list_item_1,
 							usernames);
-					setListAdapter(adapter);
+					mGridView.setAdapter(adapter);
 				}
 				else {
 					Log.e(TAG, e.getMessage());
