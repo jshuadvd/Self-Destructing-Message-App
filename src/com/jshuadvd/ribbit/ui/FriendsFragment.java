@@ -68,14 +68,14 @@ public class FriendsFragment extends Fragment {
 						i++;
 					}
 					ArrayAdapter<String> adapter = new ArrayAdapter<String>(
-							getListView().getContext(), 
+							getActivity(), 
 							android.R.layout.simple_list_item_1,
 							usernames);
 					setListAdapter(adapter);
 				}
 				else {
 					Log.e(TAG, e.getMessage());
-					AlertDialog.Builder builder = new AlertDialog.Builder(getListView().getContext());
+					AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 					builder.setMessage(e.getMessage())
 						.setTitle(R.string.error_title)
 						.setPositiveButton(android.R.string.ok, null);
