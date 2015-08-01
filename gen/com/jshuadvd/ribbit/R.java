@@ -110,11 +110,11 @@ public final class R {
         public static final int tab_unselected_ribbit=0x7f02003d;
     }
     public static final class id {
-        public static final int action_camera=0x7f0a0017;
-        public static final int action_edit_friends=0x7f0a0015;
-        public static final int action_logout=0x7f0a0016;
-        public static final int action_send=0x7f0a0018;
-        public static final int action_settings=0x7f0a0014;
+        public static final int action_camera=0x7f0a0018;
+        public static final int action_edit_friends=0x7f0a0016;
+        public static final int action_logout=0x7f0a0017;
+        public static final int action_send=0x7f0a0019;
+        public static final int action_settings=0x7f0a0015;
         public static final int backgroundImage=0x7f0a0000;
         public static final int buttonDivider=0x7f0a000a;
         public static final int cancelButton=0x7f0a000c;
@@ -132,6 +132,7 @@ public final class R {
         public static final int signupButton=0x7f0a000b;
         public static final int subtitle=0x7f0a0002;
         public static final int swipeRefreshLayout=0x7f0a000f;
+        public static final int textView1=0x7f0a0014;
         public static final int timeLabel=0x7f0a0013;
         public static final int title=0x7f0a0001;
         public static final int usernameField=0x7f0a0004;
@@ -148,6 +149,7 @@ public final class R {
         public static final int fragment_inbox=0x7f030008;
         public static final int fragment_main_dummy=0x7f030009;
         public static final int message_item=0x7f03000a;
+        public static final int user_item=0x7f03000b;
     }
     public static final class menu {
         public static final int login=0x7f090000;
