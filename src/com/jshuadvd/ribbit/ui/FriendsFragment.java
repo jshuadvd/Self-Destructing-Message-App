@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.GridView;
+import android.widget.TextView;
 
 import com.jshuadvd.ribbit.R;
 import com.jshuadvd.ribbit.utilities.ParseConstants;
@@ -36,6 +37,8 @@ public class FriendsFragment extends Fragment {
 				container, false);
 		
 		mGridView = (GridView)rootView.findViewById(R.id.friendsGrid);
+		
+		TextView emptyTextView = (TextView)rootView.findViewById(android.R.id.empty);
 
 		return rootView;
 	}
