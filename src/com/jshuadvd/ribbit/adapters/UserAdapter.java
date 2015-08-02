@@ -16,7 +16,7 @@ import com.jshuadvd.ribbit.R;
 import com.jshuadvd.ribbit.utilities.ParseConstants;
 import com.parse.ParseObject;
 
-public class UserAdapter extends ArrayAdapter<ParseObject> {
+public class UserAdapter extends ArrayAdapter<ParseUser> {
 	
 	protected Context mContext;
 	protected List<ParseObject> mMessages;
