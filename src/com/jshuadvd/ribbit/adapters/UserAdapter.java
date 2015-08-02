@@ -15,13 +15,14 @@ import android.widget.TextView;
 import com.jshuadvd.ribbit.R;
 import com.jshuadvd.ribbit.utilities.ParseConstants;
 import com.parse.ParseObject;
+import com.parse.ParseUser;
 
 public class UserAdapter extends ArrayAdapter<ParseUser> {
 	
 	protected Context mContext;
 	protected List<ParseObject> mMessages;
 	
-	public UserAdapter(Context context, List<ParseObject> messages) {
+	public UserAdapter(Context context, List<ParseUser> messages) {
 		super(context, R.layout.message_item, messages);
 		mContext = context;
 		mMessages = messages;
