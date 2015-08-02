@@ -20,12 +20,12 @@ import com.parse.ParseUser;
 public class UserAdapter extends ArrayAdapter<ParseUser> {
 	
 	protected Context mContext;
-	protected List<ParseObject> mMessages;
+	protected List<ParseObject> mUsers;
 	
 	public UserAdapter(Context context, List<ParseUser> messages) {
 		super(context, R.layout.message_item, messages);
 		mContext = context;
-		mMessages = messages;
+		mUsers = messages;
 	}
 	
 	@Override
@@ -48,7 +48,7 @@ public class UserAdapter extends ArrayAdapter<ParseUser> {
 			
 		}
 	
-		ParseObject message = mMessages.get(position);
+		ParseObject message = mUsers.get(position);
 		
 		Date createdAt = message.getCreatedAt();
 		long now = new Date().getTime();
@@ -78,8 +78,8 @@ public class UserAdapter extends ArrayAdapter<ParseUser> {
 	}
 	
 	public void refill(List<ParseObject> messages) {
-		mMessages.clear();
-		mMessages.addAll(messages);
+		mUsers.clear();
+		mUsers.addAll(messages);
 		notifyDataSetChanged();
 	
 	}
