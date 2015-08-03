@@ -20,7 +20,7 @@ import com.parse.ParseUser;
 public class UserAdapter extends ArrayAdapter<ParseUser> {
 	
 	protected Context mContext;
-	protected List<ParseObject> mUsers;
+	protected List<ParseUser> mUsers;
 	
 	public UserAdapter(Context context, List<ParseUser> users) {
 		super(context, R.layout.message_item, users);
