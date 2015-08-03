@@ -22,10 +22,10 @@ public class UserAdapter extends ArrayAdapter<ParseUser> {
 	protected Context mContext;
 	protected List<ParseObject> mUsers;
 	
-	public UserAdapter(Context context, List<ParseUser> messages) {
-		super(context, R.layout.message_item, messages);
+	public UserAdapter(Context context, List<ParseUser> users) {
+		super(context, R.layout.message_item, users);
 		mContext = context;
-		mUsers = messages;
+		mUsers = users;
 	}
 	
 	@Override
