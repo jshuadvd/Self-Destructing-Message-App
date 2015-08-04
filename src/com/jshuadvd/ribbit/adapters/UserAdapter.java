@@ -48,9 +48,9 @@ public class UserAdapter extends ArrayAdapter<ParseUser> {
 			
 		}
 	
-		ParseUser message = mUsers.get(position);
+		ParseUser user = mUsers.get(position);
 		
-		Date createdAt = message.getCreatedAt();
+		Date createdAt = user.getCreatedAt();
 		long now = new Date().getTime();
 		String convertedDate = DateUtils.getRelativeTimeSpanString(
 				createdAt.getTime(), 
@@ -59,13 +59,13 @@ public class UserAdapter extends ArrayAdapter<ParseUser> {
 		
 		holder.timeLabel.setText(convertedDate);
 		
-		if (message.getString(ParseConstants.KEY_FILE_TYPE).equals(ParseConstants.TYPE_IMAGE)) {
+		if (user.getString(ParseConstants.KEY_FILE_TYPE).equals(ParseConstants.TYPE_IMAGE)) {
 			holder.iconImageView.setImageResource(R.drawable.ic_picture);
 		}
 		else {
 			holder.iconImageView.setImageResource(R.drawable.ic_video);
 		}
-		holder.nameLabel.setText(message.getString(ParseConstants.KEY_SENDER_NAME));
+		holder.nameLabel.setText(user.getString(ParseConstants.KEY_SENDER_NAME));
 		
 		return convertView;
 		
