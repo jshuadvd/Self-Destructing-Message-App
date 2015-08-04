@@ -48,7 +48,7 @@ public class UserAdapter extends ArrayAdapter<ParseUser> {
 			
 		}
 	
-		ParseObject message = mUsers.get(position);
+		ParseUser message = mUsers.get(position);
 		
 		Date createdAt = message.getCreatedAt();
 		long now = new Date().getTime();
