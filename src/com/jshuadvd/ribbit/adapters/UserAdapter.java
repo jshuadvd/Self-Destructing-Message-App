@@ -33,7 +33,7 @@ public class UserAdapter extends ArrayAdapter<ParseUser> {
 		ViewHolder holder;
 		
 		if (convertView == null) {
-			convertView = LayoutInflater.from(mContext).inflate(R.layout.message_item, null);
+			convertView = LayoutInflater.from(mContext).inflate(R.layout.user_item, null);
 			
 			// Initialize holder as new ViewHolder
 			holder = new ViewHolder();
