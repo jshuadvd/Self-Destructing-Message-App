@@ -37,9 +37,9 @@ public class UserAdapter extends ArrayAdapter<ParseUser> {
 			
 			// Initialize holder as new ViewHolder
 			holder = new ViewHolder();
-			holder.iconImageView = (ImageView)convertView.findViewById(R.id.messageIcon) ;
-			holder.nameLabel = (TextView)convertView.findViewById(R.id.senderLabel);
-			holder.timeLabel = (TextView)convertView.findViewById(R.id.timeLabel);
+			//holder.iconImageView = (ImageView)convertView.findViewById(R.id.messageIcon) ;
+			holder.nameLabel = (TextView)convertView.findViewById(R.id.nameLabel);
+			//holder.timeLabel = (TextView)convertView.findViewById(R.id.timeLabel);
 			convertView.setTag(holder);			
 			
 		}
@@ -72,9 +72,9 @@ public class UserAdapter extends ArrayAdapter<ParseUser> {
 	}
 	
 	private static class ViewHolder {
-		ImageView iconImageView;
+		//ImageView iconImageView;
 		TextView nameLabel;
-		TextView timeLabel;
+		//TextView timeLabel;
 	}
 	
 	public void refill(List<ParseObject> messages) {
