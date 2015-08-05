@@ -68,7 +68,7 @@ public class UserAdapter extends ArrayAdapter<ParseUser> {
 		//TextView timeLabel;
 	}
 	
-	public void refill(List<ParseObject> messages) {
+	public void refill(List<ParseUser> messages) {
 		mUsers.clear();
 		mUsers.addAll(messages);
 		notifyDataSetChanged();
