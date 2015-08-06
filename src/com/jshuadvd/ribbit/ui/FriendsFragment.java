@@ -9,11 +9,11 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.GridView;
 import android.widget.TextView;
 
 import com.jshuadvd.ribbit.R;
+import com.jshuadvd.ribbit.adapters.UserAdapter;
 import com.jshuadvd.ribbit.utilities.ParseConstants;
 import com.parse.FindCallback;
 import com.parse.ParseException;
@@ -71,7 +71,7 @@ public class FriendsFragment extends Fragment {
 						usernames[i] = user.getUsername();
 						i++;
 					}
-					
+					UserAdapter adapter = new UserAdapter(getActivity(), mFriends);
 					mGridView.setAdapter(adapter);
 				}
 				else {
