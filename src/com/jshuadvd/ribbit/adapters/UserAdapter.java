@@ -56,7 +56,9 @@ public class UserAdapter extends ArrayAdapter<ParseUser> {
 //		else {
 //			holder.iconImageView.setImageResource(R.drawable.ic_video);
 //		}
-		holder.nameLabel.setText(user.getUsername();
+		holder.nameLabel.setText(user.getUsername());
+		
+		// Commit when reopened
 		
 		return convertView;
 		
@@ -68,9 +70,9 @@ public class UserAdapter extends ArrayAdapter<ParseUser> {
 		//TextView timeLabel;
 	}
 	
-	public void refill(List<ParseUser> messages) {
+	public void refill(List<ParseUser> users) {
 		mUsers.clear();
-		mUsers.addAll(messages);
+		mUsers.addAll(users);
 		notifyDataSetChanged();
 	
 	}
