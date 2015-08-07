@@ -78,7 +78,7 @@ public class FriendsFragment extends Fragment {
 						
 					}
 					else {
-						mGridView.getAdapter();
+						((UserAdapter)mGridView.getAdapter()).refill(mFriends);
 					
 					}
 				}
