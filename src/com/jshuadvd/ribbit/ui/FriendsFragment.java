@@ -71,8 +71,16 @@ public class FriendsFragment extends Fragment {
 						usernames[i] = user.getUsername();
 						i++;
 					}
-					UserAdapter adapter = new UserAdapter(getActivity(), mFriends);
-					mGridView.setAdapter(adapter);
+					
+					if (mGridView.getAdapter() == null) {
+						UserAdapter adapter = new UserAdapter(getActivity(), mFriends);
+						mGridView.setAdapter(adapter);
+						
+					}
+					else {
+						mGridView.getAdapter();
+					
+					}
 				}
 				else {
 					Log.e(TAG, e.getMessage());
