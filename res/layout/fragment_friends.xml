@@ -11,7 +11,8 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:numColumns="3"
-        android:horizontalSpacing="@dimen/user_grid_spacing" >
+        android:horizontalSpacing="@dimen/user_grid_spacing"
+        android:verticalalSpacing="@dimen/user_grid_spacing" >
     </GridView>
     
     <TextView
