@@ -123,10 +123,9 @@ public final class R {
         public static final int emailField=0x7f0a0009;
         public static final int friendsGrid=0x7f0a000e;
         public static final int imageView=0x7f0a000d;
-        public static final int imageView1=0x7f0a0015;
         public static final int loginButton=0x7f0a0006;
         public static final int messageIcon=0x7f0a0011;
-        public static final int nameLabel=0x7f0a0014;
+        public static final int nameLabel=0x7f0a0015;
         public static final int pager=0x7f0a0008;
         public static final int passwordField=0x7f0a0005;
         public static final int section_label=0x7f0a0010;
@@ -137,6 +136,7 @@ public final class R {
         public static final int swipeRefreshLayout=0x7f0a000f;
         public static final int timeLabel=0x7f0a0013;
         public static final int title=0x7f0a0001;
+        public static final int userImageView=0x7f0a0014;
         public static final int usernameField=0x7f0a0004;
     }
     public static final class layout {
