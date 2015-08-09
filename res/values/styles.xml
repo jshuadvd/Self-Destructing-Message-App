@@ -18,10 +18,6 @@
 -->
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
-    
-     <style name="AppTheme" parent="android:Theme.Holo.Light">
-        <item name="android:editTextBackground">@drawable/apptheme_edit_text_holo_light</item>
-    </style>
 
     <style name="Theme.Ribbit" parent="@android:style/Theme.Holo.Light">
         <item name="android:actionBarItemBackground">@drawable/selectable_background_ribbit</item>
@@ -34,29 +30,23 @@
         <item name="android:actionModeSplitBackground">@drawable/cab_background_bottom_ribbit</item>
         <item name="android:actionModeCloseButtonStyle">@style/ActionButton.CloseMode.Ribbit</item>
         <item name="android:editTextBackground">@drawable/apptheme_edit_text_holo_light</item>
-        <item name="android:actionOverflowButtonStyle">@style/Theme.Ribbit.Overflow</item>   
-        <item name="android:listViewStyle">@style/Theme.Ribbit.LightPurpleBackground</item>   
-        <item name="android:gridViewStyle">@style/Theme.Ribbit.LightPurpleBackground.GridView</item> 
-        
+        <item name="android:actionOverflowButtonStyle">@style/Theme.Ribbit.Overflow</item>
+        <item name="android:listViewStyle">@style/Theme.Ribbit.LightPurpleBackground</item>
+        <item name="android:gridViewStyle">@style/Theme.Ribbit.LightPurpleBackground.GridView</item>        
     </style>
     
     <style name="Theme.Ribbit.LightPurpleBackground">
-        <item name="android:background">@dimen/user_grid_spacing</item>
-        
-    </style>
-    
-    <style name="Theme.Ribbit.LightPurpleBackground.GridView">
-        <item name="android:padding">@color/light_purple_background</item>
+        <item name="android:background">@color/light_purple_background</item>
         <item name="android:divider">@null</item>
     </style>
     
-    
-    <style name="Theme.Ribbit.Overflow" parent="@android:style/Widget.ActionButton.Overflow">
-        
-        <item name="android:src">@drawable/ic_menu_overflow</item>
-        
+    <style name="Theme.Ribbit.LightPurpleBackground.GridView">
+        <item name="android:padding">@dimen/user_grid_spacing</item>
     </style>
     
+    <style name="Theme.Ribbit.Overflow" parent="@android:style/Widget.ActionButton.Overflow">
+        <item name="android:src">@drawable/ic_menu_overflow</item>
+    </style>
 
     <style name="ActionBar.Solid.Ribbit" parent="@android:style/Widget.Holo.Light.ActionBar.Solid">
         <item name="android:background">@drawable/ab_solid_ribbit</item>
@@ -66,10 +56,9 @@
         <item name="android:titleTextStyle">@style/ActionBar.Solid.Ribbit.TitleTextStyle</item>
     </style>
     
-    <style name="ActionBar.Solid.Ribbit.TitleTextStyle" parent="@android:style/TextAppearance.Holo.Widget.ActionBar.Title">
-        
-        <item name="android:textColor">@color/text_color</item>
-        
+    <style name="ActionBar.Solid.Ribbit.TitleTextStyle" 
+        parent="@android:style/TextAppearance.Holo.Widget.ActionBar.Title">
+		<item name="android:textColor">@color/text_color</item>        
     </style>
 
     <style name="ActionBar.Transparent.Ribbit" parent="@android:style/Widget.Holo.Light.ActionBar">
