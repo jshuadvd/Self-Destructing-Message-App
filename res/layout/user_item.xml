@@ -9,7 +9,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:src="@drawable/avatar_empty" />
+        android:src="@drawable/avatar_empty"
+        android:contentDescription="@string/content_desc_user_avatar" />
 
     <TextView
         android:id="@+id/nameLabel"

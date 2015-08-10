@@ -167,6 +167,7 @@ public final class R {
         public static final int content_desc_background=0x7f060027;
         public static final int content_desc_button_divider=0x7f06002a;
         public static final int content_desc_message_icon=0x7f06002b;
+        public static final int content_desc_user_avatar=0x7f06002c;
         public static final int email_hint=0x7f06000b;
         public static final int empty_friends_label=0x7f060013;
         public static final int empty_inbox_label=0x7f060012;
