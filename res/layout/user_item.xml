@@ -10,7 +10,8 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:src="@drawable/avatar_empty"
-        android:contentDescription="@string/content_desc_user_avatar" />
+        android:contentDescription="@string/content_desc_user_avatar"
+        android:scaleType="fitXY" />
 
     <TextView
         android:id="@+id/nameLabel"
