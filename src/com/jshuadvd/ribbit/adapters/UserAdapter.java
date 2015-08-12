@@ -65,7 +65,7 @@ public class UserAdapter extends ArrayAdapter<ParseUser> {
 	}
 	
 	private static class ViewHolder {
-		ImageView iconImageView;
+		ImageView userImageView;
 		TextView nameLabel;
 		//TextView timeLabel;
 	}
