@@ -50,6 +50,9 @@ public class UserAdapter extends ArrayAdapter<ParseUser> {
 		if (email.equals("")) {
 			holder.userImageView.setImageResource(R.drawable.avatar_empty);
 		}
+		else {
+			
+		}
 		
 //		if (user.getString(ParseConstants.KEY_FILE_TYPE).equals(ParseConstants.TYPE_IMAGE)) {
 //			holder.iconImageView.setImageResource(R.drawable.ic_picture);
