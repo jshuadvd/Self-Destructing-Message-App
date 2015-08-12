@@ -1,10 +1,8 @@
 package com.jshuadvd.ribbit.adapters;
 
-import java.util.Date;
 import java.util.List;
 
 import android.content.Context;
-import android.text.format.DateUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,8 +11,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.jshuadvd.ribbit.R;
-import com.jshuadvd.ribbit.utilities.ParseConstants;
-import com.parse.ParseObject;
 import com.parse.ParseUser;
 
 public class UserAdapter extends ArrayAdapter<ParseUser> {
@@ -37,7 +33,7 @@ public class UserAdapter extends ArrayAdapter<ParseUser> {
 			
 			// Initialize holder as new ViewHolder
 			holder = new ViewHolder();
-			//holder.iconImageView = (ImageView)convertView.findViewById(R.id.messageIcon) ;
+			holder.userImageView = (ImageView)convertView.findViewById(R.id.userImageView) ;
 			holder.nameLabel = (TextView)convertView.findViewById(R.id.nameLabel);
 			//holder.timeLabel = (TextView)convertView.findViewById(R.id.timeLabel);
 			convertView.setTag(holder);			
