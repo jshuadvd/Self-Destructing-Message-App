@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.jshuadvd.ribbit.R;
+import com.jshuadvd.ribbit.utilities.MD5Util;
 import com.parse.ParseUser;
 
 public class UserAdapter extends ArrayAdapter<ParseUser> {
@@ -51,7 +52,7 @@ public class UserAdapter extends ArrayAdapter<ParseUser> {
 			holder.userImageView.setImageResource(R.drawable.avatar_empty);
 		}
 		else {
-			
+			String hash = MD5Util.md5Hex(email);
 		}
 		
 //		if (user.getString(ParseConstants.KEY_FILE_TYPE).equals(ParseConstants.TYPE_IMAGE)) {
