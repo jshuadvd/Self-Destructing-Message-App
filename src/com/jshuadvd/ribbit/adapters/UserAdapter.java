@@ -45,7 +45,7 @@ public class UserAdapter extends ArrayAdapter<ParseUser> {
 		}
 	
 		ParseUser user = mUsers.get(position);
-		String email = user.getEmail();
+		String email = user.getEmail().toLowerCase();
 		
 		if (email.equals("")) {
 			holder.userImageView.setImageResource(R.drawable.avatar_empty);
