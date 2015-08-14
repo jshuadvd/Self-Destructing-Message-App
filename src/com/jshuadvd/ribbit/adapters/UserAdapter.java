@@ -14,6 +14,7 @@ import android.widget.TextView;
 import com.jshuadvd.ribbit.R;
 import com.jshuadvd.ribbit.utilities.MD5Util;
 import com.parse.ParseUser;
+import com.squareup.picasso.Picasso;
 
 public class UserAdapter extends ArrayAdapter<ParseUser> {
 	
@@ -57,7 +58,10 @@ public class UserAdapter extends ArrayAdapter<ParseUser> {
 			String gravatarUrl = "http://www.gravatar.com/avatar/" + hash + 
 					"?s=204&d=404";
 			
-			Log.d("Test", gravatarUrl);
+			//Log.d("Test", gravatarUrl);
+			Picasso.with(mContext)
+			.load(gravatarUrl)
+		    .into(holder.userImageView);
 		}
 		
 //		if (user.getString(ParseConstants.KEY_FILE_TYPE).equals(ParseConstants.TYPE_IMAGE)) {
