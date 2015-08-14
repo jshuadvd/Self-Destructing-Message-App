@@ -61,6 +61,7 @@ public class UserAdapter extends ArrayAdapter<ParseUser> {
 			//Log.d("Test", gravatarUrl);
 			Picasso.with(mContext)
 			.load(gravatarUrl)
+			.placeholder(R.drawable.avatar_empty)
 		    .into(holder.userImageView);
 		}
 		
