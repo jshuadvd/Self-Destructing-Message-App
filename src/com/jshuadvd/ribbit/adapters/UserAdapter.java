@@ -3,6 +3,7 @@ package com.jshuadvd.ribbit.adapters;
 import java.util.List;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -55,6 +56,8 @@ public class UserAdapter extends ArrayAdapter<ParseUser> {
 			String hash = MD5Util.md5Hex(email);
 			String gravatarUrl = "http://www.gravatar.com/avatar/" + hash + 
 					"?s=204&d=404";
+			
+			Log.d("Test", gravatarUrl);
 		}
 		
 //		if (user.getString(ParseConstants.KEY_FILE_TYPE).equals(ParseConstants.TYPE_IMAGE)) {
