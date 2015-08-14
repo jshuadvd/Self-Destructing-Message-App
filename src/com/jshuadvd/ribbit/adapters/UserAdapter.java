@@ -53,7 +53,8 @@ public class UserAdapter extends ArrayAdapter<ParseUser> {
 		}
 		else {
 			String hash = MD5Util.md5Hex(email);
-			String gravatarUrl = "http://www.gravatar.com/avatar/" + hash + "?s=204";
+			String gravatarUrl = "http://www.gravatar.com/avatar/" + hash + 
+					"?s=204&d=404";
 		}
 		
 //		if (user.getString(ParseConstants.KEY_FILE_TYPE).equals(ParseConstants.TYPE_IMAGE)) {
