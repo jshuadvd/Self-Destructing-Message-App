@@ -71,6 +71,7 @@ public class UserAdapter extends ArrayAdapter<ParseUser> {
 //		else {
 //			holder.iconImageView.setImageResource(R.drawable.ic_video);
 //		}
+		
 		holder.nameLabel.setText(user.getUsername());
 		
 		// Commit when reopened
