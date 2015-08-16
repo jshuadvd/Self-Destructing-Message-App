@@ -2,11 +2,10 @@ package com.jshuadvd.ribbit.ui;
 
 import java.util.List;
 
+import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.ListActivity;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
@@ -14,9 +13,6 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.jshuadvd.ribbit.R;
-import com.jshuadvd.ribbit.R.id;
-import com.jshuadvd.ribbit.R.layout;
-import com.jshuadvd.ribbit.R.string;
 import com.jshuadvd.ribbit.utilities.ParseConstants;
 import com.parse.FindCallback;
 import com.parse.ParseException;
@@ -32,6 +28,7 @@ public class EditFriendsActivity extends Activity {
 	protected List<ParseUser> mUsers;
 	protected ParseRelation<ParseUser> mFriendsRelation;
 	protected ParseUser mCurrentUser;
+	protected Gridview mGridview;
 	
 	
 
