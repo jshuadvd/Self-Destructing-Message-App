@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.widget.ArrayAdapter;
+import android.widget.GridView;
 import android.widget.ListView;
 
 import com.jshuadvd.ribbit.R;
@@ -28,7 +29,8 @@ public class EditFriendsActivity extends Activity {
 	protected List<ParseUser> mUsers;
 	protected ParseRelation<ParseUser> mFriendsRelation;
 	protected ParseUser mCurrentUser;
-	protected Gridview mGridview;
+	protected GridView mGridView;
+	
 	
 	
 
@@ -38,6 +40,7 @@ public class EditFriendsActivity extends Activity {
 		requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
 		setContentView(R.layout.user_grid);
 		
+		mGridView = (GridView)findViewById(R.id.friendsGrid); 
 		getListView().setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
 	}
 	
