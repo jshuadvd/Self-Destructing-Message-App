@@ -41,7 +41,7 @@ public class EditFriendsActivity extends Activity {
 		setContentView(R.layout.user_grid);
 		
 		mGridView = (GridView)findViewById(R.id.friendsGrid); 
-		mGridView.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
+		mGridView.setChoiceMode(GridView.CHOICE_MODE_MULTIPLE);
 	}
 	
 	@Override
