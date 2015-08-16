@@ -25,7 +25,7 @@ import com.parse.ParseRelation;
 import com.parse.ParseUser;
 import com.parse.SaveCallback;
 
-public class EditFriendsActivity extends ListActivity {
+public class EditFriendsActivity extends Activity {
 	
 	public static final String TAG = EditFriendsActivity.class.getSimpleName();
 	
