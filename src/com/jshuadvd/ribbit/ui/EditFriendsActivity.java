@@ -74,12 +74,12 @@ public class EditFriendsActivity extends Activity {
 					}
 					
 					if (mGridView.getAdapter() == null) {
-						UserAdapter adapter = new UserAdapter(EditFriendsActivity.this, mFriends);
+						UserAdapter adapter = new UserAdapter(EditFriendsActivity.this, mUsers);
 						mGridView.setAdapter(adapter);
 						
 					}
 					else {
-						((UserAdapter)mGridView.getAdapter()).refill(mFriends);
+						((UserAdapter)mGridView.getAdapter()).refill(mUsers);
 					
 					}
 					
