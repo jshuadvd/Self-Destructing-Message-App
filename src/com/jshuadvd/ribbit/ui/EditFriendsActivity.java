@@ -14,6 +14,7 @@ import android.widget.GridView;
 import android.widget.ListView;
 
 import com.jshuadvd.ribbit.R;
+import com.jshuadvd.ribbit.adapters.UserAdapter;
 import com.jshuadvd.ribbit.utilities.ParseConstants;
 import com.parse.FindCallback;
 import com.parse.ParseException;
@@ -72,12 +73,16 @@ public class EditFriendsActivity extends Activity {
 						i++;
 					}
 					
-					ArrayAdapter<String> adapter = new ArrayAdapter<String>(
-							EditFriendsActivity.this, 
-							android.R.layout.simple_list_item_checked, 
-							usernames);
-					setListAdapter(adapter);
-				
+					if (mGridView.getAdapter() == null) {
+						UserAdapter adapter = new UserAdapter(getActivity(), mFriends);
+						mGridView.setAdapter(adapter);
+						
+					}
+					else {
+						((UserAdapter)mGridView.getAdapter()).refill(mFriends);
+					
+					}
+					
 					addFriendCheckmarks(); 
 				}
 				else {
