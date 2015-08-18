@@ -223,7 +223,7 @@ public final class R {
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f080015;
+        public static final int AppBaseTheme=0x7f080016;
         public static final int AuthBackground=0x7f08000e;
         public static final int AuthBackgroundImage=0x7f08000f;
         public static final int AuthButton=0x7f080014;
@@ -233,6 +233,7 @@ public final class R {
         public static final int AuthTitle_AuthSubTitle=0x7f080011;
         public static final int DropDownListView_Ribbit=0x7f080008;
         public static final int DropDownNav_Ribbit=0x7f08000a;
+        public static final int GridImage=0x7f080015;
         public static final int PopupMenu_Ribbit=0x7f080007;
         public static final int ProgressBar_Ribbit=0x7f08000b;
         public static final int Theme_Ribbit=0x7f080000;
