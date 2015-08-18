@@ -7,11 +7,8 @@ import android.app.AlertDialog;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
-import android.view.View;
 import android.view.Window;
-import android.widget.ArrayAdapter;
 import android.widget.GridView;
-import android.widget.ListView;
 
 import com.jshuadvd.ribbit.R;
 import com.jshuadvd.ribbit.adapters.UserAdapter;
@@ -21,7 +18,6 @@ import com.parse.ParseException;
 import com.parse.ParseQuery;
 import com.parse.ParseRelation;
 import com.parse.ParseUser;
-import com.parse.SaveCallback;
 
 public class EditFriendsActivity extends Activity {
 	
