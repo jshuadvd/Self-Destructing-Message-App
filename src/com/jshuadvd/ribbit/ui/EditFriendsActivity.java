@@ -164,7 +164,7 @@ public class EditFriendsActivity extends Activity {
 						
 					for(ParseUser friend : friends) {
 						if (friend.getObjectId().equals(user.getObjectId())) {
-								getListView().setItemChecked(i, true);
+								mGridView.setItemChecked(i, true);
 							}
 							
 						 }
