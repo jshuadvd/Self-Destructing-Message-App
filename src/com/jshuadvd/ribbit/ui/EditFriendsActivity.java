@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.Window;
 import android.widget.GridView;
+import android.widget.TextView;
 
 import com.jshuadvd.ribbit.R;
 import com.jshuadvd.ribbit.adapters.UserAdapter;
@@ -39,6 +40,10 @@ public class EditFriendsActivity extends Activity {
 		
 		mGridView = (GridView)findViewById(R.id.friendsGrid); 
 		mGridView.setChoiceMode(GridView.CHOICE_MODE_MULTIPLE);
+		
+
+		TextView emptyTextView = (TextView)findViewById(android.R.id.empty);
+		mGridView.setEmptyView(emptyTextView);
 	}
 	
 	@Override
