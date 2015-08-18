@@ -18,10 +18,6 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.jshuadvd.ribbit.R;
-import com.jshuadvd.ribbit.R.id;
-import com.jshuadvd.ribbit.R.layout;
-import com.jshuadvd.ribbit.R.menu;
-import com.jshuadvd.ribbit.R.string;
 import com.jshuadvd.ribbit.utilities.FileHelper;
 import com.jshuadvd.ribbit.utilities.ParseConstants;
 import com.parse.FindCallback;
