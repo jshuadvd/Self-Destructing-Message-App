@@ -12,7 +12,7 @@
     <ImageView
         android:id="@+id/checkImageView"
         style="@style/GridImage"
-        android:contentDescription="@string/content_desc_user_avatar"
+        android:contentDescription="@string/content_desc_user_checkmark"
         android:src="@drawable/avatar_empty" />
 
     <TextView
