@@ -13,7 +13,7 @@
         android:id="@+id/checkImageView"
         style="@style/GridImage"
         android:contentDescription="@string/content_desc_user_checkmark"
-        android:src="@drawable/avatar_empty" />
+        android:src="@drawable/avatar_selected" />
 
     <TextView
         android:id="@+id/nameLabel"
