@@ -70,6 +70,9 @@ public class UserAdapter extends ArrayAdapter<ParseUser> {
 		holder.nameLabel.setText(user.getUsername());
 		
 		GridView gridView = (GridView)parent;
+		if (gridView.isItemChecked(position)) {
+			holder.checkImageView.setVisibility(View.VISIBLE);
+		}
 		
 		return convertView;
 		
