@@ -66,13 +66,7 @@ public class UserAdapter extends ArrayAdapter<ParseUser> {
 		    .into(holder.userImageView);
 		}
 		
-//		if (user.getString(ParseConstants.KEY_FILE_TYPE).equals(ParseConstants.TYPE_IMAGE)) {
-//			holder.iconImageView.setImageResource(R.drawable.ic_picture);
-//		}
-//		else {
-//			holder.iconImageView.setImageResource(R.drawable.ic_video);
-//		}
-		
+
 		holder.nameLabel.setText(user.getUsername());
 		
 		// Commit when reopened
