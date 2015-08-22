@@ -38,6 +38,7 @@ public class UserAdapter extends ArrayAdapter<ParseUser> {
 			holder = new ViewHolder();
 			holder.userImageView = (ImageView)convertView.findViewById(R.id.userImageView) ;
 			holder.nameLabel = (TextView)convertView.findViewById(R.id.nameLabel);
+			holder.checkImageView = (ImageView)convertView.findViewById(R.id.checkImageView);
 			//holder.timeLabel = (TextView)convertView.findViewById(R.id.timeLabel);
 			convertView.setTag(holder);			
 			
