@@ -3,11 +3,11 @@ package com.jshuadvd.ribbit.adapters;
 import java.util.List;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -69,7 +69,7 @@ public class UserAdapter extends ArrayAdapter<ParseUser> {
 
 		holder.nameLabel.setText(user.getUsername());
 		
-		// Commit when reopened
+		GridView gridView = (GridView)parent;
 		
 		return convertView;
 		
