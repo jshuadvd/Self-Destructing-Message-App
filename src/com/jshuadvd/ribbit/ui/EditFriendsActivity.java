@@ -150,7 +150,42 @@ public class EditFriendsActivity extends Activity {
 		public void onItemClick(AdapterView<?> parent, View view, int position,
 				long id) {
 			
-			ImageView checkImageView = (ImageView)view.findViewById(R.id.checkImageView); 		 	
+			ImageView checkImageView = (ImageView)view.findViewById(R.id.checkImageView); 		
+			super.onListItemClick(l, v, position, id);
+			
+			// If "check" is added we add the friend locally
+			
+			if(getListView().isItemChecked(position)) {
+				// add friend
+				mFriendsRelation.add(mUsers.get(position));
+				mCurrentUser.saveInBackground(new SaveCallback() {
+					
+					@Override
+					public void done(ParseException e) {
+						if(e != null) {
+							Log.e(TAG, e.getMessage());
+						}			
+					}
+				});
+			}	
+			
+			// If "Check" is removed, we remove them from the relation then below we save that instance to the back end
+			else {
+				// remove friend
+				mFriendsRelation.remove(mUsers.get(position));
+				
+				// Now we save the friend to the backend
+				
+				mCurrentUser.saveInBackground(new SaveCallback() {
+					
+					@Override
+					public void done(ParseException e) {
+						if(e != null) {
+							Log.e(TAG, e.getMessage());
+						}			
+					}
+				});
+			}
 		}
 	};
 	
