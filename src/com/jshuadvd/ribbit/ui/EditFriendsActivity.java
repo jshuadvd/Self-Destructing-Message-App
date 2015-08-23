@@ -151,7 +151,6 @@ public class EditFriendsActivity extends Activity {
 				long id) {
 			
 			ImageView checkImageView = (ImageView)view.findViewById(R.id.checkImageView); 		
-			super.onListItemClick(l, v, position, id);
 			
 			// If "check" is added we add the friend locally
 			
