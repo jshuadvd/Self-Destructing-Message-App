@@ -73,6 +73,9 @@ public class UserAdapter extends ArrayAdapter<ParseUser> {
 		if (gridView.isItemChecked(position)) {
 			holder.checkImageView.setVisibility(View.VISIBLE);
 		}
+		else {
+			holder.checkImageView.setVisibility(View.INVISIBLE);
+		}
 		
 		return convertView;
 		
