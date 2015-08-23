@@ -40,6 +40,7 @@ public class EditFriendsActivity extends Activity {
 		
 		mGridView = (GridView)findViewById(R.id.friendsGrid); 
 		mGridView.setChoiceMode(GridView.CHOICE_MODE_MULTIPLE);
+		mGridView.setOnItemClickListener(mOnItemClickListener);
 		
 
 		TextView emptyTextView = (TextView)findViewById(android.R.id.empty);
