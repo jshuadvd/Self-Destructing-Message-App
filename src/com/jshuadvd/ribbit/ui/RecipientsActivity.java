@@ -29,7 +29,7 @@ import com.parse.ParseRelation;
 import com.parse.ParseUser;
 import com.parse.SaveCallback;
 
-public class RecipientsActivity extends ListActivity {
+public class RecipientsActivity extends Activity {
 	
 	public static final String TAG = RecipientsActivity.class.getSimpleName();
 
