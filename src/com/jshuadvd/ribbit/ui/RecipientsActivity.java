@@ -14,6 +14,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.widget.ArrayAdapter;
+import android.widget.GridView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -46,6 +47,10 @@ public class RecipientsActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
 		setContentView(R.layout.user_grid);
+		
+		//setupActionBar();
+		
+		mGridView = (GridView)findViewById(R.id.friendsGrid);
 		
 		getListView().setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
 		
