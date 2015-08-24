@@ -173,6 +173,7 @@ public class EditFriendsActivity extends Activity {
 			else {
 				// remove friend
 				mFriendsRelation.remove(mUsers.get(position));
+				checkImageView.setVisibility(View.INVISIBLE);
 				
 				// Now we save the friend to the backend
 				
