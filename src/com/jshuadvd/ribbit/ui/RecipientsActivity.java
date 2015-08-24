@@ -3,8 +3,8 @@ package com.jshuadvd.ribbit.ui;
 import java.util.ArrayList;
 import java.util.List;
 
+import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.ListActivity;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
@@ -39,6 +39,7 @@ public class RecipientsActivity extends Activity {
 	protected MenuItem mSendMenuItem;
 	protected Uri mMediaUri;
 	protected String mFileType;
+	protected GridView mGridView;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
