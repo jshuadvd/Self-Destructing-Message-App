@@ -4,7 +4,6 @@ import java.util.List;
 
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.media.Image;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
@@ -24,6 +23,7 @@ import com.parse.ParseException;
 import com.parse.ParseQuery;
 import com.parse.ParseRelation;
 import com.parse.ParseUser;
+import com.parse.SaveCallback;
 
 public class EditFriendsActivity extends Activity {
 	
@@ -154,7 +154,7 @@ public class EditFriendsActivity extends Activity {
 			
 			// If "check" is added we add the friend locally
 			
-			if(getListView().isItemChecked(position)) {
+			if(mGridView.isItemChecked(position)) {
 				// add friend
 				mFriendsRelation.add(mUsers.get(position));
 				mCurrentUser.saveInBackground(new SaveCallback() {
