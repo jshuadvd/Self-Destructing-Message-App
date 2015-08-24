@@ -157,6 +157,7 @@ public class EditFriendsActivity extends Activity {
 			if(mGridView.isItemChecked(position)) {
 				// add friend
 				mFriendsRelation.add(mUsers.get(position));
+				checkImageView.setVisibility(View.VISIBLE);
 				mCurrentUser.saveInBackground(new SaveCallback() {
 					
 					@Override
