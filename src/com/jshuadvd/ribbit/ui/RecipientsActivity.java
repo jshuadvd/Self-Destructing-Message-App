@@ -88,7 +88,7 @@ public class RecipientsActivity extends Activity {
 					}
 					
 					if (mGridView.getAdapter() == null) {
-						UserAdapter adapter = new UserAdapter(EditFriendsActivity.this, mUsers);
+						UserAdapter adapter = new UserAdapter(RecipientsActivity.this, mUsers);
 						mGridView.setAdapter(adapter);
 						
 					}
