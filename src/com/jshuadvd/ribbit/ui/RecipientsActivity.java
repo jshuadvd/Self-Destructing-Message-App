@@ -53,6 +53,7 @@ public class RecipientsActivity extends Activity {
 		
 		mGridView = (GridView)findViewById(R.id.friendsGrid);		
 		mGridView.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
+		mGridView.setOnItemClickListener(mOnItemClickListener);
 		
 		mMediaUri = getIntent().getData();
 		mFileType = getIntent().getExtras().getString(ParseConstants.KEY_FILE_TYPE);
