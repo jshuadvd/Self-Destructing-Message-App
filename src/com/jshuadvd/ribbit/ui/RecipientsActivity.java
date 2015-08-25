@@ -50,9 +50,8 @@ public class RecipientsActivity extends Activity {
 		
 		//setupActionBar();
 		
-		mGridView = (GridView)findViewById(R.id.friendsGrid);
-		
-		getListView().setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
+		mGridView = (GridView)findViewById(R.id.friendsGrid);		
+		mGridView.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
 		
 		mMediaUri = getIntent().getData();
 		mFileType = getIntent().getExtras().getString(ParseConstants.KEY_FILE_TYPE);
