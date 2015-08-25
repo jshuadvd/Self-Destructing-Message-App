@@ -19,6 +19,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.jshuadvd.ribbit.R;
+import com.jshuadvd.ribbit.adapters.UserAdapter;
 import com.jshuadvd.ribbit.utilities.FileHelper;
 import com.jshuadvd.ribbit.utilities.ParseConstants;
 import com.parse.FindCallback;
@@ -85,11 +86,16 @@ public class RecipientsActivity extends Activity {
 						usernames[i] = user.getUsername();
 						i++;
 					}
-					ArrayAdapter<String> adapter = new ArrayAdapter<String>(
-							getListView().getContext(), 
-							android.R.layout.simple_list_item_checked,
-							usernames);
-					setListAdapter(adapter);
+					
+					if (mGridView.getAdapter() == null) {
+						UserAdapter adapter = new UserAdapter(EditFriendsActivity.this, mUsers);
+						mGridView.setAdapter(adapter);
+						
+					}
+					else {
+						((UserAdapter)mGridView.getAdapter()).refill(mUsers);
+					
+					}
 				}
 				else {
 					Log.e(TAG, e.getMessage());
