@@ -236,7 +236,6 @@ public class RecipientsActivity extends Activity {
 		@Override
 		public void onItemClick(AdapterView<?> parent, View view, int position,
 				long id) {
-			// TODO Auto-generated method stub
 			
 		}
 	};
