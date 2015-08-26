@@ -227,7 +227,7 @@ public class RecipientsActivity extends Activity {
 		public void onItemClick(AdapterView<?> parent, View view, int position,
 				long id) {
 			
-			if (l.getCheckedItemCount() > 0) {
+			if (mGridView.getCheckedItemCount() > 0) {
 				mSendMenuItem.setVisible(true);
 			}
 			else {
