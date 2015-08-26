@@ -156,17 +156,7 @@ public class RecipientsActivity extends Activity {
 		return super.onOptionsItemSelected(item);
 	}
 
-	@Override
-	protected void onListItemClick(ListView l, View v, int position, long id) {
-		super.onListItemClick(l, v, position, id);
-		
-		if (l.getCheckedItemCount() > 0) {
-			mSendMenuItem.setVisible(true);
-		}
-		else {
-			mSendMenuItem.setVisible(false);
-		}
-	}
+	
 	
 	protected ParseObject createMessage() {
 		ParseObject message = new ParseObject(ParseConstants.CLASS_MESSAGES);
@@ -236,6 +226,13 @@ public class RecipientsActivity extends Activity {
 		@Override
 		public void onItemClick(AdapterView<?> parent, View view, int position,
 				long id) {
+			
+			if (l.getCheckedItemCount() > 0) {
+				mSendMenuItem.setVisible(true);
+			}
+			else {
+				mSendMenuItem.setVisible(false);
+			}
 			
 		}
 	};
