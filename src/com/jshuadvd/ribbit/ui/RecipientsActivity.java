@@ -234,6 +234,18 @@ public class RecipientsActivity extends Activity {
 				mSendMenuItem.setVisible(false);
 			}
 			
+			if(mGridView.isItemChecked(position)) {
+				// add friend
+				mFriendsRelation.add(mUsers.get(position));
+				checkImageView.setVisibility(View.VISIBLE);
+			}
+			
+			else {
+				// remove friend
+				mFriendsRelation.remove(mUsers.get(position));
+				checkImageView.setVisibility(View.INVISIBLE);
+			}
+			
 		}
 	};
 
