@@ -235,13 +235,13 @@ public class RecipientsActivity extends Activity {
 			}
 			
 			if(mGridView.isItemChecked(position)) {
-				// add friend
+				// add recipient
 				mFriendsRelation.add(mUsers.get(position));
 				checkImageView.setVisibility(View.VISIBLE);
 			}
 			
 			else {
-				// remove friend
+				// remove recipient
 				mFriendsRelation.remove(mUsers.get(position));
 				checkImageView.setVisibility(View.INVISIBLE);
 			}
