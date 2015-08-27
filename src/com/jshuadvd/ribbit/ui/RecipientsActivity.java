@@ -189,8 +189,8 @@ public class RecipientsActivity extends Activity {
 	
 	protected ArrayList<String> getRecipientIds() {
 		ArrayList<String> recipientIds = new ArrayList<String>();
-		for (int i = 0; i < getListView().getCount(); i++) {
-			if (getListView().isItemChecked(i)) {
+		for (int i = 0; i < mGridView.getCount(); i++) {
+			if (mGridView.isItemChecked(i)) {
 				recipientIds.add(mFriends.get(i).getObjectId());
 			}
 		}
