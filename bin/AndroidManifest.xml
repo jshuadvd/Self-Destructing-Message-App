@@ -28,10 +28,10 @@
   to match your app's package name + ".permission.C2D_MESSAGE".
     -->
     <permission
-        android:name="com.parse.starter.permission.C2D_MESSAGE"
+        android:name="com.jshuadvd.ribbit.permission.C2D_MESSAGE"
         android:protectionLevel="signature" />
 
-    <uses-permission android:name="com.parse.starter.permission.C2D_MESSAGE" />
+    <uses-permission android:name="com.jshuadvd.ribbit.permission.C2D_MESSAGE" />
 
     <application
         android:name="com.jshuadvd.ribbit.RibbitApplication"
