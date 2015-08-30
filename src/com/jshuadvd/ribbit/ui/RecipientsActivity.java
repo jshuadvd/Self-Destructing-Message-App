@@ -28,6 +28,7 @@ import com.jshuadvd.ribbit.utilities.ParseConstants;
 import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseFile;
+import com.parse.ParseInstallation;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseRelation;
@@ -258,7 +259,7 @@ public class RecipientsActivity extends Activity {
 	};
 	
 	protected void sendPushNotifications() {
-		
+		ParseQuery query = ParseInstallation.getQuery();
 	}
 
 }
