@@ -259,7 +259,7 @@ public class RecipientsActivity extends Activity {
 	};
 	
 	protected void sendPushNotifications() {
-		ParseQuery query = ParseInstallation.getQuery();
+		ParseQuery<ParseInstallation> query = ParseInstallation.getQuery();
 	}
 
 }
