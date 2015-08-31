@@ -256,6 +256,10 @@ public class RecipientsActivity extends Activity {
 			
 		}
 	};
+	
+	protected void sendPushNotifications() {
+		
+	}
 
 }
 
