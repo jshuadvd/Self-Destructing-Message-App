@@ -79,7 +79,9 @@
             android:screenOrientation="portrait" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.jshuadvd.ribbit.MainActivity" />
+                android:value="com.jshuadvd.ribbit.MainActivity" 
+                android:name="com.parse.push.notification_icon" 
+                android:resource="@drawable/ic_launcher" />
         </activity>
 
         <service android:name="com.parse.PushService" />
