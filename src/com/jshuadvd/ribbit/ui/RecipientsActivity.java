@@ -208,6 +208,7 @@ public class RecipientsActivity extends Activity {
 				if (e == null) {
 					// It was successful
 					Toast.makeText(RecipientsActivity.this, "Message sent!", Toast.LENGTH_LONG).show();
+					sendPushNotifications();
 				}
 				else {
 					AlertDialog.Builder builder = new AlertDialog.Builder(RecipientsActivity.this);
