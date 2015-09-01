@@ -84,7 +84,7 @@ public class LoginActivity extends Activity {
 							
 							if(e == null) {
 								// Success
-								updateParseInstallation()
+								updateParseInstallation(user);
 								
 								
 								Intent intent = new Intent(LoginActivity.this, MainActivity.class);
