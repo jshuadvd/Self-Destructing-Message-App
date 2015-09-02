@@ -2,6 +2,7 @@ package com.jshuadvd.ribbit;
 
 import android.app.Application;
 
+import com.jshuadvd.ribbit.utilities.ParseConstants;
 import com.parse.Parse;
 import com.parse.ParseInstallation;
 import com.parse.ParseUser;
@@ -19,6 +20,6 @@ public class RibbitApplication extends Application {
 	
 	public static void updateParseInstallation(ParseUser user) {
 		ParseInstallation installation = ParseInstallation.getCurrentInstallation();
-		installation.put(key, value);
+		installation.put(ParseConstants.KEY_USER_ID, value);
 	}
 }
