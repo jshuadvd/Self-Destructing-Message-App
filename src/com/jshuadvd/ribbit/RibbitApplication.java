@@ -19,5 +19,6 @@ public class RibbitApplication extends Application {
 	
 	public static void updateParseInstallation(ParseUser user) {
 		ParseInstallation installation = ParseInstallation.getCurrentInstallation();
+		installation.put(key, value);
 	}
 }
