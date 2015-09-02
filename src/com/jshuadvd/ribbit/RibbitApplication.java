@@ -4,6 +4,7 @@ import android.app.Application;
 
 import com.parse.Parse;
 import com.parse.ParseInstallation;
+import com.parse.ParseUser;
 
 public class RibbitApplication extends Application {
 	
@@ -17,6 +18,6 @@ public class RibbitApplication extends Application {
 	}
 	
 	public static void updateParseInstallation(ParseUser user) {
-		
+		ParseInstallation installation = ParseInstallation.getCurrentInstallation();
 	}
 }
