@@ -12,11 +12,11 @@ public class RibbitApplication extends Application {
 		super.onCreate();
 	    
 		Parse.initialize(this, "5mxmuCNaVB2ua1mrQRVmsNIDUg8KfcbYrlzzrulh", 
-	    						"tEpFDQp3SneukuBDXXem6GID6Tx56fJe83ZZjEMt");
+	    						"tEpFDQp3SneukuBDXXem6GID6Tx56fJe83ZZjEMt");   
 	    
-
-
-	    
-	    
+	}
+	
+	public static void updateParseInstallation(ParseUser user) {
+		
 	}
 }
