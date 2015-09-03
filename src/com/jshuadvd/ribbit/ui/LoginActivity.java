@@ -18,6 +18,7 @@ import com.jshuadvd.ribbit.R.id;
 import com.jshuadvd.ribbit.R.layout;
 import com.jshuadvd.ribbit.R.menu;
 import com.jshuadvd.ribbit.R.string;
+import com.jshuadvd.ribbit.RibbitApplication;
 import com.parse.LogInCallback;
 import com.parse.ParseException;
 import com.parse.ParseUser;
@@ -84,7 +85,7 @@ public class LoginActivity extends Activity {
 							
 							if(e == null) {
 								// Success
-								updateParseInstallation(user);
+								RibbitApplication.updateParseInstallation(user);
 								
 								
 								Intent intent = new Intent(LoginActivity.this, MainActivity.class);
