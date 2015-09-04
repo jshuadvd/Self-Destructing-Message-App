@@ -12,9 +12,6 @@ import android.widget.EditText;
 
 import com.jshuadvd.ribbit.R;
 import com.jshuadvd.ribbit.RibbitApplication;
-import com.jshuadvd.ribbit.R.id;
-import com.jshuadvd.ribbit.R.layout;
-import com.jshuadvd.ribbit.R.string;
 import com.parse.ParseException;
 import com.parse.ParseUser;
 import com.parse.SignUpCallback;
@@ -84,7 +81,8 @@ public class SignUpActivity extends Activity {
 							
 							if (e == null) {
 								// Success!
-								RibbitApplication.updateParseInstallation(user);
+								RibbitApplication.updateParseInstallation(
+									ParseUser.getCurrentUser());
 								
 								
 								Intent intent = new Intent(SignUpActivity.this, MainActivity.class);
