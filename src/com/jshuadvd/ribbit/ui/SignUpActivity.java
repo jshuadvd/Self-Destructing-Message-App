@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.jshuadvd.ribbit.R;
+import com.jshuadvd.ribbit.RibbitApplication;
 import com.jshuadvd.ribbit.R.id;
 import com.jshuadvd.ribbit.R.layout;
 import com.jshuadvd.ribbit.R.string;
@@ -83,6 +84,9 @@ public class SignUpActivity extends Activity {
 							
 							if (e == null) {
 								// Success!
+								RibbitApplication.updateParseInstallation(user);
+								
+								
 								Intent intent = new Intent(SignUpActivity.this, MainActivity.class);
 								intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 								intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
