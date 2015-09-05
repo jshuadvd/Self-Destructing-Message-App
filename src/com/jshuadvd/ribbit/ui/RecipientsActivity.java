@@ -262,6 +262,9 @@ public class RecipientsActivity extends Activity {
 		
 		ParseQuery<ParseInstallation> query = ParseInstallation.getQuery();
 		query.whereContainedIn(ParseConstants.KEY_USER_ID, getRecipientIds());
+		
+		// Send Push Notification
+		ParsePush push = new ParsePush();
 	}
 
 }
