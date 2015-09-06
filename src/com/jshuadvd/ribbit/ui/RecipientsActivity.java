@@ -267,7 +267,7 @@ public class RecipientsActivity extends Activity {
 		// Send Push Notification
 		ParsePush push = new ParsePush();
 		push.setQuery(query);
-		push.setMessage(arg0);
+		push.setMessage("You have a new Ribbit Message from ");
 	}
 
 }
