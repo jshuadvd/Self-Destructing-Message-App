@@ -271,6 +271,8 @@ public class RecipientsActivity extends Activity {
 				ParseUser.getCurrentUser().getUsername()));
 		push.sendInBackground();
 	}
+	
+	// push notifs aren't showing up. debug to see why.
 
 }
 
