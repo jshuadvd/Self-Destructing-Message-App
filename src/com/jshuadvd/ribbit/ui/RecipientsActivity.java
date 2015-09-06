@@ -269,6 +269,7 @@ public class RecipientsActivity extends Activity {
 		push.setQuery(query);
 		push.setMessage(getString(R.string.push_message,
 				ParseUser.getCurrentUser().getUsername()));
+		push.sendInBackground();
 	}
 
 }
