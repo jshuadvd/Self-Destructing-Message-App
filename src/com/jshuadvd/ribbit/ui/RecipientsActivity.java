@@ -267,7 +267,8 @@ public class RecipientsActivity extends Activity {
 		// Send Push Notification
 		ParsePush push = new ParsePush();
 		push.setQuery(query);
-		push.setMessage(getString(R.string.push_message));
+		push.setMessage(getString(R.string.push_message,
+				ParseUser.getCurrentUser().getUsername()));
 	}
 
 }
