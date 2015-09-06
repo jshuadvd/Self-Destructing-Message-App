@@ -16,16 +16,16 @@ public final class R {
     public static final class color {
         public static final int apptheme_color=0x7f040002;
         public static final int background_purple=0x7f040000;
-        public static final int focused_purple_button=0x7f040005;
+        public static final int focused_purple_button=0x7f040004;
         public static final int light_gray=0x7f040001;
-        public static final int light_purple_background=0x7f040007;
+        public static final int light_purple_background=0x7f040006;
         public static final int light_purple_button=0x7f040003;
-        public static final int pressed_purple_button=0x7f040004;
-        public static final int swipeRefresh1=0x7f040008;
-        public static final int swipeRefresh2=0x7f040009;
-        public static final int swipeRefresh3=0x7f04000a;
-        public static final int swipeRefresh4=0x7f04000b;
-        public static final int text_color=0x7f040006;
+        public static final int pressed_purple_button=0x7f04000b;
+        public static final int swipeRefresh1=0x7f040007;
+        public static final int swipeRefresh2=0x7f040008;
+        public static final int swipeRefresh3=0x7f040009;
+        public static final int swipeRefresh4=0x7f04000a;
+        public static final int text_color=0x7f040005;
     }
     public static final class dimen {
         /**  Default screen margins, per the Android Design guidelines. 
@@ -190,6 +190,7 @@ public final class R {
         public static final int menu_logout_label=0x7f060011;
         public static final int menu_send_label=0x7f060022;
         public static final int password_hint=0x7f060007;
+        public static final int push_message=0x7f06002e;
         public static final int sign_up_button_label=0x7f06000c;
         public static final int sign_up_text=0x7f060009;
         public static final int signup_error_message=0x7f06000d;
