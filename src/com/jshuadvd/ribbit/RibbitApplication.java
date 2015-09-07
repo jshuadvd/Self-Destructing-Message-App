@@ -18,6 +18,11 @@ public class RibbitApplication extends Application {
 	    
 	}
 	
+	PushService.setDefaultPushCallback(this, MainActivity.class, 
+			R.drawable.ic_stat_ic_launcher);
+	ParseInstalation.getCurrentInstallation().saveInBackground();
+	
+	
 	public static void updateParseInstallation(ParseUser user) {
 		ParseInstallation installation = ParseInstallation.getCurrentInstallation();
 		installation.put(ParseConstants.KEY_USER_ID, user.getObjectId());
