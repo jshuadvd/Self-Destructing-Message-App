@@ -2,16 +2,14 @@ package com.jshuadvd.ribbit.adapters;
 
 import java.util.Locale;
 
-import com.jshuadvd.ribbit.R;
-import com.jshuadvd.ribbit.R.drawable;
-import com.jshuadvd.ribbit.R.string;
-import com.jshuadvd.ribbit.ui.FriendsFragment;
-import com.jshuadvd.ribbit.ui.InboxFragment;
-
 import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+
+import com.jshuadvd.ribbit.R;
+import com.jshuadvd.ribbit.ui.FriendsFragment;
+import com.jshuadvd.ribbit.ui.InboxFragment;
 
 /**
  * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
@@ -24,7 +22,6 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
 	public SectionsPagerAdapter(Context context, FragmentManager fm) {
 		super(fm);
 		mContext = context;
-		
 	}
 
 	@Override
@@ -56,7 +53,6 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
 			return mContext.getString(R.string.title_section1).toUpperCase(l);
 		case 1:
 			return mContext.getString(R.string.title_section2).toUpperCase(l);
-		
 		}
 		return null;
 	}
@@ -66,10 +62,14 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
 		case 0:
 			return R.drawable.ic_tab_inbox;
 		case 1:
-			return R.drawable.ic_tab_friends;		
+			return R.drawable.ic_tab_friends;
 		}
+		
 		return R.drawable.ic_tab_inbox;
-	
 	}
-	
 }
+
+
+
+
+

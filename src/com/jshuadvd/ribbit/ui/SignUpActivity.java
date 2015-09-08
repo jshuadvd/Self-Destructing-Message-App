@@ -1,3 +1,4 @@
+
 package com.jshuadvd.ribbit.ui;
 
 import android.app.ActionBar;
@@ -82,8 +83,7 @@ public class SignUpActivity extends Activity {
 							if (e == null) {
 								// Success!
 								RibbitApplication.updateParseInstallation(
-									ParseUser.getCurrentUser());
-								
+										ParseUser.getCurrentUser());
 								
 								Intent intent = new Intent(SignUpActivity.this, MainActivity.class);
 								intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -104,5 +104,4 @@ public class SignUpActivity extends Activity {
 			}
 		});
 	}
-
 }

@@ -27,7 +27,7 @@ import android.widget.Toast;
 
 import com.jshuadvd.ribbit.R;
 import com.jshuadvd.ribbit.adapters.SectionsPagerAdapter;
-import com.jshuadvd.ribbit.utilities.ParseConstants;
+import com.jshuadvd.ribbit.utils.ParseConstants;
 import com.parse.ParseAnalytics;
 import com.parse.ParseUser;
 

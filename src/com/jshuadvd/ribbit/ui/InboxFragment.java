@@ -16,7 +16,7 @@ import android.widget.ListView;
 
 import com.jshuadvd.ribbit.R;
 import com.jshuadvd.ribbit.adapters.MessageAdapter;
-import com.jshuadvd.ribbit.utilities.ParseConstants;
+import com.jshuadvd.ribbit.utils.ParseConstants;
 import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseFile;
@@ -29,7 +29,6 @@ public class InboxFragment extends ListFragment {
 	protected List<ParseObject> mMessages;
 	protected SwipeRefreshLayout mSwipeRefreshLayout;
 	
-	@SuppressWarnings("deprecation")
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {

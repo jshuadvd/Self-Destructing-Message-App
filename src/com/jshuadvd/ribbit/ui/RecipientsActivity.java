@@ -1,3 +1,4 @@
+
 package com.jshuadvd.ribbit.ui;
 
 import java.util.ArrayList;
@@ -23,8 +24,8 @@ import android.widget.Toast;
 
 import com.jshuadvd.ribbit.R;
 import com.jshuadvd.ribbit.adapters.UserAdapter;
-import com.jshuadvd.ribbit.utilities.FileHelper;
-import com.jshuadvd.ribbit.utilities.ParseConstants;
+import com.jshuadvd.ribbit.utils.FileHelper;
+import com.jshuadvd.ribbit.utils.ParseConstants;
 import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseFile;
@@ -37,7 +38,7 @@ import com.parse.ParseUser;
 import com.parse.SaveCallback;
 
 public class RecipientsActivity extends Activity {
-	
+
 	public static final String TAG = RecipientsActivity.class.getSimpleName();
 
 	protected ParseRelation<ParseUser> mFriendsRelation;
@@ -53,20 +54,19 @@ public class RecipientsActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
 		setContentView(R.layout.user_grid);
+		// Show the Up button in the action bar.
+		setupActionBar();
 		
-		//setupActionBar();
-		
-		mGridView = (GridView)findViewById(R.id.friendsGrid);		
+		mGridView = (GridView)findViewById(R.id.friendsGrid);
 		mGridView.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
 		mGridView.setOnItemClickListener(mOnItemClickListener);
-		
+
 		TextView emptyTextView = (TextView)findViewById(android.R.id.empty);
 		mGridView.setEmptyView(emptyTextView);
 		
 		mMediaUri = getIntent().getData();
 		mFileType = getIntent().getExtras().getString(ParseConstants.KEY_FILE_TYPE);
 	}
-	
 	
 	@Override
 	public void onResume() {
@@ -80,10 +80,8 @@ public class RecipientsActivity extends Activity {
 		ParseQuery<ParseUser> query = mFriendsRelation.getQuery();
 		query.addAscendingOrder(ParseConstants.KEY_USERNAME);
 		query.findInBackground(new FindCallback<ParseUser>() {
-			
 			@Override
 			public void done(List<ParseUser> friends, ParseException e) {
-				
 				setProgressBarIndeterminateVisibility(false);
 				
 				if (e == null) {
@@ -95,15 +93,13 @@ public class RecipientsActivity extends Activity {
 						usernames[i] = user.getUsername();
 						i++;
 					}
-					
+
 					if (mGridView.getAdapter() == null) {
 						UserAdapter adapter = new UserAdapter(RecipientsActivity.this, mFriends);
 						mGridView.setAdapter(adapter);
-						
 					}
 					else {
 						((UserAdapter)mGridView.getAdapter()).refill(mFriends);
-					
 					}
 				}
 				else {
@@ -118,7 +114,15 @@ public class RecipientsActivity extends Activity {
 			}
 		});
 	}
-	
+
+	/**
+	 * Set up the {@link android.app.ActionBar}.
+	 */
+	private void setupActionBar() {
+
+		getActionBar().setDisplayHomeAsUpEnabled(true);
+
+	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -127,7 +131,6 @@ public class RecipientsActivity extends Activity {
 		mSendMenuItem = menu.getItem(0);
 		return true;
 	}
-
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
@@ -148,14 +151,13 @@ public class RecipientsActivity extends Activity {
 				// error
 				AlertDialog.Builder builder = new AlertDialog.Builder(this);
 				builder.setMessage(R.string.error_selecting_file)
-				.setTitle(R.string.error_selecting_file_title)
-				.setPositiveButton(android.R.string.ok, null);
-				AlertDialog dialog = builder .create();
+					.setTitle(R.string.error_selecting_file_title)
+					.setPositiveButton(android.R.string.ok, null);
+				AlertDialog dialog = builder.create();
 				dialog.show();
 			}
 			else {
 				send(message);
-				// Finish this section
 				finish();
 			}
 			return true;
@@ -163,8 +165,6 @@ public class RecipientsActivity extends Activity {
 		return super.onOptionsItemSelected(item);
 	}
 
-	
-	
 	protected ParseObject createMessage() {
 		ParseObject message = new ParseObject(ParseConstants.CLASS_MESSAGES);
 		message.put(ParseConstants.KEY_SENDER_ID, ParseUser.getCurrentUser().getObjectId());
@@ -178,19 +178,16 @@ public class RecipientsActivity extends Activity {
 			return null;
 		}
 		else {
-			if (mFileType.equals(ParseConstants.TYPE_IMAGE) ) {
+			if (mFileType.equals(ParseConstants.TYPE_IMAGE)) {
 				fileBytes = FileHelper.reduceImageForUpload(fileBytes);
 			}
 			
 			String fileName = FileHelper.getFileName(this, mMediaUri, mFileType);
 			ParseFile file = new ParseFile(fileName, fileBytes);
 			message.put(ParseConstants.KEY_FILE, file);
-			
+
 			return message;
 		}
-		
-		
-		
 	}
 	
 	protected ArrayList<String> getRecipientIds() {
@@ -204,37 +201,30 @@ public class RecipientsActivity extends Activity {
 	}
 	
 	protected void send(ParseObject message) {
-		message.saveInBackground(new SaveCallback() {	
+		message.saveInBackground(new SaveCallback() {
 			@Override
 			public void done(ParseException e) {
 				if (e == null) {
-					// It was successful
-					Toast.makeText(RecipientsActivity.this, "Message sent!", Toast.LENGTH_LONG).show();
+					// success!
+					Toast.makeText(RecipientsActivity.this, R.string.success_message, Toast.LENGTH_LONG).show();
 					sendPushNotifications();
 				}
 				else {
 					AlertDialog.Builder builder = new AlertDialog.Builder(RecipientsActivity.this);
 					builder.setMessage(R.string.error_sending_message)
-					.setTitle(R.string.error_selecting_file_title)
-					.setPositiveButton(android.R.string.ok, null);
-					AlertDialog dialog = builder .create();
+						.setTitle(R.string.error_selecting_file_title)
+						.setPositiveButton(android.R.string.ok, null);
+					AlertDialog dialog = builder.create();
 					dialog.show();
-					
-					
-					
 				}
-					
-				
 			}
 		});
 	}
 	
 	protected OnItemClickListener mOnItemClickListener = new OnItemClickListener() {
-
 		@Override
 		public void onItemClick(AdapterView<?> parent, View view, int position,
 				long id) {
-			
 			if (mGridView.getCheckedItemCount() > 0) {
 				mSendMenuItem.setVisible(true);
 			}
@@ -243,38 +233,32 @@ public class RecipientsActivity extends Activity {
 			}
 			
 			ImageView checkImageView = (ImageView)view.findViewById(R.id.checkImageView);
-			
-			if(mGridView.isItemChecked(position)) {
-				// add recipient
-				
+
+			if (mGridView.isItemChecked(position)) {
+				// add the recipient
 				checkImageView.setVisibility(View.VISIBLE);
 			}
-			
 			else {
-				// remove recipient
-				
+				// remove the recipient
 				checkImageView.setVisibility(View.INVISIBLE);
 			}
-			
 		}
 	};
 	
 	protected void sendPushNotifications() {
-		
 		ParseQuery<ParseInstallation> query = ParseInstallation.getQuery();
 		query.whereContainedIn(ParseConstants.KEY_USER_ID, getRecipientIds());
 		
-		// Send Push Notification
+		// send push notification
 		ParsePush push = new ParsePush();
 		push.setQuery(query);
-		push.setMessage(getString(R.string.push_message,
+		push.setMessage(getString(R.string.push_message, 
 				ParseUser.getCurrentUser().getUsername()));
 		push.sendInBackground();
 	}
-	
-	// push notifs aren't showing up. debug to see why.
-
 }
+
+
 
 
 

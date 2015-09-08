@@ -1,3 +1,4 @@
+
 package com.jshuadvd.ribbit.ui;
 
 import java.util.List;
@@ -14,7 +15,7 @@ import android.widget.TextView;
 
 import com.jshuadvd.ribbit.R;
 import com.jshuadvd.ribbit.adapters.UserAdapter;
-import com.jshuadvd.ribbit.utilities.ParseConstants;
+import com.jshuadvd.ribbit.utils.ParseConstants;
 import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseQuery;
@@ -56,10 +57,8 @@ public class FriendsFragment extends Fragment {
 		ParseQuery<ParseUser> query = mFriendsRelation.getQuery();
 		query.addAscendingOrder(ParseConstants.KEY_USERNAME);
 		query.findInBackground(new FindCallback<ParseUser>() {
-			
 			@Override
 			public void done(List<ParseUser> friends, ParseException e) {
-				
 				getActivity().setProgressBarIndeterminateVisibility(false);
 				
 				if (e == null) {
@@ -71,15 +70,12 @@ public class FriendsFragment extends Fragment {
 						usernames[i] = user.getUsername();
 						i++;
 					}
-					
 					if (mGridView.getAdapter() == null) {
 						UserAdapter adapter = new UserAdapter(getActivity(), mFriends);
 						mGridView.setAdapter(adapter);
-						
 					}
 					else {
 						((UserAdapter)mGridView.getAdapter()).refill(mFriends);
-					
 					}
 				}
 				else {
